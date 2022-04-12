@@ -9,8 +9,28 @@ export const typography = StyleSheet.create({
   },
   body2: {
     color: palette.primary,
-    fontFamily: 'Trade Gothic LT Std Regular',
+    fontFamily: 'Trade Gothic LT Std Extended',
     fontSize: 14,
     lineHeight: 24,
   },
+  heading2: {
+    color: palette.primary,
+    fontFamily: 'Analogue',
+    fontSize: 30
+  },
+  greet: {
+      fontFamily:'Quentin',
+      fontSize: 24,
+      color: palette.primary
+  }, 
+  cardFont: {
+    fontFamily: 'Trade Gothic LT Std Extended',
+    fontSize: 18,
+    color: palette.background
+  },
+  pricesFont: {
+    fontFamily: 'Trade Gothic LT Std Extended',
+    fontSize: 18,
+    color: palette.primary
+  }
 });
