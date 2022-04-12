@@ -1,7 +1,8 @@
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import {Text, ImageBackground} from 'react-native';
+import {Text, ImageBackground, StyleSheet} from 'react-native';
 import {palette, paletteRGBA} from './src/theme/palette';
+import {typography} from './src/theme/typography';
 
 const App = () => {
   return (
@@ -10,29 +11,12 @@ const App = () => {
       style={{flex: 1}}
       resizeMode="cover">
       <LinearGradient
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          padding: 24,
-        }}
+        style={styles.container}
         colors={[paletteRGBA.black(0), paletteRGBA.black()]}
         start={{x: 0, y: 0}}
         end={{x: 0, y: 1}}>
-        <Text
-          style={{
-            color: palette.primary,
-            fontFamily: 'Quentin',
-            fontSize: 48,
-          }}>
-          Hey There!
-        </Text>
-        <Text
-          style={{
-            color: palette.primary,
-            fontFamily: 'Trade Gothic LT Std Regular',
-            fontSize: 14,
-            lineHeight: 24,
-          }}>
+        <Text style={typography.heading1}>Hey There!</Text>
+        <Text style={typography.body2}>
           Do You have already an account? Or is the first time you access to
           MyBooking App? So, you must have receive an email with a code to
           create your account.
@@ -41,5 +25,13 @@ const App = () => {
     </ImageBackground>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: 24,
+  },
+});
 
 export default App;
