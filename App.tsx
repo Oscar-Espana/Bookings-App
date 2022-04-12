@@ -1,7 +1,7 @@
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import {Text, ImageBackground, StyleSheet} from 'react-native';
-import {palette, paletteRGBA} from './src/theme/palette';
+import {paletteRGBA} from './src/theme/palette';
 import {typography} from './src/theme/typography';
 
 const App = () => {
