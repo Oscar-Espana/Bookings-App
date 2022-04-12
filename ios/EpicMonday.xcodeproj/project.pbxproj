@@ -14,6 +14,10 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-EpicMonday-EpicMondayTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-EpicMonday-EpicMondayTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D1E5564C2D2F4EBCAC04D8EE /* Analogue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D51B4D0C63B4710A0CAF505 /* Analogue.otf */; };
+		1EA633919A5B45F386C45929 /* Quentin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D710BA51497D4650B406499F /* Quentin.otf */; };
+		F47872B48D734503AE94A95F /* Trade Gothic LT Std Extended.otf in Resources */ = {isa = PBXBuildFile; fileRef = 675B80CB0371492987E9EA5C /* Trade Gothic LT Std Extended.otf */; };
+		03B88FDC35234FA99B804EA4 /* Trade Gothic LT Std Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D841B74F65C4206B26CB96B /* Trade Gothic LT Std Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = EpicMonday/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-EpicMonday-EpicMondayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpicMonday-EpicMondayTests.release.xcconfig"; path = "Target Support Files/Pods-EpicMonday-EpicMondayTests/Pods-EpicMonday-EpicMondayTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		7D51B4D0C63B4710A0CAF505 /* Analogue.otf */ = {isa = PBXFileReference; name = "Analogue.otf"; path = "../src/assets/fonts/Analogue.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D710BA51497D4650B406499F /* Quentin.otf */ = {isa = PBXFileReference; name = "Quentin.otf"; path = "../src/assets/fonts/Quentin.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		675B80CB0371492987E9EA5C /* Trade Gothic LT Std Extended.otf */ = {isa = PBXFileReference; name = "Trade Gothic LT Std Extended.otf"; path = "../src/assets/fonts/Trade Gothic LT Std Extended.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9D841B74F65C4206B26CB96B /* Trade Gothic LT Std Regular.otf */ = {isa = PBXFileReference; name = "Trade Gothic LT Std Regular.otf"; path = "../src/assets/fonts/Trade Gothic LT Std Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				F165B30A149F44489496A834 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +156,18 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		F165B30A149F44489496A834 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				7D51B4D0C63B4710A0CAF505 /* Analogue.otf */,
+				D710BA51497D4650B406499F /* Quentin.otf */,
+				675B80CB0371492987E9EA5C /* Trade Gothic LT Std Extended.otf */,
+				9D841B74F65C4206B26CB96B /* Trade Gothic LT Std Regular.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +265,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D1E5564C2D2F4EBCAC04D8EE /* Analogue.otf in Resources */,
+				1EA633919A5B45F386C45929 /* Quentin.otf in Resources */,
+				F47872B48D734503AE94A95F /* Trade Gothic LT Std Extended.otf in Resources */,
+				03B88FDC35234FA99B804EA4 /* Trade Gothic LT Std Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
