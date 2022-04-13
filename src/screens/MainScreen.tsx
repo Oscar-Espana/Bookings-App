@@ -38,7 +38,7 @@ const MainScreen = () => {
           <Text style={{...typography.heading2, fontSize: 24}}>
             Tu reserva en curso
           </Text>
-          <Text style={styles.line}>____________________</Text>
+          <Text style={styles.line}>______________________</Text>
         </View>
         <ScrollView>
           <CardCheckInOut />
@@ -57,9 +57,10 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
     top: 67,
+    marginHorizontal: 28,
   },
   circle: {
     width: 44,
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
   title: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginLeft: 28,
+    marginLeft: 22,
     padding: 10,
   },
   line: {
