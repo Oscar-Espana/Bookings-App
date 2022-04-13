@@ -22,10 +22,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     width: '100%',
-    padding: 20,
+    padding: 30,
   },
   image: {
     borderRadius: 20,
+    width: '100%',
   },
   checkinout: {
     position: 'absolute',
