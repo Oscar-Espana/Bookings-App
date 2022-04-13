@@ -31,6 +31,7 @@ export const typography = StyleSheet.create({
   pricesFont: {
     fontFamily: 'Trade Gothic LT Std Extended',
     fontSize: 18,
-    color: palette.primary
+    color: palette.primary,
+    lineHeight: 24
   }
 });

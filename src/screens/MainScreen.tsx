@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginLeft: 28,
+    padding: 10,
   },
   line: {
     color: '#8B8B8B',

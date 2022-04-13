@@ -9,14 +9,19 @@ const CardReservePriceTotal = () => {
     <TouchableOpacity>
       <View style={styles.container}>
         <View style={styles.aparmentInfo}>
-          <View style={{flexDirection: 'row', alignContent: 'center'}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignContent: 'center',
+              alignItems: 'center',
+            }}>
             <Icon name="location" size={14} color={'#F9B586'} />
             <Text
               style={{
                 ...typography.pricesFont,
                 fontSize: 12,
                 color: palette.neutral,
-                marginBottom: 5,
+                marginLeft: 6,
               }}>
               BARCELONA
             </Text>
@@ -44,24 +49,44 @@ const CardReservePriceTotal = () => {
 
           <View style={styles.prices}>
             <View style={styles.totalPrice}>
-              <Text style={{...typography.pricesFont, color: palette.neutral}}>
+              <Text
+                style={{
+                  ...typography.pricesFont,
+                  color: palette.neutral,
+                }}>
                 Adultos
               </Text>
-              <Text style={{...typography.pricesFont, color: 'white'}}>
-                {' '}
-                x3{' '}
+              <Text
+                style={{
+                  ...typography.pricesFont,
+                  color: 'white',
+                  position: 'absolute',
+                  left: '49%',
+                }}>
+                x3
               </Text>
-              <Text style={{...typography.pricesFont, color: 'white'}}>
+              <Text
+                style={{
+                  ...typography.pricesFont,
+                  color: 'white',
+                }}>
                 0,00$
               </Text>
             </View>
+
             <View style={styles.totalPrice}>
               <Text style={{...typography.pricesFont, color: palette.neutral}}>
                 Niños
               </Text>
-              <Text style={{...typography.pricesFont, color: 'white'}}>
-                {' '}
-                x3{' '}
+              <Text
+                style={{
+                  ...typography.pricesFont,
+                  color: 'white',
+
+                  position: 'absolute',
+                  left: '49%',
+                }}>
+                x3
               </Text>
               <Text style={{...typography.pricesFont, color: 'white'}}>
                 0,00$
@@ -71,11 +96,8 @@ const CardReservePriceTotal = () => {
         </View>
 
         <View style={styles.total}>
-          <Text style={typography.pricesFont}> Total</Text>
-          <Text style={{...typography.pricesFont, color: 'white'}}>
-            {' '}
-            0,00${' '}
-          </Text>
+          <Text style={{...typography.pricesFont, marginRight: 30}}>Total</Text>
+          <Text style={{...typography.pricesFont, color: 'white'}}>0,00$</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -106,24 +128,24 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   prices: {
-    paddingHorizontal: 10,
+    paddingLeft: 10,
+    flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
   },
   totalDetails: {
     borderBottomWidth: 1,
     borderBottomColor: '#8B8B8B',
     flexDirection: 'row',
     padding: 14,
-    justifyContent: 'space-between',
   },
   totalPrice: {
     flexDirection: 'row',
-    alignSelf: 'flex-end',
+    justifyContent: 'space-between',
   },
   total: {
     flexDirection: 'row',
-    alignSelf: 'flex-end',
+    justifyContent: 'flex-end',
+    width: '100%',
     padding: 14,
   },
 });
