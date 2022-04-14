@@ -1,5 +1,6 @@
-package com.epicmonday;
 
+import android.os.Bundle;
+package com.epicmonday;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
@@ -15,6 +16,10 @@ public class MainActivity extends ReactActivity {
     return "EpicMonday";
   }
 
+  @Override 
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+  }
   /**
    * Returns the instance of the {@link ReactActivityDelegate}. There the RootView is created and
    * you can specify the rendered you wish to use (Fabric or the older renderer).

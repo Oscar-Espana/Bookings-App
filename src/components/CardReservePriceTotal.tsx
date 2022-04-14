@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {palette} from '../theme/palette';
 import {typography} from '../theme/typography';
 
 const CardReservePriceTotal = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => setIsExpanded(!isExpanded)}>
       <View style={styles.container}>
         <View style={styles.aparmentInfo}>
           <View
@@ -95,6 +97,46 @@ const CardReservePriceTotal = () => {
           </View>
         </View>
 
+        {isExpanded && (
+          <View style={{borderBottomWidth: 1, padding: 14}}>
+            <Text style={typography.pricesFont}>Servicios</Text>
+
+            <View style={styles.serviceType}>
+              <View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <Text style={typography.pricesFont}>
+                    Servicio de limpieza
+                  </Text>
+                  <Text style={typography.pricesFont}>0.00$</Text>
+                </View>
+                <View style={{borderBottomWidth: 1, width: '100%'}}>
+                  <Text style={typography.body2}>Fecha del servicio</Text>
+                  <Text style={typography.body2}>10 AGO 2021</Text>
+                  <Text style={typography.body2}>Numero de reserva</Text>
+                  <Text style={typography.body2}>#A169-3803537472-414</Text>
+                </View>
+              </View>
+            </View>
+
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+              }}>
+              <Text style={{...typography.pricesFont, marginRight: 30}}>
+                Subtotal servicios
+              </Text>
+              <Text style={{...typography.pricesFont, color: 'white'}}>
+                0,00$
+              </Text>
+            </View>
+          </View>
+        )}
+
         <View style={styles.total}>
           <Text style={{...typography.pricesFont, marginRight: 30}}>Total</Text>
           <Text style={{...typography.pricesFont, color: 'white'}}>0,00$</Text>
@@ -147,6 +189,9 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     width: '100%',
     padding: 14,
+  },
+  serviceType: {
+    paddingBottom: 18,
   },
 });
 
