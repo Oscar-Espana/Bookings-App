@@ -12,8 +12,11 @@ export const BottomTabsNavigator = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
+
         tabBarStyle: {
           backgroundColor: palette.background,
+          height: 80,
+
           /*  shadowColor: 'black',
           shadowOffset: {width: 0.1, height: 0.1},
           shadowOpacity: 0.9, */
@@ -33,7 +36,7 @@ export const BottomTabsNavigator = () => {
         component={GreetingsScreen}
         options={{
           tabBarIcon: () => (
-            <Icon name="compass-outline" size={24} color="#fff" />
+            <Icon name="compass-outline" size={30} color="#fff" />
           ),
         }}
       />
@@ -42,7 +45,7 @@ export const BottomTabsNavigator = () => {
         component={GreetingsScreen}
         options={{
           tabBarIcon: () => (
-            <Icon name="airplane-outline" size={24} color="#fff" />
+            <Icon name="airplane-outline" size={30} color="#fff" />
           ),
         }}
       />
@@ -51,7 +54,7 @@ export const BottomTabsNavigator = () => {
         component={GreetingsScreen}
         options={{
           tabBarIcon: () => (
-            <Icon name="settings-outline" size={24} color="#fff" />
+            <Icon name="settings-outline" size={30} color="#fff" />
           ),
         }}
       />
@@ -60,7 +63,7 @@ export const BottomTabsNavigator = () => {
         component={GreetingsScreen}
         options={{
           tabBarIcon: () => (
-            <Icon name="person-outline" size={24} color="#fff" />
+            <Icon name="person-outline" size={30} color="#fff" />
           ),
         }}
       />

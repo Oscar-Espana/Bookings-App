@@ -43,6 +43,8 @@ const MainScreen = () => {
         <ScrollView>
           <CardCheckInOut />
           <CardReservePriceTotal />
+          <CardReservePriceTotal />
+          <CardReservePriceTotal />
           <ButtonBig />
         </ScrollView>
       </View>

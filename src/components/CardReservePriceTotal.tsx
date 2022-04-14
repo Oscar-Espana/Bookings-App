@@ -98,35 +98,39 @@ const CardReservePriceTotal = () => {
         </View>
 
         {isExpanded && (
-          <View style={{borderBottomWidth: 1, padding: 14}}>
+          <View
+            style={{
+              ...styles.totalDetails,
+              flexDirection: 'column',
+            }}>
             <Text style={typography.pricesFont}>Servicios</Text>
 
             <View style={styles.serviceType}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                }}>
+                <Text style={typography.pricesFont}>Servicio de limpieza</Text>
+                <Text style={typography.pricesFont}>0.00$</Text>
+              </View>
               <View>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                  }}>
-                  <Text style={typography.pricesFont}>
-                    Servicio de limpieza
-                  </Text>
-                  <Text style={typography.pricesFont}>0.00$</Text>
-                </View>
-                <View style={{borderBottomWidth: 1, width: '100%'}}>
-                  <Text style={typography.body2}>Fecha del servicio</Text>
-                  <Text style={typography.body2}>10 AGO 2021</Text>
-                  <Text style={typography.body2}>Numero de reserva</Text>
-                  <Text style={typography.body2}>#A169-3803537472-414</Text>
-                </View>
+                <Text style={{...typography.body2, marginVertical: 5}}>
+                  Fecha del servicio
+                </Text>
+                <Text style={{...typography.body2, marginVertical: 0}}>
+                  10 AGO 2021
+                </Text>
+                <Text style={{...typography.body2, marginVertical: 5}}>
+                  Numero de reserva
+                </Text>
+                <Text style={{...typography.body2, marginVertical: 0}}>
+                  #A169-3803537472-414
+                </Text>
               </View>
             </View>
 
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'flex-end',
-              }}>
+            <View style={styles.subtotal}>
               <Text style={{...typography.pricesFont, marginRight: 30}}>
                 Subtotal servicios
               </Text>
@@ -187,11 +191,14 @@ const styles = StyleSheet.create({
   total: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    width: '100%',
     padding: 14,
   },
   serviceType: {
     paddingBottom: 18,
+  },
+  subtotal: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
   },
 });
 
