@@ -6,6 +6,8 @@ import {palette} from '../theme/palette';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Image} from 'react-native';
 
+import HomeIcon from '../assets/icons/home.svg';
+
 const Tab = createBottomTabNavigator();
 
 export const BottomTabsNavigator = () => {
