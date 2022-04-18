@@ -5,6 +5,7 @@ export const palette = {
   neutral: '#8B8B8B',
   white: '#FFFFFF',
   black: '#000000',
+  gray: '#C4C4C4',
 };
 
 export const paletteRGBA = {

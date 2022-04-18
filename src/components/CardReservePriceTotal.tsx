@@ -24,13 +24,18 @@ const CardReservePriceTotal = () => {
                 fontSize: 12,
                 color: palette.neutral,
                 marginLeft: 6,
+                lineHeight: 24,
               }}>
               BARCELONA
             </Text>
           </View>
 
           <Text
-            style={{...typography.pricesFont, fontSize: 24, marginBottom: 5}}>
+            style={{
+              ...typography.pricesFont,
+              lineHeight: 29,
+              fontSize: 24,
+            }}>
             Royalt Apartment
           </Text>
           <Text
@@ -38,6 +43,7 @@ const CardReservePriceTotal = () => {
               ...typography.pricesFont,
               fontSize: 14,
               color: palette.neutral,
+              lineHeight: 24,
             }}>
             Carrer de Pallars, 171, 08005
           </Text>
@@ -45,105 +51,126 @@ const CardReservePriceTotal = () => {
 
         <View style={styles.totalDetails}>
           <View style={styles.totalDays}>
-            <Text> 3 </Text>
-            <Text> Noches </Text>
+            <Text style={typography.nightsFont}> 3</Text>
+            <Text style={typography.nightsFont}> Noches</Text>
           </View>
 
           <View style={styles.prices}>
             <View style={styles.totalPrice}>
+              <Text style={typography.body1Bold}>Adultos</Text>
               <Text
                 style={{
-                  ...typography.pricesFont,
-                  color: palette.neutral,
-                }}>
-                Adultos
-              </Text>
-              <Text
-                style={{
-                  ...typography.pricesFont,
-                  color: 'white',
+                  ...typography.body1,
                   position: 'absolute',
                   left: '49%',
                 }}>
                 x3
               </Text>
-              <Text
-                style={{
-                  ...typography.pricesFont,
-                  color: 'white',
-                }}>
-                0,00$
-              </Text>
+              <Text style={typography.body1}>0,00$</Text>
             </View>
-
             <View style={styles.totalPrice}>
-              <Text style={{...typography.pricesFont, color: palette.neutral}}>
-                Niños
-              </Text>
+              <Text style={typography.body1Bold}>Niños</Text>
               <Text
                 style={{
-                  ...typography.pricesFont,
-                  color: 'white',
-
+                  ...typography.body1,
                   position: 'absolute',
                   left: '49%',
                 }}>
                 x3
               </Text>
-              <Text style={{...typography.pricesFont, color: 'white'}}>
-                0,00$
-              </Text>
+              <Text style={typography.body1}>0,00$</Text>
             </View>
           </View>
         </View>
 
         {isExpanded && (
-          <View
-            style={{
-              ...styles.totalDetails,
-              flexDirection: 'column',
-            }}>
-            <Text style={typography.pricesFont}>Servicios</Text>
-
-            <View style={styles.serviceType}>
-              <View
+          <>
+            <View
+              style={{
+                ...styles.totalDetails,
+                flexDirection: 'column',
+              }}>
+              <Text
                 style={{
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
+                  ...typography.body1Bold,
+                  marginVertical: 20,
+                  color: '#F7F4EB',
                 }}>
-                <Text style={typography.pricesFont}>Servicio de limpieza</Text>
-                <Text style={typography.pricesFont}>0.00$</Text>
-              </View>
-              <View>
-                <Text style={{...typography.body2, marginVertical: 5}}>
-                  Fecha del servicio
-                </Text>
-                <Text style={{...typography.body2, marginVertical: 0}}>
-                  10 AGO 2021
-                </Text>
-                <Text style={{...typography.body2, marginVertical: 5}}>
-                  Numero de reserva
-                </Text>
-                <Text style={{...typography.body2, marginVertical: 0}}>
-                  #A169-3803537472-414
-                </Text>
+                Servicios
+              </Text>
+
+              <View style={styles.serviceType}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <Text style={{...typography.body1Bold, lineHeight: 22}}>
+                    Servicio de limpieza
+                  </Text>
+                  <Text style={{...typography.body1Bold, lineHeight: 22}}>
+                    0.00$
+                  </Text>
+                </View>
+                <View>
+                  <Text
+                    style={{
+                      ...typography.body2,
+                      fontWeight: '400',
+                      color: '#8B8B8B',
+                      marginVertical: 5,
+                    }}>
+                    Fecha del servicio
+                  </Text>
+                  <Text
+                    style={{
+                      ...typography.body2,
+                      color: '#8B8B8B',
+                      marginVertical: 0,
+                    }}>
+                    10 AGO 2021
+                  </Text>
+                  <Text
+                    style={{
+                      ...typography.body2,
+                      color: '#8B8B8B',
+                      marginVertical: 5,
+                    }}>
+                    Numero de reserva
+                  </Text>
+                  <Text
+                    style={{
+                      ...typography.body2,
+                      color: '#8B8B8B',
+                      marginVertical: 0,
+                    }}>
+                    #A169-3803537472-414
+                  </Text>
+                </View>
               </View>
             </View>
-
             <View style={styles.subtotal}>
-              <Text style={{...typography.pricesFont, marginRight: 30}}>
+              <Text
+                style={{
+                  ...typography.pricesFont,
+                  color: palette.neutral,
+                  marginRight: 30,
+                }}>
                 Subtotal servicios
               </Text>
               <Text style={{...typography.pricesFont, color: 'white'}}>
                 0,00$
               </Text>
             </View>
-          </View>
+          </>
         )}
 
         <View style={styles.total}>
-          <Text style={{...typography.pricesFont, marginRight: 30}}>Total</Text>
-          <Text style={{...typography.pricesFont, color: 'white'}}>0,00$</Text>
+          <Text
+            style={{...typography.body1, color: '#F7F4EB', marginRight: 30}}>
+            Total
+          </Text>
+          <Text style={{...typography.body1Bold, color: '#F7F4EB'}}>0,00$</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -165,7 +192,6 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     backgroundColor: palette.secondary,
     justifyContent: 'center',
-    alignItems: 'center',
   },
   aparmentInfo: {
     borderBottomWidth: 1,
@@ -192,6 +218,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end',
     padding: 14,
+    borderTopWidth: 1,
+    borderColor: palette.neutral,
   },
   serviceType: {
     paddingBottom: 18,
@@ -199,6 +227,7 @@ const styles = StyleSheet.create({
   subtotal: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
+    padding: 14,
   },
 });
 
