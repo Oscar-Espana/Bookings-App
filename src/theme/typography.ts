@@ -17,7 +17,7 @@ export const typography = StyleSheet.create({
     color: palette.primary,
     fontFamily: 'Analogue',
     fontSize: 24
-  },
+    },
   body1: {
     color: palette.gray,
     fontFamily: 'Trade Gothic LT Std',

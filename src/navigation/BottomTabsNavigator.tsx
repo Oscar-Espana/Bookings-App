@@ -4,6 +4,7 @@ import MainScreen from '../screens/MainScreen';
 import GreetingsScreen from '../screens/GreetingsScreen';
 import {palette} from '../theme/palette';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {Image} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,7 +13,7 @@ export const BottomTabsNavigator = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-
+        tabBarActiveTintColor: palette.primary,
         tabBarStyle: {
           backgroundColor: palette.background,
           height: 80,
@@ -27,7 +28,10 @@ export const BottomTabsNavigator = () => {
         component={MainScreen}
         options={{
           tabBarIcon: () => (
-            <Icon name="home-outline" size={30} color="white" />
+            <Image
+              source={require('../assets/icons/home.png')}
+              style={{width: 30, height: 30}}
+            />
           ),
         }}
       />
@@ -36,7 +40,10 @@ export const BottomTabsNavigator = () => {
         component={GreetingsScreen}
         options={{
           tabBarIcon: () => (
-            <Icon name="compass-outline" size={30} color="#fff" />
+            <Image
+              source={require('../assets/icons/compass.png')}
+              style={{width: 30, height: 30}}
+            />
           ),
         }}
       />
@@ -45,7 +52,10 @@ export const BottomTabsNavigator = () => {
         component={GreetingsScreen}
         options={{
           tabBarIcon: () => (
-            <Icon name="airplane-outline" size={30} color="#fff" />
+            <Image
+              source={require('../assets/icons/briefcase.png')}
+              style={{width: 30, height: 30}}
+            />
           ),
         }}
       />
@@ -54,7 +64,10 @@ export const BottomTabsNavigator = () => {
         component={GreetingsScreen}
         options={{
           tabBarIcon: () => (
-            <Icon name="settings-outline" size={30} color="#fff" />
+            <Image
+              source={require('../assets/icons/life-buoy.png')}
+              style={{width: 30, height: 30}}
+            />
           ),
         }}
       />
@@ -63,7 +76,10 @@ export const BottomTabsNavigator = () => {
         component={GreetingsScreen}
         options={{
           tabBarIcon: () => (
-            <Icon name="person-outline" size={30} color="#fff" />
+            <Image
+              source={require('../assets/icons/user.png')}
+              style={{width: 30, height: 30}}
+            />
           ),
         }}
       />
