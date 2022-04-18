@@ -35,16 +35,13 @@ const MainScreen = () => {
       </ImageBackground>
       <View style={styles.container}>
         <View style={styles.title}>
-          <Text style={{...typography.heading2, fontSize: 24}}>
-            Tu reserva en curso
-          </Text>
+          <Text style={typography.heading3}>Tu reserva en curso</Text>
           <Text style={styles.line}>______________________</Text>
         </View>
         <ScrollView>
           <CardCheckInOut />
           <CardReservePriceTotal />
-          <CardReservePriceTotal />
-          <CardReservePriceTotal />
+
           <ButtonBig />
         </ScrollView>
       </View>
