@@ -3,12 +3,15 @@ import GreetingsScreen from './src/screens/GreetingsScreen';
 import MainScreen from './src/screens/MainScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {BottomTabsNavigator} from './src/navigation/BottomTabsNavigator';
+import {NativeBaseProvider} from 'native-base';
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <BottomTabsNavigator />
-    </NavigationContainer>
+    <NativeBaseProvider>
+      <NavigationContainer>
+        <BottomTabsNavigator />
+      </NavigationContainer>
+    </NativeBaseProvider>
   );
 };
 

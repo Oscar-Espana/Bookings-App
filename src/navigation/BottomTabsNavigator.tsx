@@ -7,6 +7,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {Image} from 'react-native';
 
 import HomeIcon from '../assets/icons/home.svg';
+import ProfileScreen from '../screens/ProfileScreen';
+import MainScreenNB from '../screens/MainScreenNB';
 
 const Tab = createBottomTabNavigator();
 
@@ -51,7 +53,7 @@ export const BottomTabsNavigator = () => {
       />
       <Tab.Screen
         name="MI VIAJE"
-        component={GreetingsScreen}
+        component={MainScreenNB}
         options={{
           tabBarIcon: () => (
             <Image
@@ -75,7 +77,7 @@ export const BottomTabsNavigator = () => {
       />
       <Tab.Screen
         name="MI PERFIL"
-        component={GreetingsScreen}
+        component={ProfileScreen}
         options={{
           tabBarIcon: () => (
             <Image
