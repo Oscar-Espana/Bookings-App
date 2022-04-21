@@ -1,15 +1,10 @@
 import React from 'react';
-import {
-  Text,
-  View,
-  ImageBackground,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import {ImageBackground, TouchableOpacity, StyleSheet} from 'react-native';
 import {Image} from 'react-native-svg';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {typography} from '../theme/typography';
 import {palette} from '../theme/palette';
+import {Box, Center, VStack, Text} from 'native-base';
 
 const ProfileScreen = () => {
   return (
@@ -21,20 +16,37 @@ const ProfileScreen = () => {
           flex: 1,
         }}
         resizeMode="cover">
-        <View style={styles.header}>
-          <View>
-            <Text style={typography.heading2}>PROFILE</Text>
-          </View>
+        <Box style={styles.header}>
+          <Box>
+            <Text style={{...typography.heading2, lineHeight: 25}}>
+              PROFILE
+            </Text>
+          </Box>
           <TouchableOpacity>
-            <View style={styles.circle}>
+            <Box style={styles.circle}>
               <Icon name="notifications-outline" size={24} color="#fff" />
-            </View>
+            </Box>
           </TouchableOpacity>
-        </View>
+        </Box>
       </ImageBackground>
-      <View style={{flex: 2, backgroundColor: palette.background}}>
-        <View></View>
-      </View>
+      <VStack bgColor={palette.background} flex={2} space={5} px={8} py={8}>
+        <Text fontSize={18} color={palette.primary}>
+          Datos personales
+        </Text>
+
+        <Text fontSize={18} color={palette.primary}>
+          Datos de reserva
+        </Text>
+        <Text fontSize={18} color={palette.primary}>
+          Terminos y condiciones
+        </Text>
+        <Text fontSize={18} color={palette.primary}>
+          Aviso Legal
+        </Text>
+        <Text fontSize={18} color={palette.secondary}>
+          Cerrar sesión
+        </Text>
+      </VStack>
     </>
   );
 };

@@ -33,6 +33,7 @@ const MainScreen = () => {
           </TouchableOpacity>
         </View>
       </ImageBackground>
+
       <View style={styles.container}>
         <View style={styles.title}>
           <Text style={typography.heading3}>Tu reserva en curso</Text>
@@ -40,6 +41,7 @@ const MainScreen = () => {
         </View>
         <ScrollView>
           <CardCheckInOut />
+
           <CardReservePriceTotal />
 
           <ButtonBig />
