@@ -9,6 +9,7 @@ import {Image} from 'react-native';
 import HomeIcon from '../assets/icons/home.svg';
 import ProfileScreen from '../screens/ProfileScreen';
 import MainScreenNB from '../screens/MainScreenNB';
+import HomeScreen_reservations from '../screens/HomeScreen_reservations';
 
 const Tab = createBottomTabNavigator();
 
@@ -41,7 +42,7 @@ export const BottomTabsNavigator = () => {
       />
       <Tab.Screen
         name="EXPLORA"
-        component={GreetingsScreen}
+        component={HomeScreen_reservations}
         options={{
           tabBarIcon: () => (
             <Image
