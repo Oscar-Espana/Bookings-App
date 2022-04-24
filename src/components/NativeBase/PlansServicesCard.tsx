@@ -10,7 +10,6 @@ interface Props {
 }
 
 const PlansServicesCard = ({data}: Props) => {
-  console.log(data);
   return (
     <ScrollView horizontal padding={5} showsHorizontalScrollIndicator={false}>
       {data.map((item: IPlanServices) => (
@@ -38,15 +37,36 @@ const PlansServicesCard = ({data}: Props) => {
 
           <VStack
             w={190}
-            h={73}
+            h={113}
             alignSelf={'center'}
             bottom={2}
             rounded={16}
             position={'absolute'}
             backgroundColor="white">
-            <Text>{item.type}</Text>
-            <Text>{item.name}</Text>
-            <Text>{item.description}</Text>
+            <Text
+              fontSize={10}
+              lineHeight={24}
+              fontWeight={'400'}
+              color={palette.gray}>
+              {item.type}
+            </Text>
+            <Text
+              fontFamily={'Trade Gothic LT Std'}
+              fontStyle={'normal'}
+              fontWeight={700}
+              fontSize={16}
+              lineHeight={19}
+              color={palette.black}>
+              {item.name}
+            </Text>
+            <Text
+              fontFamily={'Trade Gothic LT Std'}
+              fontStyle={'normal'}
+              fontWeight={400}
+              fontSize={10}
+              lineHeight={14}>
+              {item.description}
+            </Text>
           </VStack>
         </Box>
       ))}

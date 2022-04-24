@@ -14,7 +14,7 @@ const SectionTitle = ({title}: Props) => {
       marginLeft={22}
       padding={2}>
       <Text style={typography.heading3}>{title}</Text>
-      <Text color={'white'}>______________________</Text>
+      <Box w={'100%'} borderBottomWidth={1} borderColor={'white'} />
     </Box>
   );
 };

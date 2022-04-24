@@ -4,6 +4,7 @@ import React from 'react';
 import {IReservations} from '../../interfaces/IReservations';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {palette} from '../../theme/palette';
+import {typography} from '../../theme/typography';
 interface Props {
   data: IReservations[];
 }
@@ -63,10 +64,25 @@ const ReservationsCard = ({data}: Props) => {
             backgroundColor="white">
             <Box flexDirection={'row'}>
               <Icon name="location" size={24} color={palette.secondary} />
-              <Text>{item.location}</Text>
+              <Text
+                fontSize={10}
+                lineHeight={24}
+                color={palette.neutral}
+                fontWeight={'400'}>
+                {item.location}
+              </Text>
             </Box>
-            <Text>{item.name}</Text>
-            <Text>{item.street}</Text>
+            <Text
+              fontSize={16}
+              lineHeight={19}
+              color={palette.black}
+              fontStyle={'normal'}
+              fontFamily={'Trade Gothic LT Std'}>
+              {item.name}
+            </Text>
+            <Text fontSize={10} lineHeight={24} color={palette.gray}>
+              {item.street}
+            </Text>
           </VStack>
         </Box>
       ))}
