@@ -36,8 +36,10 @@ const ReservationsCard = ({data}: Props) => {
               borderColor={palette.primary}>
               <Text
                 fontSize={16}
+                textAlign={'center'}
+                fontStyle={'normal'}
                 lineHeight={24}
-                fontWeight={'700'}
+                fontWeight={'400'}
                 color={palette.primary}>
                 {item.dateStart}
               </Text>
@@ -57,13 +59,15 @@ const ReservationsCard = ({data}: Props) => {
           <VStack
             w={190}
             h={73}
+            px={3}
+            py={1}
             alignSelf={'center'}
             bottom={2}
             rounded={16}
             position={'absolute'}
             backgroundColor="white">
             <Box flexDirection={'row'}>
-              <Icon name="location" size={24} color={palette.secondary} />
+              <Icon name="location" size={18} color={palette.secondary} />
               <Text
                 fontSize={10}
                 lineHeight={24}
@@ -77,6 +81,7 @@ const ReservationsCard = ({data}: Props) => {
               lineHeight={19}
               color={palette.black}
               fontStyle={'normal'}
+              fontWeight={'700'}
               fontFamily={'Trade Gothic LT Std'}>
               {item.name}
             </Text>

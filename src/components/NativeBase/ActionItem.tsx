@@ -9,7 +9,7 @@ interface Props {
   icon: ImageSourcePropType;
   name: string;
   selected: boolean;
-  onPress: () => void;
+  onPress?: () => void;
 }
 
 const ActionItem = ({icon, name, selected, onPress}: Props) => {

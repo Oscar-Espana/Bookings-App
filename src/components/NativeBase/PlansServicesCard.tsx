@@ -37,6 +37,8 @@ const PlansServicesCard = ({data}: Props) => {
 
           <VStack
             w={190}
+            px={3}
+            py={1}
             h={113}
             alignSelf={'center'}
             bottom={2}
@@ -64,6 +66,7 @@ const PlansServicesCard = ({data}: Props) => {
               fontStyle={'normal'}
               fontWeight={400}
               fontSize={10}
+              alignItems={'center'}
               lineHeight={14}>
               {item.description}
             </Text>

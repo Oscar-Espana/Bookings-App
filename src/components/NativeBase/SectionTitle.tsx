@@ -12,9 +12,10 @@ const SectionTitle = ({title}: Props) => {
       flexDirection={'row'}
       justifyContent={'space-between'}
       marginLeft={22}
-      padding={2}>
+      padding={2}
+      alignItems={'center'}>
       <Text style={typography.heading3}>{title}</Text>
-      <Box w={'100%'} borderBottomWidth={1} borderColor={'white'} />
+      <Box w={'100%'} ml={3} borderBottomWidth={1} borderColor={'white'} />
     </Box>
   );
 };

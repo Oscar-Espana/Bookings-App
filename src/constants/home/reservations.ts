@@ -2,7 +2,7 @@ export const reservations = [
     {
         id: 1,
         name: 'Royalt Apartment',
-        dateStart: '2020-01-01',
+        dateStart: '02/05SEP21',
         dateEnd: '2020-01-02',
         time: '10:00',
         people: 2,
@@ -16,7 +16,7 @@ export const reservations = [
     {
         id: 2,
         name: 'Networking Event',
-        dateStart: '2020-01-01',
+        dateStart: '09/15OCT21',
 dateEnd: '2020-01-02',
         time: '10:00',
         people: 2,
