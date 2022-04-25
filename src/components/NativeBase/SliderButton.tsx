@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 5,
   },
   sliderContainer: {
     width: '90%',
