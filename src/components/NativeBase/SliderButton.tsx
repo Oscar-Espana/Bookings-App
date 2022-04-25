@@ -18,7 +18,7 @@ const SliderButton = () => {
 
   const left = animatedValue.interpolate({
     inputRange: [0, 1],
-    outputRange: ['2%', '50%'],
+    outputRange: ['0%', '50%'],
     extrapolate: 'clamp',
   });
 
