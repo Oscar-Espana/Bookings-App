@@ -1,6 +1,6 @@
-import {Box} from 'native-base';
+import {Box, Text} from 'native-base';
 import React, {useState} from 'react';
-import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {palette} from '../../theme/palette';
 import {typography} from '../../theme/typography';
@@ -95,73 +95,79 @@ const CardReservePriceTotal = () => {
             </Box>
           </Box>
         </Box>
+        <>
+          <Box
+            style={{
+              ...styles.totalDetails,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}>
+            <Text
+              style={{
+                ...typography.body1Bold,
+                marginVertical: 8,
+                marginLeft: 8,
+                color: '#F7F4EB',
+              }}>
+              Servicios
+            </Text>
+            <Icon name="ios-arrow-down" size={24} color={palette.secondary} />
+          </Box>
+        </>
 
         {isExpanded && (
           <>
-            <Box
-              style={{
-                ...styles.totalDetails,
-                flexDirection: 'column',
-              }}>
-              <Text
+            <Box style={styles.serviceType}>
+              <Box
                 style={{
-                  ...typography.body1Bold,
-                  marginVertical: 20,
-                  color: '#F7F4EB',
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
                 }}>
-                Servicios
-              </Text>
-
-              <Box style={styles.serviceType}>
-                <Box
+                <Text style={{...typography.body1Bold, lineHeight: 22}}>
+                  Servicio de limpieza
+                </Text>
+                <Text style={{...typography.body1Bold, lineHeight: 22}}>
+                  0.00$
+                </Text>
+              </Box>
+              <Box>
+                <Text
                   style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
+                    ...typography.body2,
+                    fontWeight: '400',
+                    color: '#8B8B8B',
+                    marginVertical: 5,
                   }}>
-                  <Text style={{...typography.body1Bold, lineHeight: 22}}>
-                    Servicio de limpieza
-                  </Text>
-                  <Text style={{...typography.body1Bold, lineHeight: 22}}>
-                    0.00$
-                  </Text>
-                </Box>
-                <Box>
-                  <Text
-                    style={{
-                      ...typography.body2,
-                      fontWeight: '400',
-                      color: '#8B8B8B',
-                      marginVertical: 5,
-                    }}>
-                    Fecha del servicio
-                  </Text>
-                  <Text
-                    style={{
-                      ...typography.body2,
-                      color: '#8B8B8B',
-                      marginVertical: 0,
-                    }}>
-                    10 AGO 2021
-                  </Text>
-                  <Text
-                    style={{
-                      ...typography.body2,
-                      color: '#8B8B8B',
-                      marginVertical: 5,
-                    }}>
-                    Numero de reserva
-                  </Text>
-                  <Text
-                    style={{
-                      ...typography.body2,
-                      color: '#8B8B8B',
-                      marginVertical: 0,
-                    }}>
-                    #A169-3803537472-414
-                  </Text>
-                </Box>
+                  Fecha del servicio
+                </Text>
+                <Text
+                  style={{
+                    ...typography.body2,
+                    color: '#8B8B8B',
+                    marginVertical: 0,
+                  }}>
+                  10 AGO 2021
+                </Text>
+                <Text
+                  style={{
+                    ...typography.body2,
+                    color: '#8B8B8B',
+                    marginVertical: 5,
+                  }}>
+                  Numero de reserva
+                </Text>
+                <Text
+                  style={{
+                    ...typography.body2,
+                    color: '#8B8B8B',
+                    marginVertical: 0,
+                  }}>
+                  #A169-3803537472-414
+                </Text>
               </Box>
             </Box>
+
             <Box style={styles.subtotal}>
               <Text
                 style={{
@@ -208,7 +214,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#8B8B8B',
     flexDirection: 'row',
-    padding: 14,
+    padding: 8,
   },
   totalPrice: {
     flexDirection: 'row',
@@ -222,7 +228,7 @@ const styles = StyleSheet.create({
     borderColor: palette.neutral,
   },
   serviceType: {
-    paddingBottom: 18,
+    padding: 18,
   },
   subtotal: {
     flexDirection: 'row',

@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import GreetingsScreen from './src/screens/GreetingsScreen';
 import MainScreen from './src/screens/MainScreen';

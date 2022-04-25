@@ -7,17 +7,20 @@ import {palette} from '../../theme/palette';
 import {typography} from '../../theme/typography';
 interface Props {
   data: IReservations[];
+  horizontal: boolean;
 }
 
-const ReservationsCard = ({data}: Props) => {
-  console.log(data);
+const ReservationsCard = ({data, horizontal}: Props) => {
   return (
-    <ScrollView horizontal padding={5} showsHorizontalScrollIndicator={false}>
+    <ScrollView
+      horizontal={horizontal}
+      padding={5}
+      showsHorizontalScrollIndicator={false}>
       {data.map((item: IReservations) => (
-        <Box key={item.id} marginRight={10}>
+        <Box key={item.id}>
           <Image
             source={item.img}
-            w={210}
+            w={'100%'}
             h={288}
             alt={'reservation'}
             rounded={16}
@@ -28,7 +31,7 @@ const ReservationsCard = ({data}: Props) => {
             alignItems={'center'}
             w={'100%'}
             top={1}
-            justifyContent={'space-around'}>
+            justifyContent={'space-between'}>
             <Box
               borderRadius={16}
               padding={1}
@@ -57,12 +60,12 @@ const ReservationsCard = ({data}: Props) => {
           </Box>
 
           <VStack
-            w={190}
+            w={'100%'}
             h={73}
             px={3}
             py={1}
             alignSelf={'center'}
-            bottom={2}
+            bottom={3}
             rounded={16}
             position={'absolute'}
             backgroundColor="white">

@@ -18,7 +18,7 @@ const HomeScreen_reservations = () => {
       <Box flex={2} backgroundColor={palette.background}>
         <ScrollView>
           <SectionTitle title={'Your Reservations'} />
-          <ReservationsCard data={reservations} />
+          <ReservationsCard data={reservations} horizontal={true} />
 
           <SectionTitle title={'Required actions'} />
 

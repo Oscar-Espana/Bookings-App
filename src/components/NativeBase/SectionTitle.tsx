@@ -13,6 +13,7 @@ const SectionTitle = ({title}: Props) => {
       justifyContent={'space-between'}
       marginLeft={22}
       padding={2}
+      mb={5}
       alignItems={'center'}>
       <Text style={typography.heading3}>{title}</Text>
       <Box w={'100%'} ml={3} borderBottomWidth={1} borderColor={'white'} />

@@ -10,6 +10,8 @@ import HomeIcon from '../assets/icons/home.svg';
 import ProfileScreen from '../screens/ProfileScreen';
 import MainScreenNB from '../screens/MainScreenNB';
 import HomeScreen_reservations from '../screens/HomeScreen_reservations';
+import HomeScroll from '../screens/HomeScroll';
+import StackNavigator from './StackNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -66,7 +68,7 @@ export const BottomTabsNavigator = () => {
       />
       <Tab.Screen
         name="SOPORTE"
-        component={GreetingsScreen}
+        component={StackNavigator}
         options={{
           tabBarIcon: () => (
             <Image
