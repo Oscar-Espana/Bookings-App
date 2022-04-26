@@ -12,6 +12,13 @@ export const reservations = [
         location: 'BARCELONA',
         street: 'Carrer de Pallars, 171, 08005',
         img: require('../../assets/images/reservations/1.png'),
+        guests: [
+            {name: 'Juan', lastname: 'Perez', id: 1, img: require('../../assets/images/guests/1.png')},
+            {name: 'Juan', lastname: 'Perez', id: 2, img: require('../../assets/images/guests/2.png')},
+            {name: 'Juan', lastname: 'Perez', id: 3, img: require('../../assets/images/guests/3.png')},
+            {name: 'Juan', lastname: 'Perez', id: 4, img: require('../../assets/images/guests/4.png')},
+            {name: 'Juan', lastname: 'Perez', id: 5, img: require('../../assets/images/guests/5.png')},
+        ]
     }, 
     {
         id: 2,
@@ -26,6 +33,13 @@ dateEnd: '2020-01-02',
         location: 'BARCELONA',
         street: 'Carrer de Pallars, 171, 08005',
         img: require('../../assets/images/reservations/2.png'),
+        guests: [
+            {name: 'Juan', lastname: 'Perez', id: 1, img: require('../../assets/images/guests/1.png')},
+            {name: 'Juan', lastname: 'Perez', id: 2, img: require('../../assets/images/guests/2.png')},
+            {name: 'Juan', lastname: 'Perez', id: 3, img: require('../../assets/images/guests/3.png')},
+            {name: 'Juan', lastname: 'Perez', id: 4, img: require('../../assets/images/guests/4.png')},
+            {name: 'Juan', lastname: 'Perez', id: 5, img: require('../../assets/images/guests/5.png')},
+        ]
     }, 
     {
         id: 3,
@@ -40,5 +54,12 @@ dateEnd: '2020-01-02',
         location: 'BARCELONA',
         street: 'Carrer de Pallars, 171, 08005',
         img: require('../../assets/images/reservations/1.png'),
+        guests: [
+            {name: 'Juan', lastname: 'Perez', id: 1, img: require('../../assets/images/guests/1.png')},
+            {name: 'Juan', lastname: 'Perez', id: 2, img: require('../../assets/images/guests/2.png')},
+            {name: 'Juan', lastname: 'Perez', id: 3, img: require('../../assets/images/guests/3.png')},
+            {name: 'Juan', lastname: 'Perez', id: 4, img: require('../../assets/images/guests/4.png')},
+            {name: 'Juan', lastname: 'Perez', id: 5, img: require('../../assets/images/guests/5.png')},
+        ]
     }, 
 ]

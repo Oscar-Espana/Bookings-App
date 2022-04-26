@@ -9,34 +9,23 @@ import {reservations} from '../constants/home/reservations';
 import Icon from 'react-native-vector-icons/Ionicons';
 import TitleCentered from '../components/NativeBase/TitleCentered';
 import {useNavigation} from '@react-navigation/native';
+import BackgroundwithGradient from '../components/NativeBase/BackgroundwithGradient';
 
 const ReservesScreen = () => {
   const navigation = useNavigation();
   return (
     <Box flex={1}>
-      <ImageBackground
-        source={require('../assets/images/hey-there.png')}
-        style={{flex: 1}}
-        resizeMode="cover">
-        <LinearGradient
-          style={styles.container}
-          colors={[paletteRGBA.black(0.6), paletteRGBA.black(1)]}
-          start={{x: 0, y: 0}}
-          end={{x: 0, y: 1}}>
-          <TitleCentered title="RESERVAS" onPress={() => navigation.goBack()} />
-          <ReservationsCard data={reservations} horizontal={false} />
-        </LinearGradient>
-      </ImageBackground>
+      <BackgroundwithGradient>
+        <TitleCentered title="RESERVAS" onPress={() => navigation.goBack()} />
+
+        <ReservationsCard
+          data={reservations}
+          horizontal={false}
+          onPress={item => navigation.navigate('Stay', {item})}
+        />
+      </BackgroundwithGradient>
     </Box>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: 24,
-  },
-});
 
 export default ReservesScreen;

@@ -21,6 +21,7 @@ const HomeScroll = () => {
         flexDirection={'row'}
         alignItems={'center'}
         width={'100%'}
+        py={10}
         backgroundColor={palette.background}>
         <SliderButton />
         <TouchableOpacity>
