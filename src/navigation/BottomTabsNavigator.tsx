@@ -12,6 +12,7 @@ import MainScreenNB from '../screens/MainScreenNB';
 import HomeScreen_reservations from '../screens/HomeScreen_reservations';
 import HomeScroll from '../screens/HomeScroll';
 import StackNavigator from './StackNavigator';
+import MyTripNavigator from './MyTripNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,7 +33,7 @@ export const BottomTabsNavigator = () => {
       }}>
       <Tab.Screen
         name="HOME"
-        component={MainScreen}
+        component={MainScreenNB}
         options={{
           tabBarIcon: () => (
             <Image
@@ -56,7 +57,7 @@ export const BottomTabsNavigator = () => {
       />
       <Tab.Screen
         name="MI VIAJE"
-        component={MainScreenNB}
+        component={MyTripNavigator}
         options={{
           tabBarIcon: () => (
             <Image
