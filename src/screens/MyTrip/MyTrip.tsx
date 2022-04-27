@@ -17,8 +17,10 @@ import SectionTitle from '../../components/NativeBase/SectionTitle';
 import TextSection from '../../components/NativeBase/TextSection';
 import ListItem from '../../components/NativeBase/ListItem';
 import {ScrollView} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 
 const MyTrip = () => {
+  const navigation = useNavigation();
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     {
@@ -61,14 +63,35 @@ const MyTrip = () => {
 
   const SecondRoute = () => (
     <VStack space={30}>
-      <ListItem name={'Documentacion'} />
-      <ListItem name={'Propinas'} />
-      <ListItem name={'Horarios de comida'} />
-      <ListItem name={'Ocio Nocturno en la ciudad'} />
-      <ListItem name={'Conversor de tallas de ropa'} />
-      <ListItem name={'Medidas Covid en la ciudad'} />
-      <ListItem name={'Conversor de divisas'} />
-      <ListItem name={'Diccionation de frases unicas'} />
+      <ListItem
+        name={'Documentacion'}
+        onPress={() => navigation.navigate('Documentation')}
+      />
+      <ListItem name={'Propinas'} onPress={() => navigation.navigate('Tips')} />
+      <ListItem
+        name={'Horarios de comida'}
+        onPress={() => navigation.navigate('FoodSchedule')}
+      />
+      <ListItem
+        name={'Ocio Nocturno en la ciudad'}
+        onPress={() => navigation.navigate('NightLeasure')}
+      />
+      <ListItem
+        name={'Conversor de tallas de ropa'}
+        onPress={() => navigation.navigate('SizeConverter')}
+      />
+      <ListItem
+        name={'Medidas Covid en la ciudad'}
+        onPress={() => navigation.navigate('CovidMeasures')}
+      />
+      <ListItem
+        name={'Conversor de divisas'}
+        onPress={() => navigation.navigate('CurrencyConverter')}
+      />
+      <ListItem
+        name={'Diccionation de frases unicas'}
+        onPress={() => navigation.navigate('Dictionary')}
+      />
     </VStack>
   );
 
