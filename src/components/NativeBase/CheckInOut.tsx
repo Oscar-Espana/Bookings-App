@@ -16,9 +16,7 @@ const CheckInOut = ({type, date}: Props) => {
       borderRadius={20}
       backgroundColor={'#fff'}
       justifyContent={'center'}
-      alignItems={'center'}
-      bottom={-20}
-      mr={3}>
+      alignItems={'center'}>
       <Text style={{...typography.cardFont, fontSize: 10, marginBottom: 5}}>
         {type}
       </Text>

@@ -13,7 +13,10 @@ export interface IReservations {
         location: string,
         street: string,
         img: ImageSourcePropType
-        guests: IGuest[]
+        guests: IGuest[],
+        nights: number,
+        reservationNumber: string,
+
 }
 
 

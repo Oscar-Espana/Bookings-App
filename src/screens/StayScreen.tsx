@@ -17,6 +17,7 @@ import PaymentsCard from '../components/NativeBase/PaymentsCard';
 import MoreDropdown from '../components/NativeBase/MoreDropdown';
 import ContractsList from '../components/NativeBase/ContractsList';
 import Tutorials from '../components/NativeBase/Tutorials';
+import StayCard from '../components/NativeBase/StayCard';
 
 interface Props extends NativeStackNavigationProp<RootStackParamList, 'Stay'> {}
 
@@ -28,7 +29,7 @@ const StayScreen = ({route, navigation}: any) => {
       {/* <BackgroundwithGradient> */}
       <TitleCentered title={'Estancia'} onPress={() => navigation.goBack()} />
       <ScrollView>
-        <CardReservePriceTotal />
+        <StayCard StayInfo={item} />
         <SectionTitle title={'Servicios Contratados'} />
         <VStack space={11} mb={10}>
           <Box
@@ -64,6 +65,7 @@ const StayScreen = ({route, navigation}: any) => {
 
         <SectionTitle title={'Húespedes'} />
         <GuestCard data={item.guests} />
+
         <SectionTitle title={'Pagos realizadoss'} />
         <PaymentsCard />
 

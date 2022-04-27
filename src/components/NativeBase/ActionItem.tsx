@@ -9,11 +9,15 @@ interface Props {
   icon: ImageSourcePropType;
   name: string;
   selected: boolean;
+  size?: 'small' | 'large';
   onPress?: () => void;
 }
 
-const ActionItem = ({icon, name, selected, onPress}: Props) => {
+const ActionItem = ({icon, name, selected, onPress, size}: Props) => {
   //const [isSelected, setIsSelected] = React.useState(selected);
+
+  const boxSize = size === 'large' ? 120 : 70;
+  const iconSize = size === 'large' ? 50 : 30;
 
   return (
     <TouchableOpacity onPress={onPress}>
@@ -26,8 +30,8 @@ const ActionItem = ({icon, name, selected, onPress}: Props) => {
         justifyContent={'center'}
         alignItems={'center'}>
         <Box
-          w={70}
-          h={70}
+          w={boxSize}
+          h={boxSize}
           bg={palette.background}
           rounded={16}
           justifyContent={'center'}
@@ -48,7 +52,7 @@ const ActionItem = ({icon, name, selected, onPress}: Props) => {
             )}
           </Box>
 
-          <Image source={icon} alt="icon" />
+          <Image source={icon} alt="icon" w={iconSize} h={iconSize} />
         </Box>
         {name}
       </Box>
