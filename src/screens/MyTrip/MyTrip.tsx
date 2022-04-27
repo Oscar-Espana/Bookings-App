@@ -18,9 +18,12 @@ import TextSection from '../../components/NativeBase/TextSection';
 import ListItem from '../../components/NativeBase/ListItem';
 import {ScrollView} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
+import {StackScreenProps} from '@react-navigation/stack';
+import {RootStackParamList} from '../../navigation/MyTripNavigator';
 
-const MyTrip = () => {
-  const navigation = useNavigation();
+interface Props extends StackScreenProps<RootStackParamList, 'MyTrip'> {}
+
+const MyTrip = ({navigation}: Props) => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     {
