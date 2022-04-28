@@ -4,12 +4,14 @@ import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import {palette} from '../../theme/palette';
 import {typography} from '../../theme/typography';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 interface Props {
   title: string;
 }
 
 const TitleWithIcon = ({title}: Props) => {
+  const {top} = useSafeAreaInsets();
   return (
     <Box
       safeArea
