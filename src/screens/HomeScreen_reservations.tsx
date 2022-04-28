@@ -10,6 +10,9 @@ import {planservices} from '../constants/home/planservices';
 import Timeline from '../components/NativeBase/Timeline';
 import {timeline} from '../constants/home/timeline';
 import RequiredActions from '../components/NativeBase/RequiredActions';
+import CardCheckInOut from '../components/NativeBase/CardCheckInOut';
+import CardReservePriceTotal from '../components/NativeBase/CardReservePriceTotal';
+import ButtonBig from '../components/NativeBase/ButtonBig';
 
 const HomeScreen_reservations = () => {
   return (
@@ -28,6 +31,10 @@ const HomeScreen_reservations = () => {
           <Timeline data={timeline} />
           <SectionTitle title={'Plans & Services'} />
           <PlansServicesCard data={planservices} />
+          <SectionTitle title={'Tu reserva en curso'} />
+          <CardCheckInOut />
+          <CardReservePriceTotal />
+          <ButtonBig />
         </ScrollView>
       </Box>
     </>

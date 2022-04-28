@@ -530,7 +530,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.init.EpicMonday;
+				PRODUCT_BUNDLE_IDENTIFIER = org.initl.EpicMonday;
 				PRODUCT_NAME = EpicMonday;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -556,7 +556,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.init.EpicMonday;
+				PRODUCT_BUNDLE_IDENTIFIER = org.initl.EpicMonday;
 				PRODUCT_NAME = EpicMonday;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

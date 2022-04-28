@@ -33,7 +33,7 @@ export const BottomTabsNavigator = () => {
       }}>
       <Tab.Screen
         name="HOME"
-        component={MainScreenNB}
+        component={HomeScreen_reservations}
         options={{
           tabBarIcon: () => (
             <Image
