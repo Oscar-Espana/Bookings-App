@@ -11,7 +11,8 @@ export const typography = StyleSheet.create({
   heading2: {
     color: palette.primary,
     fontFamily: 'Analogue',
-    fontSize: 30
+    fontSize: 30,
+    textAlign: 'center'
   },
   heading3: {
     color: palette.primary,

@@ -13,6 +13,7 @@ import HomeScreen_reservations from '../screens/HomeScreen_reservations';
 import HomeScroll from '../screens/HomeScroll';
 import StackNavigator from './StackNavigator';
 import MyTripNavigator from './MyTripNavigator';
+import SupportNavigator from './SupportNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -69,7 +70,7 @@ export const BottomTabsNavigator = () => {
       />
       <Tab.Screen
         name="SOPORTE"
-        component={StackNavigator}
+        component={SupportNavigator}
         options={{
           tabBarIcon: () => (
             <Image

@@ -12,20 +12,24 @@ interface Props {
 
 const TitleCentered = ({title, onPress}: Props) => {
   return (
-    <Box safeArea justifyItems={'center'}>
-      <TouchableOpacity onPress={onPress}>
-        <Box position={'absolute'} ml={8} mt={0}>
+    <Box
+      safeArea
+      justifyContent={'space-between'}
+      alignItems={'center'}
+      width={'100%'}
+      px={3}
+      flexDirection="row">
+      <Box>
+        <TouchableOpacity onPress={onPress}>
           <Icon name="arrow-back" size={30} color={palette.secondary} />
-        </Box>
-      </TouchableOpacity>
-      <Box padding={2} alignItems={'center'}>
-        <Heading
-          style={typography.heading2}
-          position={'absolute'}
-          color={'black'}>
-          {title}
-        </Heading>
+        </TouchableOpacity>
       </Box>
+
+      <Heading style={typography.heading2} color={'black'}>
+        {title}
+      </Heading>
+
+      <Box w={30} h={30} />
     </Box>
   );
 };
