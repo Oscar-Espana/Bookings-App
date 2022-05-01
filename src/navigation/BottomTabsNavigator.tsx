@@ -25,7 +25,6 @@ export const BottomTabsNavigator = () => {
         tabBarActiveTintColor: palette.primary,
         tabBarStyle: {
           backgroundColor: palette.background,
-          height: 80,
 
           /*  shadowColor: 'black',
           shadowOffset: {width: 0.1, height: 0.1},

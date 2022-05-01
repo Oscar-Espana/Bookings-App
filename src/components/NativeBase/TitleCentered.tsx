@@ -15,7 +15,7 @@ const TitleCentered = ({title, onPress}: Props) => {
   const {top} = useSafeAreaInsets();
   return (
     <Box
-      marginTop={top}
+      safeArea
       justifyContent={'space-between'}
       alignItems={'center'}
       width={'100%'}
