@@ -5,6 +5,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {typography} from '../theme/typography';
 import {palette} from '../theme/palette';
 import {Box, Center, VStack, Text} from 'native-base';
+import TitleWithIcon from '../components/NativeBase/TitleWithIcon';
+import ListItem from '../components/NativeBase/ListItem';
 
 const ProfileScreen = () => {
   return (
@@ -16,36 +18,14 @@ const ProfileScreen = () => {
           flex: 1,
         }}
         resizeMode="cover">
-        <Box style={styles.header}>
-          <Box>
-            <Text style={{...typography.heading2, lineHeight: 25}}>
-              PROFILE
-            </Text>
-          </Box>
-          <TouchableOpacity>
-            <Box style={styles.circle}>
-              <Icon name="notifications-outline" size={24} color="#fff" />
-            </Box>
-          </TouchableOpacity>
-        </Box>
+        <TitleWithIcon title="PROFILE" />
       </ImageBackground>
-      <VStack bgColor={palette.background} flex={2} space={5} px={8} py={8}>
-        <Text fontSize={18} color={palette.primary}>
-          Datos personales
-        </Text>
-
-        <Text fontSize={18} color={palette.primary}>
-          Datos de reserva
-        </Text>
-        <Text fontSize={18} color={palette.primary}>
-          Terminos y condiciones
-        </Text>
-        <Text fontSize={18} color={palette.primary}>
-          Aviso Legal
-        </Text>
-        <Text fontSize={18} color={palette.secondary}>
-          Cerrar sesión
-        </Text>
+      <VStack bgColor={palette.background} flex={2} space={5} py={8}>
+        <ListItem name="Datos personales" />
+        <ListItem name="Datos de reserva" />
+        <ListItem name="Terminos y condiciones" />
+        <ListItem name="Aviso Legal" />
+        <ListItem name="Cerrar sesión" />
       </VStack>
     </>
   );

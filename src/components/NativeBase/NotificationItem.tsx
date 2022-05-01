@@ -17,7 +17,7 @@ const NotificationItem = ({icon, name, time, info}: Props) => {
         style={{width: 48, height: 48}}
         alt={'icon-user'}
         rounded={50}
-        mr={2}
+        mr={4}
       />
       <Box flex={1}>
         <Text style={{color: 'white'}} flexWrap={'wrap'}>
