@@ -19,6 +19,8 @@ import {IRouteTab} from '../../interfaces/IRouteTab';
 import {TabBarOptions} from '../../components/NativeBase/TabBarOptions';
 import {YourCity} from './Scenes/YourCity';
 import {Manual} from './Scenes/Manual';
+import BackgroundwithCustomImage from '../../components/NativeBase/BackgroundwithCustomImage';
+import madrid from '../../assets/images/cities/madrid.png';
 
 interface Props extends StackScreenProps<RootStackParamList, 'MyTrip'> {}
 
@@ -49,7 +51,7 @@ const MyTrip = ({navigation}: Props) => {
   };
 
   return (
-    <BackgroundwithGradient>
+    <BackgroundwithCustomImage source={madrid}>
       <TitleWithIcon title={'Mi viaje'} />
 
       <TabView
@@ -68,7 +70,7 @@ const MyTrip = ({navigation}: Props) => {
         onIndexChange={setIndex}
         initialLayout={initialLayout}
       />
-    </BackgroundwithGradient>
+    </BackgroundwithCustomImage>
   );
 };
 

@@ -15,7 +15,6 @@ const TitleWithIcon = ({title}: Props) => {
   return (
     <Box
       safeArea
-      py={5}
       flexDirection={'row'}
       alignItems={'center'}
       justifyContent={'space-between'}

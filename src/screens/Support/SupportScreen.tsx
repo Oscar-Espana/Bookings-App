@@ -4,6 +4,8 @@ import TitleWithIcon from '../../components/NativeBase/TitleWithIcon';
 import BackgroundwithGradient from '../../components/NativeBase/BackgroundwithGradient';
 import ListItem from '../../components/NativeBase/ListItem';
 import {StackScreenProps} from '@react-navigation/stack';
+import BackgroundwithCustomImage from '../../components/NativeBase/BackgroundwithCustomImage';
+import tecnician from '../../assets/images/tecnician.png';
 
 export type SupportScreenProps = {
   Chat: any;
@@ -15,7 +17,7 @@ interface Props extends StackScreenProps<SupportScreenProps> {}
 
 const SupportScreen = ({navigation}: Props) => {
   return (
-    <BackgroundwithGradient>
+    <BackgroundwithCustomImage source={tecnician}>
       <TitleWithIcon title={'Soporte'} />
 
       <VStack space={30} flex={1}>
@@ -29,7 +31,7 @@ const SupportScreen = ({navigation}: Props) => {
           onPress={() => navigation.navigate('Notifications')}
         />
       </VStack>
-    </BackgroundwithGradient>
+    </BackgroundwithCustomImage>
   );
 };
 

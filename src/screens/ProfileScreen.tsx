@@ -1,25 +1,38 @@
 import React from 'react';
 import {ImageBackground, TouchableOpacity, StyleSheet} from 'react-native';
-import {Image} from 'react-native-svg';
+
 import Icon from 'react-native-vector-icons/Ionicons';
 import {typography} from '../theme/typography';
 import {palette} from '../theme/palette';
-import {Box, Center, VStack, Text} from 'native-base';
+import {Box, Center, VStack, Text, Image} from 'native-base';
 import TitleWithIcon from '../components/NativeBase/TitleWithIcon';
 import ListItem from '../components/NativeBase/ListItem';
+import profile_pic from '../assets/images/profilePicture/profile_pic.png';
+import user_profile from '../assets/images/user_profile.png';
+import BackgroundwithCustomImage from '../components/NativeBase/BackgroundwithCustomImage';
 
 const ProfileScreen = () => {
   return (
     <>
-      <ImageBackground
-        source={require('../assets/images/user_profile.png')}
-        style={{
-          height: 288,
-          flex: 1,
-        }}
-        resizeMode="cover">
+      <BackgroundwithCustomImage source={user_profile}>
         <TitleWithIcon title="PROFILE" />
-      </ImageBackground>
+        <Box flexDirection={'row'} mx={28} alignItems="center">
+          <Box
+            w={90}
+            h={90}
+            justifyContent="center"
+            alignItems="center"
+            borderColor={palette.secondary}
+            borderWidth={2}
+            rounded={70}>
+            <Image source={profile_pic} w={74} h={74} alt="ppic" />
+          </Box>
+          <Box mx={8}>
+            <Text style={styles.name}>Melissa Meryem</Text>
+            <Text style={styles.subtitle}>Editar perfil </Text>
+          </Box>
+        </Box>
+      </BackgroundwithCustomImage>
       <VStack bgColor={palette.background} flex={2} space={5} py={8}>
         <ListItem name="Datos personales" />
         <ListItem name="Datos de reserva" />
@@ -32,36 +45,22 @@ const ProfileScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#282827',
+  name: {
+    color: palette.primary,
+    fontFamily: 'Quentin',
+    fontSize: 24,
+    fontWeight: '400',
+    lineHeight: 35,
+    letterSpacing: 0,
+    textAlign: 'center',
   },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    top: 67,
-    marginHorizontal: 28,
-  },
-  circle: {
-    width: 44,
-    height: 44,
-    borderRadius: 50,
-    backgroundColor: 'transparent',
-    borderWidth: 1,
-    borderColor: 'white',
-    zIndex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginLeft: 22,
-    padding: 10,
-  },
-  line: {
-    color: '#8B8B8B',
+  subtitle: {
+    color: palette.secondary,
+    fontFamily: 'Trade Gothic LT Std',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    fontSize: 12,
+    lineHeight: 14,
   },
 });
 

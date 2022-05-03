@@ -1,22 +1,20 @@
+import {Box} from 'native-base';
 import React, {Children} from 'react';
-import {ImageBackground, StyleSheet} from 'react-native';
+import {Image, ImageBackground, StyleSheet} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {reservations} from '../../constants/home/reservations';
 import {paletteRGBA} from '../../theme/palette';
 import ReservationsCard from './ReservationsCard';
 import TitleCentered from './TitleCentered';
 
-const BackgroundwithGradient = ({children}: any) => {
+const BackgroundwithGradient = ({children, source}: any) => {
   return (
-    <ImageBackground
-      source={require('../../assets/images/hey-there.png')}
-      style={{flex: 1}}
-      resizeMode="cover">
+    <ImageBackground source={source} style={{flex: 1}} resizeMode="cover">
       <LinearGradient
         style={styles.container}
-        colors={[paletteRGBA.background(0.8), paletteRGBA.background(1)]}
+        colors={[paletteRGBA.background(0.5), paletteRGBA.background()]}
         start={{x: 0, y: 0}}
-        end={{x: 0, y: 1}}>
+        end={{x: 0, y: 0.5}}>
         {children}
       </LinearGradient>
     </ImageBackground>

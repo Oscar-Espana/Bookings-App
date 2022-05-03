@@ -33,6 +33,7 @@ export const TabBarOptions = (props: Props) => {
             : useColorModeValue('transparent', 'gray.400');
         return (
           <Box
+            key={route.key}
             borderBottomWidth="3"
             borderColor={borderColor}
             alignItems="center"
