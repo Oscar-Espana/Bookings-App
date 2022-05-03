@@ -9,6 +9,7 @@ import CurrencyConverter from '../screens/MyTrip/CurrencyConverter';
 import SizeConverter from '../screens/MyTrip/SizeConverter';
 import NightLeasure from '../screens/MyTrip/NightLeasure';
 import Dictionary from '../screens/MyTrip/Dictionary';
+import Notifications from '../screens/Support/Notifications';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ export type RootStackParamList = {
   CovidMeasures: undefined;
   CurrencyConverter: undefined;
   Dictionary: undefined;
+  Notifications: undefined;
 };
 
 const MyTripNavigator = () => {
@@ -40,6 +42,8 @@ const MyTripNavigator = () => {
       <Stack.Screen name="CovidMeasures" component={CovidMeasures} />
       <Stack.Screen name="CurrencyConverter" component={CurrencyConverter} />
       <Stack.Screen name="Dictionary" component={Dictionary} />
+
+      <Stack.Screen name="Notifications" component={Notifications} />
     </Stack.Navigator>
   );
 };

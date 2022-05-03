@@ -5,6 +5,7 @@ import {TouchableOpacity} from 'react-native';
 import {palette} from '../../theme/palette';
 import {typography} from '../../theme/typography';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {useNavigation} from '@react-navigation/native';
 
 interface Props {
   title: string;
@@ -12,6 +13,7 @@ interface Props {
 
 const TitleWithIcon = ({title}: Props) => {
   const {top} = useSafeAreaInsets();
+  const navigation = useNavigation();
   return (
     <Box
       safeArea
@@ -33,7 +35,7 @@ const TitleWithIcon = ({title}: Props) => {
         justifyContent={'center'}
         alignItems={'center'}
         borderColor={palette.primary}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
           <Icon name="notifications-outline" size={24} color="#fff" />
         </TouchableOpacity>
       </Box>

@@ -30,17 +30,17 @@ const Notifications = () => {
             <NotificationItem
               icon={userProfile}
               name={'Terry Culhane'}
-              time={'1h'}
+              time={'2h'}
             />
             <NotificationItem
               icon={userProfile}
               name={'Terry Culhane'}
-              time={'1h'}
+              time={'3h'}
             />
             <NotificationItem
               icon={userProfile}
               name={'Terry Culhane'}
-              time={'1h'}
+              time={'4h'}
             />
             <NotificationItem
               icon={userProfile}

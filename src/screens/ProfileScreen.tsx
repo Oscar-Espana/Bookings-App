@@ -38,7 +38,7 @@ const ProfileScreen = () => {
         <ListItem name="Datos de reserva" />
         <ListItem name="Terminos y condiciones" />
         <ListItem name="Aviso Legal" />
-        <ListItem name="Cerrar sesión" />
+        <ListItem name="Cerrar sesión" color={palette.secondary} />
       </VStack>
     </>
   );

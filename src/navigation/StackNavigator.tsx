@@ -3,6 +3,7 @@ import {createStackNavigator, StackView} from '@react-navigation/stack';
 import HomeScroll from '../screens/HomeScroll';
 import ReservesScreen from '../screens/ReservesScreen';
 import StayScreen from '../screens/StayScreen';
+import Notifications from '../screens/Support/Notifications';
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,7 @@ const StackNavigator = () => {
         component={ReservesScreen}
       />
       <Stack.Screen name="Stay" component={StayScreen} />
+      <Stack.Screen name="Notifications" component={Notifications} />
     </Stack.Navigator>
   );
 };

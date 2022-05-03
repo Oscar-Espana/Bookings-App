@@ -1,6 +1,7 @@
 import {Box, Image, Text} from 'native-base';
 import React from 'react';
 import {ImageSourcePropType} from 'react-native';
+import {palette} from '../../theme/palette';
 
 interface Props {
   icon: ImageSourcePropType;
@@ -25,7 +26,7 @@ const NotificationItem = ({icon, name, time, info}: Props) => {
           is simply dummy text of the printing and typesetting is simply is
           simply dummy text of the printing and typesetting is simply
         </Text>
-        <Text style={{color: 'white'}}>{time}</Text>
+        <Text style={{color: palette.secondary}}>{time}</Text>
       </Box>
     </Box>
   );

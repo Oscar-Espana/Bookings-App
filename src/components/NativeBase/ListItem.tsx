@@ -9,9 +9,15 @@ interface Props {
   name: string;
   subtitle?: string;
   onPress?: () => void;
+  color?: string;
 }
 
-const ListItem = ({name, onPress, subtitle}: Props) => {
+const ListItem = ({
+  name,
+  onPress,
+  subtitle,
+  color = palette.primary,
+}: Props) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <Box
@@ -23,7 +29,7 @@ const ListItem = ({name, onPress, subtitle}: Props) => {
           <Text
             style={{
               ...typography.body1Bold,
-              color: palette.primary,
+              color: color,
               fontFamily: 'Trade Gothic LT Std',
               fontStyle: 'normal',
               fontWeight: '700',
