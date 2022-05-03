@@ -15,6 +15,7 @@ import StackNavigator from './StackNavigator';
 import MyTripNavigator from './MyTripNavigator';
 import SupportNavigator from './SupportNavigator';
 import Explore_screen from '../screens/Explore/Explore_screen';
+import ExploreNavigator from './ExploreNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -46,7 +47,7 @@ export const BottomTabsNavigator = () => {
       />
       <Tab.Screen
         name="EXPLORA"
-        component={Explore_screen}
+        component={ExploreNavigator}
         options={{
           tabBarIcon: () => (
             <Image

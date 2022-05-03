@@ -37,6 +37,14 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Need maps for explore screen</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  	<string>YOUR TEXT</string>
+  	<key>NSLocationAlwaysUsageDescription</key>
+  	<string>YOUR TEXT</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+  	<string>YOUR TEXT</string>
+
+
 	<key>UIAppFonts</key>
 	<array>
 		<string>Ionicons.ttf</string>

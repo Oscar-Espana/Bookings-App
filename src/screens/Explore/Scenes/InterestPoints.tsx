@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Box, Text, VStack} from 'native-base';
 import {IRouteTab} from '../../../interfaces/IRouteTab';
 import {Dimensions} from 'react-native';
@@ -7,12 +7,18 @@ import {TabBarOptions} from '../../../components/NativeBase/TabBarOptions';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import {mapstyle} from '../../../constants/mapstyle';
 import ListItem from '../../../components/NativeBase/ListItem';
+import {Map} from '../../../components/Map';
+import {PermissionsContext} from '../../../context/PermissionsContext';
+import useNearbyPlaces from '../../../hooks/useNearbyPlaces';
 
 const initialLayout = {
   width: Dimensions.get('window').width,
 };
 
 export const InterestPoints = () => {
+  const {askLocationPermission, permissions, checkLocationPermission} =
+    React.useContext(PermissionsContext);
+
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState<IRouteTab[]>([
     {
@@ -46,13 +52,20 @@ export const InterestPoints = () => {
     }
   };
 
+  useEffect(() => {
+    askLocationPermission();
+  }, []);
+
   return (
     <>
-      <MapView
-        style={{flex: 1}}
-        provider={PROVIDER_GOOGLE}
-        customMapStyle={mapstyle}
+      <Map
+        coords={{
+          latitude: 0,
+          longitude: 0,
+        }}
       />
+      <Text>{JSON.stringify(permissions, null, 5)}</Text>
+
       <TabView
         navigationState={{
           index,

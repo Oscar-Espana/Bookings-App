@@ -5,14 +5,17 @@ import MainScreen from './src/screens/MainScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {BottomTabsNavigator} from './src/navigation/BottomTabsNavigator';
 import {NativeBaseProvider} from 'native-base';
+import {PermissionsProvider} from './src/context/PermissionsContext';
 
 const App = () => {
   return (
-    <NativeBaseProvider>
-      <NavigationContainer>
-        <BottomTabsNavigator />
-      </NavigationContainer>
-    </NativeBaseProvider>
+    <PermissionsProvider>
+      <NativeBaseProvider>
+        <NavigationContainer>
+          <BottomTabsNavigator />
+        </NavigationContainer>
+      </NativeBaseProvider>
+    </PermissionsProvider>
   );
 };
 

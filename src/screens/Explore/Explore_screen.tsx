@@ -1,12 +1,13 @@
 import {Box} from 'native-base';
-import React from 'react';
-import {Dimensions, Text} from 'react-native';
+import React, {useEffect} from 'react';
+import {Dimensions, Text, TouchableOpacity} from 'react-native';
 import MapView from 'react-native-maps';
 import {TabView} from 'react-native-tab-view';
 import BackgroundwithGradient from '../../components/NativeBase/BackgroundwithGradient';
 import {TabBarOptions} from '../../components/NativeBase/TabBarOptions';
 import TitleCentered from '../../components/NativeBase/TitleCentered';
 import TitleWithIcon from '../../components/NativeBase/TitleWithIcon';
+import {PermissionsContext} from '../../context/PermissionsContext';
 import {IRouteTab} from '../../interfaces/IRouteTab';
 import {InterestPoints} from './Scenes/InterestPoints';
 import {Services} from './Scenes/Services';
