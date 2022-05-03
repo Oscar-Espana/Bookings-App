@@ -14,6 +14,7 @@ import HomeScroll from '../screens/HomeScroll';
 import StackNavigator from './StackNavigator';
 import MyTripNavigator from './MyTripNavigator';
 import SupportNavigator from './SupportNavigator';
+import Explore_screen from '../screens/Explore/Explore_screen';
 
 const Tab = createBottomTabNavigator();
 
@@ -45,7 +46,7 @@ export const BottomTabsNavigator = () => {
       />
       <Tab.Screen
         name="EXPLORA"
-        component={HomeScreen_reservations}
+        component={Explore_screen}
         options={{
           tabBarIcon: () => (
             <Image

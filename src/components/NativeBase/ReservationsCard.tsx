@@ -16,11 +16,11 @@ const ReservationsCard = ({data, horizontal, onPress}: Props) => {
   return (
     <ScrollView
       horizontal={horizontal}
-      w={'100%'}
-      showsHorizontalScrollIndicator={false}>
+      showsHorizontalScrollIndicator={false}
+      mt={-10}>
       {data.map((item: IReservations) => (
-        <TouchableOpacity onPress={() => onPress(item)}>
-          <Box key={item.id} px={30}>
+        <TouchableOpacity key={item.id} onPress={() => onPress(item)}>
+          <Box px={4}>
             <Box
               flexDirection={'row'}
               justifyContent="space-between"
@@ -43,7 +43,12 @@ const ReservationsCard = ({data, horizontal, onPress}: Props) => {
                 {item.dateStart}
               </Box>
 
-              <Box>
+              <Box
+                w={36}
+                h={36}
+                rounded={50}
+                justifyContent={'center'}
+                alignContent={'center'}>
                 {item.status === 'done' ? (
                   <Icon
                     name="checkmark-circle"
@@ -51,14 +56,14 @@ const ReservationsCard = ({data, horizontal, onPress}: Props) => {
                     color={palette.secondary}
                   />
                 ) : (
-                  <Icon name="close-circle" size={36} color={'green.500'} />
+                  <Icon name="close-circle" size={36} color={palette.gray} />
                 )}
               </Box>
             </Box>
 
             <Image
               source={item.img}
-              w={'100%'}
+              w={350}
               h={288}
               alt={'reservation'}
               rounded={16}
