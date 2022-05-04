@@ -5,7 +5,7 @@ import {typography} from '../../theme/typography';
 
 const TextSection = ({children}: any) => {
   return (
-    <Box mx={8} _text={{...typography.body2}}>
+    <Box mx={8} _text={{...typography.body2}} my={2}>
       {children}
     </Box>
   );

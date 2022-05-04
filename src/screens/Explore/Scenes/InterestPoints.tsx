@@ -52,10 +52,10 @@ export const InterestPoints = () => {
     }
   };
 
-  useEffect(() => {
-    askLocationPermission();
-  }, []);
-
+  /*  useEffect(() => {
+    checkLocationPermission();
+  }, [permissions]);
+ */
   return (
     <>
       <Map

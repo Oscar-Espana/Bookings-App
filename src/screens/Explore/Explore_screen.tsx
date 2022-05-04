@@ -9,6 +9,7 @@ import TitleCentered from '../../components/NativeBase/TitleCentered';
 import TitleWithIcon from '../../components/NativeBase/TitleWithIcon';
 import {PermissionsContext} from '../../context/PermissionsContext';
 import {IRouteTab} from '../../interfaces/IRouteTab';
+import ComunityPlans from './Scenes/ComunityPlans';
 import {InterestPoints} from './Scenes/InterestPoints';
 import {Services} from './Scenes/Services';
 
@@ -39,6 +40,8 @@ const Explore_screen = () => {
         return <InterestPoints />;
       case 'second':
         return <Services />;
+      case 'third':
+        return <ComunityPlans />;
     }
   };
 
