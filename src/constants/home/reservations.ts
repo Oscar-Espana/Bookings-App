@@ -36,11 +36,12 @@ export const reservations = [
         street: 'Carrer de Pallars, 171, 08005',
         img: require('../../assets/images/reservations/2.png'),
         guests: [
-            {name: 'Juan', lastname: 'Perez', id: 1, img: require('../../assets/images/guests/1.png')},
+            
             {name: 'Juan', lastname: 'Perez', id: 2, img: require('../../assets/images/guests/2.png')},
             {name: 'Juan', lastname: 'Perez', id: 3, img: require('../../assets/images/guests/3.png')},
             {name: 'Juan', lastname: 'Perez', id: 4, img: require('../../assets/images/guests/4.png')},
             {name: 'Juan', lastname: 'Perez', id: 5, img: require('../../assets/images/guests/5.png')},
+            {name: 'Juan', lastname: 'Perez', id: 1, img: require('../../assets/images/guests/1.png')},
         ]
     }, 
     {
@@ -61,8 +62,8 @@ export const reservations = [
             {name: 'Juan', lastname: 'Perez', id: 1, img: require('../../assets/images/guests/1.png')},
             {name: 'Juan', lastname: 'Perez', id: 2, img: require('../../assets/images/guests/2.png')},
             {name: 'Juan', lastname: 'Perez', id: 3, img: require('../../assets/images/guests/3.png')},
-            {name: 'Juan', lastname: 'Perez', id: 4, img: require('../../assets/images/guests/4.png')},
-            {name: 'Juan', lastname: 'Perez', id: 5, img: require('../../assets/images/guests/5.png')},
+            
+            
         ]
     }, 
 ]
