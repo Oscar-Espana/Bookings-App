@@ -1,4 +1,4 @@
-import {Box, Heading} from 'native-base';
+import {Box, Heading, Text} from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
@@ -23,9 +23,7 @@ const TitleWithIcon = ({title}: Props) => {
       mx={30}>
       <Box w={44} h={44} />
 
-      <Heading style={typography.heading2} color={'black'}>
-        {title}
-      </Heading>
+      <Text style={typography.heading2}>{title}</Text>
 
       <Box
         width={44}
