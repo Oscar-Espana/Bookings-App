@@ -1,16 +1,15 @@
 import React from 'react';
 import {ImageBackground, TouchableOpacity, StyleSheet} from 'react-native';
-
-import Icon from 'react-native-vector-icons/Ionicons';
-import {typography} from '../theme/typography';
-import {palette} from '../theme/palette';
+import {palette} from '../../theme/palette';
 import {Box, Center, VStack, Text, Image} from 'native-base';
-import TitleWithIcon from '../components/NativeBase/TitleWithIcon';
-import ListItem from '../components/NativeBase/ListItem';
-import profile_pic from '../assets/images/profilePicture/profile_pic.png';
-import user_profile from '../assets/images/user_profile.png';
-import BackgroundwithCustomImage from '../components/NativeBase/BackgroundwithCustomImage';
+import TitleWithIcon from '../../components/NativeBase/TitleWithIcon';
+import ListItem from '../../components/NativeBase/ListItem';
+
+import profile_pic from '../../assets/images/profilePicture/profile_pic.png';
+import user_profile from '../../assets/images/user_profile.png';
+
 import {useNavigation} from '@react-navigation/native';
+import BackgroundwithCustomImage from '../../components/NativeBase/BackgroundwithCustomImage';
 
 const ProfileScreen = () => {
   const navigation = useNavigation();

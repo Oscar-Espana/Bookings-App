@@ -1,22 +1,13 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import MainScreen from '../screens/MainScreen';
-import GreetingsScreen from '../screens/GreetingsScreen';
 import {palette} from '../theme/palette';
-import Icon from 'react-native-vector-icons/Ionicons';
 import {Image} from 'react-native';
-
-import HomeIcon from '../assets/icons/home.svg';
-import ProfileScreen from '../screens/ProfileScreen';
-import MainScreenNB from '../screens/MainScreenNB';
 import HomeScreen_reservations from '../screens/HomeScreen_reservations';
-import HomeScroll from '../screens/HomeScroll';
-import StackNavigator from './StackNavigator';
 import MyTripNavigator from './MyTripNavigator';
 import SupportNavigator from './SupportNavigator';
-import Explore_screen from '../screens/Explore/Explore_screen';
 import ExploreNavigator from './ExploreNavigator';
-import ProfileNavigator from './ProfileStack';
+import ProfileNavigator from './ProfileNavigator';
+import ProfileScreen from '../screens/Profile/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 
