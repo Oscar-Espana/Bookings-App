@@ -10,8 +10,10 @@ import ListItem from '../components/NativeBase/ListItem';
 import profile_pic from '../assets/images/profilePicture/profile_pic.png';
 import user_profile from '../assets/images/user_profile.png';
 import BackgroundwithCustomImage from '../components/NativeBase/BackgroundwithCustomImage';
+import {useNavigation} from '@react-navigation/native';
 
 const ProfileScreen = () => {
+  const navigation = useNavigation();
   return (
     <>
       <BackgroundwithCustomImage source={user_profile}>
@@ -34,6 +36,10 @@ const ProfileScreen = () => {
         </Box>
       </BackgroundwithCustomImage>
       <VStack bgColor={palette.background} flex={2} space={5} py={8}>
+        <ListItem
+          name="Signature"
+          onPress={() => navigation.navigate('Signature')}
+        />
         <ListItem name="Datos personales" />
         <ListItem name="Datos de reserva" />
         <ListItem name="Terminos y condiciones" />

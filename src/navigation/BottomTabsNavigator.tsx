@@ -16,6 +16,7 @@ import MyTripNavigator from './MyTripNavigator';
 import SupportNavigator from './SupportNavigator';
 import Explore_screen from '../screens/Explore/Explore_screen';
 import ExploreNavigator from './ExploreNavigator';
+import ProfileNavigator from './ProfileStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -83,7 +84,7 @@ export const BottomTabsNavigator = () => {
       />
       <Tab.Screen
         name="MI PERFIL"
-        component={ProfileScreen}
+        component={ProfileNavigator}
         options={{
           tabBarIcon: () => (
             <Image
