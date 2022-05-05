@@ -12,8 +12,7 @@ export const typography = StyleSheet.create({
     color: palette.primary,
     fontFamily: 'Analogue',
     fontSize: 30,
-    textAlign: 'center',
-    lineHeight: 40,
+    textAlign: 'center'
   },
   heading3: {
     color: palette.primary,
@@ -22,10 +21,10 @@ export const typography = StyleSheet.create({
     },
   body1: {
     color: palette.gray,
-    fontFamily: 'Trade Gothic LT Std Extended',
+    fontFamily: 'Trade Gothic LT Std',
     fontSize: 18,
     lineHeight: 22,
-    
+    fontWeight: '400'
   },
   body1Bold: {
     color: palette.neutral,

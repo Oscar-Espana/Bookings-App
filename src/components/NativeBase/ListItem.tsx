@@ -28,8 +28,9 @@ const ListItem = ({
         <Box>
           <Text
             style={{
+              ...typography.body1Bold,
               color: color,
-              fontFamily: 'TradeGothic-LT-Regular',
+              fontFamily: 'Trade Gothic LT Std',
               fontStyle: 'normal',
               fontWeight: '700',
               fontSize: 18,

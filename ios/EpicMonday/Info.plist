@@ -36,19 +36,22 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>YOUR TEXT</string>
+	<string>Need maps for explore screen</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>YOUR TEXT</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>YOUR TEXT</string>
+  	<string>YOUR TEXT</string>
+  	<key>NSLocationAlwaysUsageDescription</key>
+  	<string>YOUR TEXT</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+  	<string>YOUR TEXT</string>
+
+
 	<key>UIAppFonts</key>
 	<array>
 		<string>Ionicons.ttf</string>
 		<string>Analogue.otf</string>
 		<string>Quentin.otf</string>
-		<string>Baskerville.otf</string>
-		<string>Trade-Gothic-LT-Std-Extended.otf</string>
-		<string>TradeGothic-LT-Regular.ttf</string>
+		<string>Trade Gothic LT Std Extended.otf</string>
+		<string>Trade Gothic LT Std Regular.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
