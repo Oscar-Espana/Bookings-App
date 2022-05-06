@@ -77,9 +77,7 @@ export const Map = ({
   };
 
   if (!hasLocation) {
-    console.log('No location');
-    console.log(userLocation);
-    console.log(permissions);
+    return <LoadingScreen />;
   }
 
   return (

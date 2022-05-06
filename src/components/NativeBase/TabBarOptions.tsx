@@ -41,7 +41,6 @@ export const TabBarOptions = (props: Props) => {
             mr="30">
             <Pressable
               onPress={() => {
-                console.log(i);
                 props.onIndexChange(i);
               }}>
               <Animated.Text

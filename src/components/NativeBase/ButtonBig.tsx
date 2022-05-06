@@ -18,7 +18,7 @@ const ButtonBig = ({name, onPress}: Props) => {
         alignItems={'center'}
         borderRadius={16}
         padding={5}
-        width={158}>
+        margin={30}>
         <Text
           color={palette.primary}
           fontFamily={'Trade Gothic LT Std'}

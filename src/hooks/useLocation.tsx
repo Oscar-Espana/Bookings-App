@@ -38,7 +38,6 @@ export const useLocation = () => {
         setUserLocation(location);
         setRouteLines(routes => [...routes, location]);
         setHasLocation(true);
-        console.log('setting initial position');
       })
       .catch(err => console.log(err, 'error'));
   }, []);

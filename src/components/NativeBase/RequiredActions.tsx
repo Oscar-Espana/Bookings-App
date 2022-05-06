@@ -31,7 +31,7 @@ const RequiredActions = () => {
     const newActions: Action[] = [...selectedActions];
     const index = newActions.findIndex(item => item.id === action.id);
     newActions[index].isSelected = !newActions[index].isSelected;
-    console.log(index, action);
+
     setSelectedActions(newActions);
   };
 

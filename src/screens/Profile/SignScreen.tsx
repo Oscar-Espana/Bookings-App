@@ -14,8 +14,8 @@ const SignScreen = () => {
   const [signature, setSign] = useState(null);
 
   const handleOK = signature => {
-    console.log(signature);
     setSign(signature);
+    navigation.navigate('Contract', signature);
   };
 
   const handleEmpty = () => {
@@ -52,7 +52,10 @@ const SignScreen = () => {
           />
         </Box>
 
-        <Box flexDirection={'row'} justifyContent={'space-between'} my={4}>
+        <Box
+          flexDirection={'row'}
+          justifyContent={'space-between'}
+          bg={'black'}>
           <ButtonBig name={'CLEAR'} onPress={handleClear} />
           <ButtonBig name={'NEXT'} onPress={handleConfirm} />
         </Box>

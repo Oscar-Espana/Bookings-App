@@ -50,9 +50,7 @@ export const PermissionsProvider = ({children}: any) => {
       );
     }
 
-    if (permissionStatus === 'blocked' || permissionStatus === 'denied') {
-      console.log('Permission denied');
-
+    if (permissionStatus === 'blocked') {
       openSettings();
     }
 
