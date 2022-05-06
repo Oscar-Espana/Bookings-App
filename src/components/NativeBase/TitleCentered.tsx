@@ -1,4 +1,4 @@
-import {Box, Heading} from 'native-base';
+import {Box, Heading, Text} from 'native-base';
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -28,9 +28,7 @@ const TitleCentered = ({title, onPress}: Props) => {
         </TouchableOpacity>
       </Box>
 
-      <Heading style={typography.heading2} color={'black'}>
-        {title}
-      </Heading>
+      <Text style={typography.heading2}>{title}</Text>
 
       <Box w={30} h={30} />
     </Box>

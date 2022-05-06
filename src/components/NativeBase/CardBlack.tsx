@@ -40,7 +40,15 @@ const CardBlack = ({data}: Props) => {
           </Text>
           <Box w={100} flexDirection={'row'} mt={5}>
             {data.guests.map((item: IGuest, index: number) => {
-              return <Image alt={'guest'} source={item.img} w={8} h={8} />;
+              return (
+                <Image
+                  alt={'guest'}
+                  source={item.img}
+                  w={8}
+                  h={8}
+                  key={index}
+                />
+              );
             })}
           </Box>
         </Box>

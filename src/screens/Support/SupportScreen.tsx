@@ -18,7 +18,7 @@ interface Props extends StackScreenProps<SupportScreenProps> {}
 const SupportScreen = ({navigation}: Props) => {
   return (
     <BackgroundwithCustomImage source={tecnician}>
-      <TitleWithIcon title={'Soporte'} />
+      <TitleWithIcon title={'SOPORTE'} />
 
       <VStack space={30} flex={1}>
         <ListItem name={'Chat'} onPress={() => navigation.navigate('Chat')} />

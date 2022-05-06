@@ -1,30 +1,74 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import React, {useRef, useState} from 'react';
+import SignatureScreen from 'react-native-signature-canvas';
 import Signature from 'react-native-signature-canvas';
+import BackgroundwithGradient from '../../components/NativeBase/BackgroundwithGradient';
+import TitleCentered from '../../components/NativeBase/TitleCentered';
+import {useNavigation} from '@react-navigation/native';
+import {Box, ScrollView, Text} from 'native-base';
+import {palette} from '../../theme/palette';
+import ButtonBig from '../../components/NativeBase/ButtonBig';
 
-export const SignScreen = () => {
-  return <Text>Signature</Text>;
+const SignScreen = () => {
+  const navigation = useNavigation();
+  const ref = useRef();
+  const [signature, setSign] = useState(null);
+
+  const handleOK = signature => {
+    console.log(signature);
+    setSign(signature);
+  };
+
+  const handleEmpty = () => {
+    console.log('Empty');
+  };
+
+  const handleClear = () => {
+    ref.current.clearSignature();
+  };
+
+  const handleConfirm = () => {
+    console.log('end');
+    ref.current.readSignature();
+  };
+
+  return (
+    <BackgroundwithGradient>
+      <TitleCentered title="Signature" onPress={() => navigation.goBack()} />
+
+      <Box padding={6} flex={1}>
+        <Text
+          mb={4}
+          style={{fontSize: 14, fontWeight: '400', color: '#8B8B8B'}}>
+          Sign with inside of the delimited area.
+        </Text>
+        <Box w={'100%'} h={'80%'} rounded={100}>
+          <SignatureScreen
+            ref={ref}
+            onOK={handleOK}
+            onEmpty={handleEmpty}
+            clearText="CLEAR"
+            confirmText="SAVE"
+            webStyle={style}
+          />
+        </Box>
+
+        <Box flexDirection={'row'} justifyContent={'space-between'} my={4}>
+          <ButtonBig name={'CLEAR'} onPress={handleClear} />
+          <ButtonBig name={'NEXT'} onPress={handleConfirm} />
+        </Box>
+      </Box>
+    </BackgroundwithGradient>
+  );
 };
+const style = `.m-signature-pad--body canvas {
+  
+}
+.m-signature-pad  {
+  height: 438px; 
+}
+  .m-signature-pad--footer {
+    display: none;
+    } 
+}`;
 
-const styles = StyleSheet.create({
-  preview: {
-    width: 335,
-    height: 114,
-    backgroundColor: '#F8F8F8',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 15,
-  },
-  previewText: {
-    color: '#FFF',
-    fontSize: 14,
-    height: 40,
-    lineHeight: 40,
-    paddingLeft: 10,
-    paddingRight: 10,
-    backgroundColor: '#69B2FF',
-    width: 120,
-    textAlign: 'center',
-    marginTop: 10,
-  },
-});
+export default SignScreen;

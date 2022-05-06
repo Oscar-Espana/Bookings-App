@@ -14,27 +14,27 @@ import BackgroundwithCustomImage from '../../components/NativeBase/Backgroundwit
 const ProfileScreen = () => {
   const navigation = useNavigation();
   return (
-    <>
-      <BackgroundwithCustomImage source={user_profile}>
-        <TitleWithIcon title="PROFILE" />
-        <Box flexDirection={'row'} mx={28} alignItems="center">
-          <Box
-            w={90}
-            h={90}
-            justifyContent="center"
-            alignItems="center"
-            borderColor={palette.secondary}
-            borderWidth={2}
-            rounded={70}>
-            <Image source={profile_pic} w={74} h={74} alt="ppic" />
-          </Box>
-          <Box mx={8}>
-            <Text style={styles.name}>Melissa Meryem</Text>
-            <Text style={styles.subtitle}>Editar perfil </Text>
-          </Box>
+    <BackgroundwithCustomImage source={user_profile}>
+      <TitleWithIcon title="PROFILE" />
+
+      <Box flexDirection={'row'} mx={28} alignItems="center">
+        <Box
+          w={90}
+          h={90}
+          justifyContent="center"
+          alignItems="center"
+          borderColor={palette.secondary}
+          borderWidth={2}
+          rounded={70}>
+          <Image source={profile_pic} w={74} h={74} alt="ppic" />
         </Box>
-      </BackgroundwithCustomImage>
-      <VStack bgColor={palette.background} flex={2} space={5} py={8}>
+        <Box mx={8}>
+          <Text style={styles.name}>Melissa Meryem</Text>
+          <Text style={styles.subtitle}>Editar perfil </Text>
+        </Box>
+      </Box>
+
+      <VStack flex={2} space={5} py={8}>
         <ListItem
           name="Signature"
           onPress={() => navigation.navigate('Signature')}
@@ -45,7 +45,7 @@ const ProfileScreen = () => {
         <ListItem name="Aviso Legal" />
         <ListItem name="Cerrar sesión" color={palette.secondary} />
       </VStack>
-    </>
+    </BackgroundwithCustomImage>
   );
 };
 

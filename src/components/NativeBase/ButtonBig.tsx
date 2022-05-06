@@ -3,9 +3,14 @@ import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import {palette} from '../../theme/palette';
 
-const ButtonBig = () => {
+interface Props {
+  name?: string;
+  onPress?: () => void;
+}
+
+const ButtonBig = ({name, onPress}: Props) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <Box
         borderColor={palette.primary}
         borderWidth={2}
@@ -13,14 +18,14 @@ const ButtonBig = () => {
         alignItems={'center'}
         borderRadius={16}
         padding={5}
-        mx={28}>
+        width={158}>
         <Text
           color={palette.primary}
-          fontFamily={'Trade Gothic LT Std Extended'}
+          fontFamily={'Trade Gothic LT Std'}
           fontSize={16}
           fontWeight={'700'}
           lineHeight={16}>
-          NEXT
+          {name}
         </Text>
       </Box>
     </TouchableOpacity>

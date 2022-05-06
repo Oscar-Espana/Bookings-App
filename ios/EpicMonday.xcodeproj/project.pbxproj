@@ -17,7 +17,6 @@
 		7699B88040F8A987B510C191 /* libPods-EpicMonday-EpicMondayTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-EpicMonday-EpicMondayTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		D1E5564C2D2F4EBCAC04D8EE /* Analogue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D51B4D0C63B4710A0CAF505 /* Analogue.otf */; };
-		F47872B48D734503AE94A95F /* Trade Gothic LT Std Extended.otf in Resources */ = {isa = PBXBuildFile; fileRef = 675B80CB0371492987E9EA5C /* Trade Gothic LT Std Extended.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +44,6 @@
 		5709B34CF0A7D63546082F79 /* Pods-EpicMonday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpicMonday.release.xcconfig"; path = "Target Support Files/Pods-EpicMonday/Pods-EpicMonday.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-EpicMonday-EpicMondayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpicMonday-EpicMondayTests.debug.xcconfig"; path = "Target Support Files/Pods-EpicMonday-EpicMondayTests/Pods-EpicMonday-EpicMondayTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-EpicMonday.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EpicMonday.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		675B80CB0371492987E9EA5C /* Trade Gothic LT Std Extended.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Trade Gothic LT Std Extended.otf"; path = "../src/assets/fonts/Trade Gothic LT Std Extended.otf"; sourceTree = "<group>"; };
 		7D51B4D0C63B4710A0CAF505 /* Analogue.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Analogue.otf; path = ../src/assets/fonts/Analogue.otf; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = EpicMonday/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-EpicMonday-EpicMondayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpicMonday-EpicMondayTests.release.xcconfig"; path = "Target Support Files/Pods-EpicMonday-EpicMondayTests/Pods-EpicMonday-EpicMondayTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 			children = (
 				7D51B4D0C63B4710A0CAF505 /* Analogue.otf */,
 				D710BA51497D4650B406499F /* Quentin.otf */,
-				675B80CB0371492987E9EA5C /* Trade Gothic LT Std Extended.otf */,
 				9D841B74F65C4206B26CB96B /* Trade Gothic LT Std Regular.otf */,
 			);
 			name = Resources;
@@ -276,7 +273,6 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				D1E5564C2D2F4EBCAC04D8EE /* Analogue.otf in Resources */,
 				1EA633919A5B45F386C45929 /* Quentin.otf in Resources */,
-				F47872B48D734503AE94A95F /* Trade Gothic LT Std Extended.otf in Resources */,
 				03B88FDC35234FA99B804EA4 /* Trade Gothic LT Std Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

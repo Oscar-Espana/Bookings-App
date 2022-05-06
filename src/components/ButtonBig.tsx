@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
   button: {
     color: palette.primary,
-    fontFamily: 'Trade Gothic LT Std Extended',
+    fontFamily: 'Trade Gothic LT Std',
     fontSize: 16,
     fontWeight: '700',
     lineHeight: 16,

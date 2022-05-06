@@ -12,6 +12,7 @@ export const typography = StyleSheet.create({
     color: palette.primary,
     fontFamily: 'Analogue',
     fontSize: 30,
+    lineHeight: 40,
     textAlign: 'center'
   },
   heading3: {
@@ -35,7 +36,8 @@ export const typography = StyleSheet.create({
   },  
   body2: {
     color: palette.primary,
-    fontFamily: 'Trade Gothic LT Std Extended',
+    fontWeight: '400',
+    fontFamily: 'Trade Gothic LT Std',
     fontSize: 14,
     lineHeight: 24,
   },greet: {
@@ -44,12 +46,12 @@ export const typography = StyleSheet.create({
       color: palette.primary
   }, 
   cardFont: {
-    fontFamily: 'Trade Gothic LT Std Extended',
+    fontFamily: 'Trade Gothic LT Std',
     fontSize: 18,
     color: palette.background
   },
   pricesFont: {
-    fontFamily: 'Trade Gothic LT Std Extended',
+    fontFamily: 'Trade Gothic LT Std',
     fontSize: 18,
     fontWeight: '700',
     color: palette.primary,
@@ -57,7 +59,7 @@ export const typography = StyleSheet.create({
   }, 
   nightsFont: {
     color: palette.background,
-    fontFamily: 'Trade Gothic LT Std Extended',
+    fontFamily: 'Trade Gothic LT Std',
     fontWeight: '700',
     fontStyle: 'normal',
     fontSize: 18,

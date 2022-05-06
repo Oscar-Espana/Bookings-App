@@ -8,10 +8,12 @@ import LoadingScreen from '../screens/LoadingScreen';
 import {mapstyle} from '../constants/mapstyle';
 import {palette} from '../theme/palette';
 import Fab from './Fab';
+import {PermissionsContext} from '../context/PermissionsContext';
+import {useFocusEffect} from '@react-navigation/native';
 
 interface Props {
   markers?: Location[];
-  coords: Location;
+  coords?: Location;
   polyline?: Location[];
   showUserLocation?: boolean;
   isMarker?: boolean;
@@ -30,6 +32,9 @@ export const Map = ({
   const ASPECT_RATIO = width / height;
   const LATITUDE_DELTA = zoom;
   const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
+
+  const {permissions, askLocationPermission} =
+    React.useContext(PermissionsContext);
 
   const {
     hasLocation,
@@ -59,6 +64,10 @@ export const Map = ({
     });
   }, [userLocation]);
 
+  useFocusEffect(() => {
+    askLocationPermission();
+  });
+
   const centerPosition = async () => {
     const {latitude, longitude} = await getCurrentLocation();
     following.current = true;
@@ -68,7 +77,9 @@ export const Map = ({
   };
 
   if (!hasLocation) {
-    return <LoadingScreen />;
+    console.log('No location');
+    console.log(userLocation);
+    console.log(permissions);
   }
 
   return (

@@ -38,7 +38,6 @@ const HomeScreen_reservations = () => {
           <SectionTitle title={'Tu reserva en curso'} />
           <CardCheckInOut />
           <CardReservePriceTotal />
-          <ButtonBig />
         </ScrollView>
       </Box>
     </>

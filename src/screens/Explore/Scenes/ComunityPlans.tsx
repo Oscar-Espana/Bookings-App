@@ -12,12 +12,12 @@ const ComunityPlans = () => {
       <SingleTitle title="Planes de la comunidad" icon={'cog'} />
 
       {reservations.map((item: IReservations, index: number) => {
-        return <CardBlack data={item} />;
+        return <CardBlack data={item} key={index} />;
       })}
 
       <SingleTitle title="Post relacionados" />
       {reservations.map((item: IReservations, index: number) => {
-        return <CardBlack data={item} />;
+        return <CardBlack data={item} key={index} />;
       })}
     </ScrollView>
   );

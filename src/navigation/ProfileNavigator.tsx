@@ -2,7 +2,7 @@ import React from 'react';
 import {createStackNavigator, StackView} from '@react-navigation/stack';
 
 import ProfileScreen from '../screens/Profile/ProfileScreen';
-import {SignScreen} from '../screens/Profile/SignScreen';
+import SignScreen from '../screens/Profile/SignScreen';
 
 const Stack = createStackNavigator();
 

@@ -20,7 +20,7 @@ import {TabBarOptions} from '../../components/NativeBase/TabBarOptions';
 import {YourCity} from './Scenes/YourCity';
 import {Manual} from './Scenes/Manual';
 import BackgroundwithCustomImage from '../../components/NativeBase/BackgroundwithCustomImage';
-import madrid from '../../assets/images/cities/madrid.png';
+import madrid from '../../assets/images/cities/madrid2.png';
 
 interface Props extends StackScreenProps<RootStackParamList, 'MyTrip'> {}
 

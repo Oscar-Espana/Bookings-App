@@ -20,7 +20,7 @@ const SectionTitle = ({title, upperTitle}: Props) => {
             fontSize: 12,
             lineHeight: 24,
             fontWeight: 400,
-            fontFamily: 'Trade Gothic LT Std Extended',
+            fontFamily: 'Trade Gothic LT Std',
           }}>
           {upperTitle}
         </Box>

@@ -1,4 +1,4 @@
-import {Box, Heading} from 'native-base';
+import {Box, Heading, Text} from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
@@ -12,7 +12,6 @@ interface Props {
 }
 
 const TitleWithIcon = ({title}: Props) => {
-  const {top} = useSafeAreaInsets();
   const navigation = useNavigation();
   return (
     <Box
@@ -20,12 +19,11 @@ const TitleWithIcon = ({title}: Props) => {
       flexDirection={'row'}
       alignItems={'center'}
       justifyContent={'space-between'}
-      mx={30}>
+      mx={30}
+      py={4}>
       <Box w={44} h={44} />
 
-      <Heading style={typography.heading2} color={'black'}>
-        {title}
-      </Heading>
+      <Text style={typography.heading2}>{title}</Text>
 
       <Box
         width={44}

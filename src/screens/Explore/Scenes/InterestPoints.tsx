@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import {Box, Text, VStack} from 'native-base';
 import {IRouteTab} from '../../../interfaces/IRouteTab';
 import {Dimensions} from 'react-native';
@@ -10,14 +10,14 @@ import ListItem from '../../../components/NativeBase/ListItem';
 import {Map} from '../../../components/Map';
 import {PermissionsContext} from '../../../context/PermissionsContext';
 import useNearbyPlaces from '../../../hooks/useNearbyPlaces';
+import {useFocusEffect} from '@react-navigation/native';
 
 const initialLayout = {
   width: Dimensions.get('window').width,
 };
 
 export const InterestPoints = () => {
-  const {askLocationPermission, permissions, checkLocationPermission} =
-    React.useContext(PermissionsContext);
+  const {permissions} = React.useContext(PermissionsContext);
 
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState<IRouteTab[]>([
@@ -52,18 +52,9 @@ export const InterestPoints = () => {
     }
   };
 
-  /*  useEffect(() => {
-    checkLocationPermission();
-  }, [permissions]);
- */
   return (
     <>
-      <Map
-        coords={{
-          latitude: 0,
-          longitude: 0,
-        }}
-      />
+      {/* <Map /> */}
       <Text>{JSON.stringify(permissions, null, 5)}</Text>
 
       <TabView

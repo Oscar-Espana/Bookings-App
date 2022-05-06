@@ -25,7 +25,7 @@ const ActionItem = ({icon, name, selected, onPress, size}: Props) => {
         _text={{
           color: palette.primary,
           fontSize: 11,
-          fontFamily: 'Trade Gothic LT Std Extended',
+          fontFamily: 'Trade Gothic LT Std',
         }}
         justifyContent={'center'}
         alignItems={'center'}>
