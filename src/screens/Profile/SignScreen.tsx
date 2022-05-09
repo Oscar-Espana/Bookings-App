@@ -52,10 +52,7 @@ const SignScreen = () => {
           />
         </Box>
 
-        <Box
-          flexDirection={'row'}
-          justifyContent={'space-between'}
-          bg={'black'}>
+        <Box flexDirection={'row'} justifyContent={'space-between'}>
           <ButtonBig name={'CLEAR'} onPress={handleClear} />
           <ButtonBig name={'NEXT'} onPress={handleConfirm} />
         </Box>

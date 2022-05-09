@@ -8,6 +8,7 @@ import SupportNavigator from './SupportNavigator';
 import ExploreNavigator from './ExploreNavigator';
 import ProfileNavigator from './ProfileNavigator';
 import ProfileScreen from '../screens/Profile/ProfileScreen';
+import AddGuest from '../screens/Staging/AddGuest';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,6 +26,19 @@ export const BottomTabsNavigator = () => {
           shadowOpacity: 0.9, */
         },
       }}>
+      <Tab.Screen
+        name="STAGING"
+        component={AddGuest}
+        options={{
+          tabBarIcon: () => (
+            <Image
+              source={require('../assets/icons/home.png')}
+              style={{width: 30, height: 30}}
+            />
+          ),
+        }}
+      />
+
       <Tab.Screen
         name="HOME"
         component={HomeScreen_reservations}
