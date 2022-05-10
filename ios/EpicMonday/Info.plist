@@ -43,6 +43,12 @@
   	<string>YOUR TEXT</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
   	<string>YOUR TEXT</string>
+	<key>NSCameraUsageDescription</key>
+    <string>YOUR TEXT</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+    <string>YOUR TEXT</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>YOUR TEXT</string>
 
 
 	<key>UIAppFonts</key>

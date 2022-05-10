@@ -1,18 +1,23 @@
 import {Box, Text} from 'native-base';
-import React from 'react';
+import React, {useRef, useState, useEffect} from 'react';
+import {PERMISSIONS, request} from 'react-native-permissions';
 import ButtonBig from '../../../components/NativeBase/ButtonBig';
 import SectionTitle from '../../../components/NativeBase/SectionTitle';
 import TextSection from '../../../components/NativeBase/TextSection';
 import ScanIcon from '../../../assets/icons/Scan';
 import {palette} from '../../../theme/palette';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, StyleSheet, Platform, Image} from 'react-native';
+
+import PDFScanner from '@woonivers/react-native-document-scanner';
+import {useNavigation} from '@react-navigation/native';
 
 const ScanID = ({onPress}: {onPress: () => void}) => {
+  const navigation = useNavigation();
   return (
     <Box flex={6}>
       <SectionTitle title="Scan ID / Passport" />
       <TextSection>You should see the code code (MRZ) IS.</TextSection>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Scanner')}>
         <Box alignItems={'center'}>
           <Box
             justifyContent={'center'}

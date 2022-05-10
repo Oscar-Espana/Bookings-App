@@ -9,6 +9,7 @@ import ExploreNavigator from './ExploreNavigator';
 import ProfileNavigator from './ProfileNavigator';
 import ProfileScreen from '../screens/Profile/ProfileScreen';
 import AddGuest from '../screens/Staging/AddGuest';
+import StagingNavigator from './StagingNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,7 +29,7 @@ export const BottomTabsNavigator = () => {
       }}>
       <Tab.Screen
         name="STAGING"
-        component={AddGuest}
+        component={StagingNavigator}
         options={{
           tabBarIcon: () => (
             <Image
