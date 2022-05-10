@@ -17,7 +17,7 @@ const customStyles = {
   separatorStrokeWidth: 2,
   currentStepStrokeWidth: 2,
   stepStrokeCurrentColor: palette.secondary,
-  stepStrokeWidth: 1,
+  stepStrokeWidth: 0,
   stepStrokeFinishedColor: palette.secondary,
   stepStrokeUnFinishedColor: palette.gray,
   separatorFinishedColor: palette.secondary,
@@ -62,7 +62,7 @@ const AddGuest = () => {
         title="ADD GUEST"
         onPress={() => console.log(currentPosition)}
       />
-      <Box flex={1}>
+      <Box pb={5}>
         <StepIndicator
           stepCount={4}
           renderStepIndicator={customRenderStepIndicator}
@@ -79,23 +79,23 @@ const AddGuest = () => {
 const customRenderStepIndicator = ({stepStatus, position}: any) => {
   console.log(stepStatus, position);
 
-  const styles = StyleSheet.create({
-    stepIndicator: {},
-  });
-
   return (
-    <Box style={styles.stepIndicator}>
+    <>
       {stepStatus === 'finished' ? (
         <Box
-          width={40}
-          height={40}
+          width={9}
+          borderRadius={50}
+          height={9}
+          borderWidth={1}
+          borderColor={palette.secondary}
+          borderStyle="dashed"
           bgColor={palette.background}
           justifyContent={'center'}
           alignItems={'center'}>
           <Icon name="checkmark-outline" size={15} color={palette.secondary} />
         </Box>
       ) : null}
-    </Box>
+    </>
   );
 };
 

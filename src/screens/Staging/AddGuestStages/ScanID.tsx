@@ -14,7 +14,7 @@ import {useNavigation} from '@react-navigation/native';
 const ScanID = ({onPress}: {onPress: () => void}) => {
   const navigation = useNavigation();
   return (
-    <Box flex={6}>
+    <Box flex={1}>
       <SectionTitle title="Scan ID / Passport" />
       <TextSection>You should see the code code (MRZ) IS.</TextSection>
       <TouchableOpacity onPress={() => navigation.navigate('Scanner')}>
@@ -24,7 +24,7 @@ const ScanID = ({onPress}: {onPress: () => void}) => {
             alignItems={'center'}
             w={200}
             h={200}
-            mt={1}
+            mt={5}
             rounded={100}
             borderWidth={1}
             borderColor={palette.secondary}
