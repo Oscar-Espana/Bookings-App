@@ -66,7 +66,7 @@ const PersonalInformation = ({onPress, handleSubmit}: Props) => {
         <DateInput />
       </Box>
 
-      <VStack p={30}>
+      <VStack px={30} mt={30} mb={5}>
         <GenderInput label={'Gender'} />
       </VStack>
 

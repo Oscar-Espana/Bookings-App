@@ -14,19 +14,28 @@ const GenderInput = ({label}: Props) => {
     other: false,
   });
 
+  const onSelect = (option: string) => {
+    setIsSelected({
+      m: option === 'm',
+      f: option === 'f',
+      other: option === 'other',
+    });
+  };
+
+  console.log(selectedOption);
+
   return (
     <Box>
       <Text style={styles.title}>{label}</Text>
 
       <Box flexDirection={'row'} justifyContent={'space-between'} pt={18}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => onSelect('m')}>
           <Box
-            w={62}
-            h={62}
-            bgColor={palette.secondary}
-            rounded={50}
-            justifyContent={'center'}
-            alignItems={'center'}
+            w={71}
+            h={71}
+            style={
+              selectedOption.m ? styles.buttonSelected : styles.buttonUnselected
+            }
             _text={{
               fontFamily: 'Trade Gothic LT Std',
               fontStyle: 'normal',
@@ -34,19 +43,19 @@ const GenderInput = ({label}: Props) => {
               fontSize: 30,
               lineHeight: 36,
               textAlign: 'center',
+              color: selectedOption.m ? palette.background : palette.neutral,
             }}>
             M
           </Box>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => onSelect('f')}>
           <Box
-            w={62}
-            h={62}
-            bgColor={palette.secondary}
-            rounded={50}
-            justifyContent={'center'}
-            alignItems={'center'}
+            w={71}
+            h={71}
+            style={
+              selectedOption.f ? styles.buttonSelected : styles.buttonUnselected
+            }
             _text={{
               fontFamily: 'Trade Gothic LT Std',
               fontStyle: 'normal',
@@ -54,30 +63,31 @@ const GenderInput = ({label}: Props) => {
               fontSize: 30,
               lineHeight: 36,
               textAlign: 'center',
+              color: selectedOption.f ? palette.background : palette.neutral,
             }}>
             F
           </Box>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => onSelect('other')}>
           <Box
-            w={62}
-            h={62}
-            bgColor={'transparent'}
-            rounded={50}
-            borderWidth={1}
-            borderColor={palette.gray}
-            borderStyle={'dashed'}
-            justifyContent={'center'}
-            alignItems={'center'}
+            w={71}
+            h={71}
+            style={
+              selectedOption.other
+                ? styles.buttonSelected
+                : styles.buttonUnselected
+            }
             _text={{
-              color: palette.gray,
               fontFamily: 'Trade Gothic LT Std',
               fontStyle: 'normal',
               fontWeight: '400',
               fontSize: 16,
               lineHeight: 36,
               textAlign: 'center',
+              color: selectedOption.other
+                ? palette.background
+                : palette.neutral,
             }}>
             OTHER
           </Box>
@@ -95,6 +105,21 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     fontSize: 14,
     lineHeight: 17,
+  },
+  buttonSelected: {
+    backgroundColor: palette.secondary,
+    borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonUnselected: {
+    borderColor: palette.gray,
+    borderWidth: 1,
+    borderRadius: 50,
+    backgroundColor: palette.background,
+    borderStyle: 'dashed',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
