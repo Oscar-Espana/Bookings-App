@@ -38,6 +38,7 @@ const AddGuest = () => {
       case 1:
         return (
           <PersonalInformation
+            handleSubmit={() => console.log('submit')}
             onPress={() => setCurrentPosition(currentPosition + 1)}
           />
         );

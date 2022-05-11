@@ -1,24 +1,38 @@
-import {Box} from 'native-base';
+import {Box, ScrollView, Select, VStack} from 'native-base';
 import React from 'react';
 import ButtonBig from '../../../components/NativeBase/ButtonBig';
 import SectionTitle from '../../../components/NativeBase/SectionTitle';
-import TextInputC from '../../../components/NativeBase/TextInputC';
 import TextSection from '../../../components/NativeBase/TextSection';
+import TextInputC from '../../../components/NativeBase/TextInputC';
+import SelectInput from '../../../components/NativeBase/SelectInput';
+import GenderInput from '../../../components/NativeBase/Input/GenderInput';
 
-const PersonalInformation = ({onPress}: {onPress: () => void}) => {
+interface Props {
+  onPress: () => void;
+  handleSubmit: () => void;
+}
+
+const PersonalInformation = ({onPress, handleSubmit}: Props) => {
+  let [service, setService] = React.useState('');
   return (
-    <Box flex={6}>
+    <ScrollView flex={1}>
       <SectionTitle title="Personal Information" />
       <TextSection>Make sure the images are clear.</TextSection>
 
-      <TextInputC title={'User'} placeholder={'Enter username'} />
-      <TextInputC title={'Password'} placeholder={'Enter password'} />
-      <Box flexDirection={'row'}>
-        <TextInputC title={'Nationality'} />
-        <TextInputC title={'Birthday'} />
+      <VStack px={30}>
+        <TextInputC label={'User'} placeholder={'Enter username'} />
+        <TextInputC label={'Password'} placeholder={'Enter password'} />
+      </VStack>
+
+      <Box flexDirection={'row'} justifyContent={'space-between'} mx={30}>
+        <SelectInput label={'Nationality'} />
+        <SelectInput label={'Birthday'} />
       </Box>
+
+      <GenderInput label={'Gender'} />
+
       <ButtonBig name="NEXT" onPress={onPress} />
-    </Box>
+    </ScrollView>
   );
 };
 
