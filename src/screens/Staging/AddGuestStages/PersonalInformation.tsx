@@ -63,7 +63,7 @@ const PersonalInformation = ({onPress, handleSubmit}: Props) => {
 
       <Box flexDirection={'row'} justifyContent={'space-between'} mx={30}>
         <SelectInput label={'Nationality'} />
-        <DateInput />
+        <DateInput label="Birthday" />
       </Box>
 
       <VStack px={30} mt={30} mb={5}>

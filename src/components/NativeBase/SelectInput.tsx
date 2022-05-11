@@ -6,20 +6,15 @@ import {palette} from '../../theme/palette';
 const SelectInput = ({label}: {label: string}) => {
   let [service, setService] = React.useState('');
   return (
-    <Box h={50} my={30} minWidth={'150'}>
+    <Box my={30} minWidth={'150'}>
       <Text style={styles.title}>{label}</Text>
       <Select
+        height={50}
+        rounded={10}
         selectedValue={service}
         accessibilityLabel="Choose Service"
         placeholder="Choose Service"
-        _selectedItem={{
-          bg: 'blue.100',
-        }}
-        style={{
-          borderColor: 'white',
-          height: 50,
-          borderRadius: 10,
-        }}
+        color={palette.primary}
         mt={1}
         onValueChange={itemValue => setService(itemValue)}>
         <Select.Item label="Ecuadorian" value="ec" />
