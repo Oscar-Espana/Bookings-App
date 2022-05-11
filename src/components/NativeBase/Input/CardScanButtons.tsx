@@ -2,30 +2,35 @@ import {Box, Image, Text} from 'native-base';
 import React from 'react';
 
 import {ImageSourcePropType, StyleSheet} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import {palette} from '../../../theme/palette';
 
 const CardScanButtons = ({
   icon,
   label,
+  onPress,
 }: {
   icon: ImageSourcePropType;
   label: string;
+  onPress: () => void;
 }) => {
   return (
-    <Box justifyContent={'center'}>
-      <Text style={styles.label}>{label}</Text>
-      <Box
-        height={110}
-        justifyContent="center"
-        borderColor={palette.gray}
-        borderStyle={'dashed'}
-        borderWidth={1}
-        rounded={16}>
-        <Box padding={44}>
-          <Image source={icon} alt={'icon'} w={45} h={30} />
+    <TouchableOpacity onPress={onPress}>
+      <Box justifyContent={'center'}>
+        <Text style={styles.label}>{label}</Text>
+        <Box
+          height={110}
+          justifyContent="center"
+          borderColor={palette.gray}
+          borderStyle={'dashed'}
+          borderWidth={1}
+          rounded={16}>
+          <Box padding={44}>
+            <Image source={icon} alt={'icon'} w={45} h={30} />
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </TouchableOpacity>
   );
 };
 

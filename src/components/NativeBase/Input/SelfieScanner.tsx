@@ -2,24 +2,26 @@ import {Box, Image, Text} from 'native-base';
 import React from 'react';
 import {palette} from '../../../theme/palette';
 import selfie from '../../../assets/icons/selfie.png';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 
-const SelfieScanner = () => {
+const SelfieScanner = ({onPress}: {onPress: () => void}) => {
   return (
-    <Box justifyContent={'center'}>
-      <Text style={styles.label}>Selfie</Text>
-      <Box
-        height={176}
-        justifyContent="center"
-        borderColor={palette.gray}
-        borderStyle={'dashed'}
-        borderWidth={1}
-        rounded={16}>
-        <Box padding={44} alignItems={'center'}>
-          <Image source={selfie} alt={'icon'} />
+    <TouchableOpacity onPress={onPress}>
+      <Box justifyContent={'center'}>
+        <Text style={styles.label}>Selfie</Text>
+        <Box
+          height={176}
+          justifyContent="center"
+          borderColor={palette.gray}
+          borderStyle={'dashed'}
+          borderWidth={1}
+          rounded={16}>
+          <Box padding={44} alignItems={'center'}>
+            <Image source={selfie} alt={'icon'} />
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </TouchableOpacity>
   );
 };
 

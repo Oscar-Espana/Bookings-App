@@ -13,8 +13,10 @@ import SelfieScanner from '../../../components/NativeBase/Input/SelfieScanner';
 import {Formik} from 'formik';
 import DateInput from '../../../components/NativeBase/Input/DateInput';
 import {userValidation} from '../../../lib/validationScheme';
+import {useNavigation} from '@react-navigation/native';
 
 const DocumentScreening = ({onPress}: {onPress: () => void}) => {
+  const navigation = useNavigation();
   return (
     <ScrollView flex={1}>
       <SectionTitle title="Identify Document" />
@@ -50,12 +52,20 @@ const DocumentScreening = ({onPress}: {onPress: () => void}) => {
       </Formik>
 
       <HStack justifyContent={'space-between'} px={30}>
-        <CardScanButtons label={'Front'} icon={frontCard} />
-        <CardScanButtons label={'Back'} icon={backCard} />
+        <CardScanButtons
+          label={'Front'}
+          icon={frontCard}
+          onPress={() => navigation.navigate('Scanner')}
+        />
+        <CardScanButtons
+          label={'Back'}
+          icon={backCard}
+          onPress={() => navigation.navigate('Scanner')}
+        />
       </HStack>
 
       <Box px={30}>
-        <SelfieScanner />
+        <SelfieScanner onPress={() => navigation.navigate('Scanner')} />
       </Box>
 
       <ButtonBig name={'NEXT'} onPress={onPress} />
