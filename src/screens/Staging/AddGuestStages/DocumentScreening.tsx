@@ -1,10 +1,14 @@
-import {Box, ScrollView, VStack} from 'native-base';
+import {Box, HStack, ScrollView, VStack} from 'native-base';
 import React from 'react';
 import ButtonBig from '../../../components/NativeBase/ButtonBig';
+import CardScanButtons from '../../../components/NativeBase/Input/CardScanButtons';
 import SectionTitle from '../../../components/NativeBase/SectionTitle';
 import SelectInput from '../../../components/NativeBase/SelectInput';
 import TextInputC from '../../../components/NativeBase/TextInputC';
 import TextSection from '../../../components/NativeBase/TextSection';
+
+import frontCard from '../../../assets/icons/front-card.png';
+import backCard from '../../../assets/icons/back-card.png';
 
 const DocumentScreening = ({onPress}: {onPress: () => void}) => {
   return (
@@ -21,6 +25,11 @@ const DocumentScreening = ({onPress}: {onPress: () => void}) => {
         <TextInputC label={'Document number'} />
         <TextInputC label={'Expiration Date'} />
       </VStack>
+
+      <HStack justifyContent={'space-between'}>
+        <CardScanButtons label={'Front'} icon={frontCard} />
+        <CardScanButtons label={'Back'} icon={backCard} />
+      </HStack>
 
       <ButtonBig name={'NEXT'} onPress={onPress} />
     </ScrollView>
