@@ -26,10 +26,11 @@ const DateInput = ({label}: {label: string}) => {
 
   console.log(date.toLocaleString());
   return (
-    <Box my={3} mb={10} minWidth={'150'} h={50}>
+    <Box my={3} minWidth={'150'}>
       <Text style={styles.title}>{label}</Text>
       <Box
-        height={60}
+        height={51}
+        mt={1}
         borderWidth={1}
         flexDirection={'row'}
         borderRadius={10}

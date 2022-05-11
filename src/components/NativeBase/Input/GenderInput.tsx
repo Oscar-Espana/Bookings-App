@@ -28,7 +28,7 @@ const GenderInput = ({label}: Props) => {
     <Box>
       <Text style={styles.title}>{label}</Text>
 
-      <Box flexDirection={'row'} justifyContent={'space-between'} pt={18}>
+      <Box flexDirection={'row'} justifyContent={'space-between'}>
         <TouchableOpacity onPress={() => onSelect('m')}>
           <Box
             w={71}

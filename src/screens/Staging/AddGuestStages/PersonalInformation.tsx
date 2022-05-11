@@ -61,7 +61,11 @@ const PersonalInformation = ({onPress, handleSubmit}: Props) => {
         )}
       </Formik>
 
-      <Box flexDirection={'row'} justifyContent={'space-between'} mx={30}>
+      <Box
+        flexDirection={'row'}
+        justifyContent={'space-between'}
+        mx={30}
+        alignItems={'center'}>
         <SelectInput label={'Nationality'} />
         <DateInput label="Birthday" />
       </Box>
