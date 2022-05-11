@@ -1,20 +1,14 @@
 import {Box, Text} from 'native-base';
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, StyleSheet} from 'react-native';
 import {palette} from '../../../theme/palette';
 
 interface Props {
   label: string;
 }
 
-type optionsType = {
-  m: boolean;
-  f: boolean;
-  other: boolean;
-};
-
 const GenderInput = ({label}: Props) => {
-  const [selectedOption, setIsSelected] = React.useState<optionsType>({
+  const [selectedOption, setIsSelected] = React.useState({
     m: true,
     f: false,
     other: false,
@@ -22,9 +16,9 @@ const GenderInput = ({label}: Props) => {
 
   return (
     <Box>
-      <Text>{label}</Text>
+      <Text style={styles.title}>{label}</Text>
 
-      <Box flexDirection={'row'} justifyContent={'space-between'} px={30}>
+      <Box flexDirection={'row'} justifyContent={'space-between'} pt={18}>
         <TouchableOpacity>
           <Box
             w={62}
@@ -37,7 +31,7 @@ const GenderInput = ({label}: Props) => {
               fontFamily: 'Trade Gothic LT Std',
               fontStyle: 'normal',
               fontWeight: '400',
-              fontSize: 28,
+              fontSize: 30,
               lineHeight: 36,
               textAlign: 'center',
             }}>
@@ -57,7 +51,7 @@ const GenderInput = ({label}: Props) => {
               fontFamily: 'Trade Gothic LT Std',
               fontStyle: 'normal',
               fontWeight: '400',
-              fontSize: 28,
+              fontSize: 30,
               lineHeight: 36,
               textAlign: 'center',
             }}>
@@ -69,11 +63,15 @@ const GenderInput = ({label}: Props) => {
           <Box
             w={62}
             h={62}
-            bgColor={palette.secondary}
+            bgColor={'transparent'}
             rounded={50}
+            borderWidth={1}
+            borderColor={palette.gray}
+            borderStyle={'dashed'}
             justifyContent={'center'}
             alignItems={'center'}
             _text={{
+              color: palette.gray,
               fontFamily: 'Trade Gothic LT Std',
               fontStyle: 'normal',
               fontWeight: '400',
@@ -81,12 +79,23 @@ const GenderInput = ({label}: Props) => {
               lineHeight: 36,
               textAlign: 'center',
             }}>
-            Other
+            OTHER
           </Box>
         </TouchableOpacity>
       </Box>
     </Box>
   );
 };
+
+const styles = StyleSheet.create({
+  title: {
+    color: palette.primary,
+    fontFamily: 'Trade Gothic LT Std',
+    fontStyle: 'normal',
+    fontWeight: '700',
+    fontSize: 14,
+    lineHeight: 17,
+  },
+});
 
 export default GenderInput;

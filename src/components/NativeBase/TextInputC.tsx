@@ -8,65 +8,60 @@ import {
   Select,
   Text,
 } from 'native-base';
-import React from 'react';
-import {StyleSheet, TextInput} from 'react-native';
+import React, {ChangeEvent} from 'react';
+import {
+  NativeSyntheticEvent,
+  StyleSheet,
+  TextInput,
+  TextInputFocusEventData,
+} from 'react-native';
 import {palette} from '../../theme/palette';
+import {userValidation} from '../../lib/validationScheme';
 
 interface Props {
   label: string;
   placeholder?: string;
   type?: 'date' | string;
+  onChangeText: (e: string | ChangeEvent<any>) => void;
+  onBlur: (e: NativeSyntheticEvent<TextInputFocusEventData>) => void;
+  value: string;
+  errorMesagge?: string | undefined;
+  hasError?: boolean;
 }
 
-const TextInputC = ({label, placeholder, type}: Props) => {
-  const onSubmit = (data: any) => {
-    console.log('submiting with ', data);
-  };
-
-  const validate = (values: any) => {
-    const errors = {};
-
-    if (!values.firstName) {
-      errors.firstName = 'Required';
-    }
-
-    return errors;
-  };
-
+const TextInputC = ({
+  label,
+  placeholder,
+  type,
+  hasError,
+  onBlur,
+  onChangeText,
+  value,
+  errorMesagge,
+}: Props) => {
   return (
-    <Formik
-      initialValues={{
-        firstName: '',
-        lastName: '',
-      }}
-      onSubmit={onSubmit}
-      validate={validate}>
-      {({handleChange, handleBlur, handleSubmit, values, errors}) => (
-        <Box py={2}>
-          <FormControl style={{}} isRequired isInvalid={'firstName' in errors}>
-            <FormControl.Label>
-              <Text style={styles.title}>{label}</Text>
-            </FormControl.Label>
+    <Box py={2}>
+      <FormControl isRequired isInvalid={hasError}>
+        <Text style={styles.title}>{label}</Text>
 
-            <Input
-              variant={'rounded'}
-              style={{
-                borderColor: 'white',
-                height: 50,
-              }}
-              onBlur={handleBlur('firstName')}
-              placeholder={placeholder}
-              onChangeText={handleChange('firstName')}
-              value={values.firstName}
-            />
+        <Input
+          _focus={{
+            borderColor: palette.primary,
+            backgroundColor: 'transparent',
+          }}
+          color={palette.primary}
+          borderColor={palette.gray}
+          height={50}
+          borderRadius={10}
+          onBlur={onBlur}
+          placeholder={placeholder}
+          onChangeText={onChangeText}
+          value={value}
+        />
 
-            <FormControl.ErrorMessage>
-              {errors.firstName}
-            </FormControl.ErrorMessage>
-          </FormControl>
-        </Box>
-      )}
-    </Formik>
+        <FormControl.ErrorMessage>{errorMesagge}</FormControl.ErrorMessage>
+      </FormControl>
+    </Box>
   );
 };
 

@@ -9,6 +9,7 @@ import TextSection from '../../../components/NativeBase/TextSection';
 
 import frontCard from '../../../assets/icons/front-card.png';
 import backCard from '../../../assets/icons/back-card.png';
+import SelfieScanner from '../../../components/NativeBase/Input/SelfieScanner';
 
 const DocumentScreening = ({onPress}: {onPress: () => void}) => {
   return (
@@ -26,10 +27,14 @@ const DocumentScreening = ({onPress}: {onPress: () => void}) => {
         <TextInputC label={'Expiration Date'} />
       </VStack>
 
-      <HStack justifyContent={'space-between'}>
+      <HStack justifyContent={'space-between'} px={30}>
         <CardScanButtons label={'Front'} icon={frontCard} />
         <CardScanButtons label={'Back'} icon={backCard} />
       </HStack>
+
+      <Box px={30}>
+        <SelfieScanner />
+      </Box>
 
       <ButtonBig name={'NEXT'} onPress={onPress} />
     </ScrollView>

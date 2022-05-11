@@ -1,28 +1,22 @@
 import {Box, Image, Text} from 'native-base';
 import React from 'react';
-
-import {ImageSourcePropType, StyleSheet} from 'react-native';
 import {palette} from '../../../theme/palette';
+import selfie from '../../../assets/icons/selfie.png';
+import {StyleSheet} from 'react-native';
 
-const CardScanButtons = ({
-  icon,
-  label,
-}: {
-  icon: ImageSourcePropType;
-  label: string;
-}) => {
+const SelfieScanner = () => {
   return (
     <Box justifyContent={'center'}>
-      <Text style={styles.label}>{label}</Text>
+      <Text style={styles.label}>Selfie</Text>
       <Box
-        height={110}
+        height={176}
         justifyContent="center"
         borderColor={palette.gray}
         borderStyle={'dashed'}
         borderWidth={1}
         rounded={16}>
-        <Box padding={44}>
-          <Image source={icon} alt={'icon'} w={45} h={30} />
+        <Box padding={44} alignItems={'center'}>
+          <Image source={selfie} alt={'icon'} />
         </Box>
       </Box>
     </Box>
@@ -41,4 +35,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CardScanButtons;
+export default SelfieScanner;

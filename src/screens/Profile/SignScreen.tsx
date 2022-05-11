@@ -10,7 +10,7 @@ import ButtonBig from '../../components/NativeBase/ButtonBig';
 
 const SignScreen = () => {
   const navigation = useNavigation();
-  const ref = useRef();
+  const ref = useRef(null);
   const [signature, setSign] = useState(null);
 
   const handleOK = signature => {
