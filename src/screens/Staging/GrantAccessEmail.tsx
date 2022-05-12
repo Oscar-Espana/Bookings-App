@@ -1,10 +1,10 @@
-import {Box, FormControl, Image, Input, Text} from 'native-base';
+import {Box, FormControl, Image, Input, ScrollView, Text} from 'native-base';
 import React from 'react';
 import BackgroundwithGradient from '../../components/NativeBase/BackgroundwithGradient';
 import TitleCentered from '../../components/NativeBase/TitleCentered';
 import {useNavigation} from '@react-navigation/native';
 import usercheck from '../../assets/icons/user-check.png';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, TouchableWithoutFeedback} from 'react-native';
 import {palette} from '../../theme/palette';
 import TextSection from '../../components/NativeBase/TextSection';
 import {Formik} from 'formik';
@@ -20,7 +20,7 @@ const GrantAccessEmail = () => {
         title="GRANT APP ACCESS"
         onPress={() => navigation.goBack()}
       />
-      <Box flex={1}>
+      <ScrollView flex={1}>
         <Box alignItems={'center'}>
           <Image alt="user-check" source={usercheck} />
         </Box>
@@ -61,7 +61,12 @@ const GrantAccessEmail = () => {
             </>
           )}
         </Formik>
-      </Box>
+
+        <TouchableWithoutFeedback
+          onPress={() => navigation.navigate('TravelInformation')}>
+          <Text style={styles.skip}>Omitir</Text>
+        </TouchableWithoutFeedback>
+      </ScrollView>
     </BackgroundwithGradient>
   );
 };
@@ -74,6 +79,15 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: 24,
     lineHeight: 24,
+    textAlign: 'center',
+  },
+  skip: {
+    color: palette.secondary,
+    fontFamily: 'Trade Gothic LT Std',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    fontSize: 16,
+    lineHeight: 19,
     textAlign: 'center',
   },
 });
