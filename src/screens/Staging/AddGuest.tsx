@@ -63,7 +63,7 @@ const AddGuest = () => {
         title="ADD GUEST"
         onPress={() => console.log(currentPosition)}
       />
-      <Box pb={5}>
+      <Box pb={5} mt={-6}>
         <StepIndicator
           stepCount={4}
           renderStepIndicator={customRenderStepIndicator}

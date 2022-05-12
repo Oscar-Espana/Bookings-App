@@ -36,7 +36,15 @@ const DocumentScreening = ({onPress}: {onPress: () => void}) => {
         onSubmit={() => console.log('submited')}>
         {({handleChange, handleBlur, values, errors}) => (
           <VStack mx={30}>
-            <SelectInput label={'Document Type'} />
+            <SelectInput
+              label={'Document Type'}
+              items={[
+                {label: 'Driver License', value: 'driverLicense'},
+                {label: 'Passport', value: 'passport'},
+                {label: 'Identity Card', value: 'identityCard'},
+                {label: 'Other', value: 'other'},
+              ]}
+            />
             <TextInputC
               label={'Document number'}
               placeholder={'Enter document number'}

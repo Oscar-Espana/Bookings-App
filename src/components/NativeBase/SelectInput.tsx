@@ -1,25 +1,36 @@
 import React from 'react';
-import {Select, Box, Text} from 'native-base';
+import {Select, Box, Text, FormControl} from 'native-base';
 import {StyleSheet} from 'react-native';
 import {palette} from '../../theme/palette';
 
-const SelectInput = ({label}: {label: string}) => {
+interface Props {
+  label: string;
+  hasError?: boolean;
+  errorMesage?: string | undefined;
+  items: {label: string; value: string}[];
+}
+
+const SelectInput = ({label, hasError, errorMesage, items}: Props) => {
   let [service, setService] = React.useState('');
   return (
     <Box my={30} minWidth={'150'}>
-      <Text style={styles.title}>{label}</Text>
-      <Select
-        height={50}
-        rounded={10}
-        selectedValue={service}
-        accessibilityLabel="Choose Service"
-        placeholder="Choose Service"
-        color={palette.primary}
-        mt={1}
-        onValueChange={itemValue => setService(itemValue)}>
-        <Select.Item label="Ecuadorian" value="ec" />
-        <Select.Item label="Colombian" value="col" />
-      </Select>
+      <FormControl isRequired isInvalid={hasError}>
+        <Text style={styles.title}>{label}</Text>
+        <Select
+          height={50}
+          rounded={10}
+          selectedValue={service}
+          accessibilityLabel="Choose Service"
+          placeholder="Choose Service"
+          color={palette.primary}
+          mt={1}
+          onValueChange={itemValue => setService(itemValue)}>
+          {items.map(item => (
+            <Select.Item label={item.label} value={item.value} />
+          ))}
+        </Select>
+        <FormControl.ErrorMessage>{errorMesage}</FormControl.ErrorMessage>
+      </FormControl>
     </Box>
   );
 };

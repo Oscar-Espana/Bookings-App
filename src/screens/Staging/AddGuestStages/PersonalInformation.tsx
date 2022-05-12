@@ -17,10 +17,11 @@ interface Props {
   handleSubmit: () => void;
 }
 
-const PersonalInformation = ({onPress, handleSubmit}: Props) => {
+const PersonalInformation = ({onPress}: Props) => {
   let [service, setService] = React.useState('');
   const onSubmit = (data: any) => {
     console.log('submiting with ', data);
+    onPress();
   };
 
   return (
@@ -32,49 +33,60 @@ const PersonalInformation = ({onPress, handleSubmit}: Props) => {
         initialValues={{
           user: '',
           password: '',
+          nationality: '',
+          birthday: '',
+          gender: '',
         }}
         validationSchema={userValidation}
-        onSubmit={onSubmit}
-        /* validate={validate} */
-      >
+        onSubmit={onSubmit}>
         {({handleChange, handleBlur, handleSubmit, values, errors}) => (
-          <VStack px={30}>
-            <TextInputC
-              label={'User'}
-              placeholder={'Enter username'}
-              onChangeText={handleChange('user')}
-              onBlur={handleBlur('user')}
-              value={values.user}
-              errorMesagge={errors.user}
-              hasError={'user' in errors}
-            />
-            <TextInputC
-              label={'Password'}
-              placeholder={'Enter password'}
-              onChangeText={handleChange('password')}
-              onBlur={handleBlur('password')}
-              value={values.password}
-              errorMesagge={errors.password}
-              hasError={'password' in errors}
-            />
-          </VStack>
+          <>
+            <VStack px={30}>
+              <TextInputC
+                label={'User'}
+                placeholder={'Enter username'}
+                onChangeText={handleChange('user')}
+                onBlur={handleBlur('user')}
+                value={values.user}
+                errorMesagge={errors.user}
+                hasError={'user' in errors}
+              />
+              <TextInputC
+                label={'Password'}
+                placeholder={'Enter password'}
+                onChangeText={handleChange('password')}
+                onBlur={handleBlur('password')}
+                value={values.password}
+                errorMesagge={errors.password}
+                hasError={'password' in errors}
+              />
+            </VStack>
+            <Box
+              flexDirection={'row'}
+              justifyContent={'space-between'}
+              mx={30}
+              alignItems={'center'}>
+              <SelectInput
+                label={'Nationality'}
+                items={[
+                  {label: 'Ecuadorian', value: 'EC'},
+                  {label: 'Spanish', value: 'ES'},
+                  {label: 'Colombian', value: 'COL'},
+                ]}
+                hasError={'nationality' in errors}
+                errorMesage={errors.nationality}
+              />
+              <DateInput label="Birthday" />
+            </Box>
+
+            <VStack px={30} mt={30} mb={5}>
+              <GenderInput label={'Gender'} />
+            </VStack>
+
+            <ButtonBig name="NEXT" onPress={handleSubmit} />
+          </>
         )}
       </Formik>
-
-      <Box
-        flexDirection={'row'}
-        justifyContent={'space-between'}
-        mx={30}
-        alignItems={'center'}>
-        <SelectInput label={'Nationality'} />
-        <DateInput label="Birthday" />
-      </Box>
-
-      <VStack px={30} mt={30} mb={5}>
-        <GenderInput label={'Gender'} />
-      </VStack>
-
-      <ButtonBig name="NEXT" onPress={onPress} />
     </ScrollView>
   );
 };

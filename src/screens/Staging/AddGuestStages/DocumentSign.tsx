@@ -14,7 +14,7 @@ const DocumentSign = ({onPress}: {onPress: () => void}) => {
 
   const handleOK = (signature: any) => {
     setSign(signature);
-    navigation.navigate('Contract', signature);
+    navigation.navigate('GrantAccessEmail');
   };
 
   const handleEmpty = () => {
