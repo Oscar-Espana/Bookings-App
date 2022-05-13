@@ -9,8 +9,10 @@ buildscript {
         ndkVersion = "21.4.7075529"
     }
     repositories {
+        
         google()
         mavenCentral()
+        
     }
     dependencies {
         classpath("com.android.tools.build:gradle:7.0.4")
@@ -40,5 +42,7 @@ allprojects {
         }
         google()
         maven { url 'https://www.jitpack.io' }
+        jcenter()
+        
     }
 }

@@ -7,6 +7,7 @@ import BackgroundwithGradient from '../../components/NativeBase/BackgroundwithGr
 import SelectInput from '../../components/NativeBase/SelectInput';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import ButtonBig from '../../components/NativeBase/ButtonBig';
+import CustomDatePicker from '../../components/NativeBase/Input/CustomDatePicker';
 
 const TravelInformation = () => {
   const navigation = useNavigation();
@@ -33,13 +34,16 @@ const TravelInformation = () => {
           />
         </Box>
 
-        <Box m={30} bgColor={'blue.100'}>
+        {/*  <Box m={30} bgColor={'blue.100'}>
           <DateTimePicker mode="time" value={new Date()} />
         </Box>
 
         <Box m={30} bgColor={'blue.100'}>
           <DateTimePicker mode="time" value={new Date()} />
-        </Box>
+        </Box> */}
+
+        <CustomDatePicker mode={'time'} label={'Estimated checking time'} />
+        <CustomDatePicker mode={'time'} label={'Estimated checking time'} />
 
         <ButtonBig
           name="SAVE"
