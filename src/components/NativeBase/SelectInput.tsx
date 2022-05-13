@@ -25,8 +25,8 @@ const SelectInput = ({label, hasError, errorMesage, items}: Props) => {
           color={palette.primary}
           mt={1}
           onValueChange={itemValue => setService(itemValue)}>
-          {items.map(item => (
-            <Select.Item label={item.label} value={item.value} />
+          {items.map((item, key) => (
+            <Select.Item key={key} label={item.label} value={item.value} />
           ))}
         </Select>
         <FormControl.ErrorMessage>{errorMesage}</FormControl.ErrorMessage>

@@ -6,13 +6,15 @@ import {NavigationContainer} from '@react-navigation/native';
 import {BottomTabsNavigator} from './src/navigation/BottomTabsNavigator';
 import {NativeBaseProvider} from 'native-base';
 import {PermissionsProvider} from './src/context/PermissionsContext';
+import LoginNavigator from './src/navigation/Login/LoginNavigator';
 
 const App = () => {
   return (
     <PermissionsProvider>
       <NativeBaseProvider>
         <NavigationContainer>
-          <BottomTabsNavigator />
+          {/*  <BottomTabsNavigator /> */}
+          <LoginNavigator />
         </NavigationContainer>
       </NativeBaseProvider>
     </PermissionsProvider>

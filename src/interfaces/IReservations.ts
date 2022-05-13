@@ -25,4 +25,5 @@ export type IGuest = {
         lastname: string,
         id: number,
         img: ImageSourcePropType
+        status?: | "Pending" | "Completado" 
 }
