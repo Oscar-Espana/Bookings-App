@@ -9,13 +9,15 @@ import GenderInput from '../../../components/NativeBase/Input/GenderInput';
 import {Formik} from 'formik';
 import {userValidation} from '../../../lib/validationScheme';
 import DateInput from '../../../components/NativeBase/Input/DateInput';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Button} from 'react-native';
 import {palette} from '../../../theme/palette';
 
 interface Props {
   onPress: () => void;
   handleSubmit: () => void;
 }
+
+type gender = 'M' | 'Other' | 'F';
 
 const PersonalInformation = ({onPress}: Props) => {
   let [service, setService] = React.useState('');
@@ -31,11 +33,11 @@ const PersonalInformation = ({onPress}: Props) => {
 
       <Formik
         initialValues={{
-          user: '',
-          password: '',
-          nationality: '',
+          user: 'HOASS',
+          password: 'SSS12345',
+          nationality: 'ESP',
           birthday: '',
-          gender: '',
+          gender: 'm',
         }}
         validationSchema={userValidation}
         onSubmit={onSubmit}>
@@ -73,17 +75,34 @@ const PersonalInformation = ({onPress}: Props) => {
                   {label: 'Spanish', value: 'ES'},
                   {label: 'Colombian', value: 'COL'},
                 ]}
+                value={values.nationality}
+                onChange={handleChange('nationality')}
                 hasError={'nationality' in errors}
                 errorMesage={errors.nationality}
               />
-              <DateInput label="Birthday" />
+              <DateInput
+                value={values.birthday}
+                onChange={handleChange('birthday')}
+                hasError={'birthday' in errors}
+                errorMessage={errors.birthday}
+                label="Birthday"
+              />
             </Box>
 
-            <VStack px={30} mt={30} mb={5}>
-              <GenderInput label={'Gender'} />
+            <VStack px={30} mt={5} mb={5}>
+              <GenderInput
+                label={'Gender'}
+                value={values.gender}
+                onChange={handleChange('gender')}
+                hasError={'gender' in errors}
+                errorMessage={errors.gender}
+              />
             </VStack>
 
-            <ButtonBig name="NEXT" onPress={handleSubmit} />
+            <ButtonBig
+              name="NEXT"
+              onPress={() => console.log(values, 'VALUES')}
+            />
           </>
         )}
       </Formik>

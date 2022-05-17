@@ -1,4 +1,4 @@
-import {Box, ScrollView, VStack} from 'native-base';
+import {Box, ScrollView, Text, VStack} from 'native-base';
 import React from 'react';
 import BackgroundwithGradient from '../../../components/NativeBase/BackgroundwithGradient';
 import TextSection from '../../../components/NativeBase/TextSection';
@@ -8,6 +8,8 @@ import SectionTitle from '../../../components/NativeBase/SectionTitle';
 import ButtonBig from '../../../components/NativeBase/ButtonBig';
 import {IGuest} from '../../../interfaces/IReservations';
 import GuestCard from './components/GuestCard';
+import AddGuestButton from './components/AddGuestButton';
+import {palette} from '../../../theme/palette';
 
 interface Props {
   guests?: IGuest[];
@@ -67,19 +69,36 @@ const Guests = () => {
       <ScrollView>
         {/* render guest card with data  */}
         <VStack mx={30}>
-          {data.map(guest => {
-            return (
-              <GuestCard
-                key={guest.id}
-                name={guest.name}
-                lastname={guest.lastname}
-                id={guest.id}
-                img={guest.img}
-                status={guest.status}
-              />
-            );
-          })}
+          {data &&
+            data.map(guest => {
+              return (
+                <GuestCard
+                  key={guest.id}
+                  name={guest.name}
+                  lastname={guest.lastname}
+                  id={guest.id}
+                  img={guest.img}
+                  status={guest.status}
+                />
+              );
+            })}
+          <AddGuestButton />
         </VStack>
+        <Text
+          mt={2}
+          color={palette.secondary}
+          fontFamily="Analogue"
+          fontStyle="italic"
+          fontWeight={400}
+          fontSize={16}
+          lineHeight={24}
+          textAlign="center"
+          textTransform="uppercase">
+          DO YOU HAVE ANY QUESTION?
+        </Text>
+        <TextSection>
+          Write us on the chat support, we will be pleased to help you.
+        </TextSection>
       </ScrollView>
       <ButtonBig name="OPEN CHAT" />
     </BackgroundwithGradient>

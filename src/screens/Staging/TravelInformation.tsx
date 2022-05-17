@@ -34,16 +34,8 @@ const TravelInformation = () => {
           />
         </Box>
 
-        {/*  <Box m={30} bgColor={'blue.100'}>
-          <DateTimePicker mode="time" value={new Date()} />
-        </Box>
-
-        <Box m={30} bgColor={'blue.100'}>
-          <DateTimePicker mode="time" value={new Date()} />
-        </Box> */}
-
         <CustomDatePicker mode={'time'} label={'Estimated checking time'} />
-        <CustomDatePicker mode={'time'} label={'Estimated checking time'} />
+        <CustomDatePicker mode={'date'} label={'Estimated checking time'} />
 
         <ButtonBig
           name="SAVE"

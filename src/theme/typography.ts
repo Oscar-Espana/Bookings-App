@@ -6,6 +6,7 @@ export const typography = StyleSheet.create({
     color: palette.primary,
     fontFamily: 'Quentin',
     fontSize: 48,
+    lineHeight: 70
   },
  
   heading2: {

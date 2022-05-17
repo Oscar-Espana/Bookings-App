@@ -1,4 +1,4 @@
-import {Box, Input, Text} from 'native-base';
+import {Box, Button, Input, Text} from 'native-base';
 import React, {useState} from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import {palette} from '../../../theme/palette';
@@ -14,7 +14,7 @@ interface Props {
 
 const CustomDatePicker = ({mode, label}: Props) => {
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
-  const [date, setDate] = useState('00:00');
+  const [date, setDate] = useState(new Date());
 
   const showDatePicker = () => {
     setDatePickerVisibility(true);
@@ -24,32 +24,31 @@ const CustomDatePicker = ({mode, label}: Props) => {
     setDatePickerVisibility(false);
   };
 
-  const handleConfirm = (date: Date) => {
+  const handleConfirm = date => {
     console.log(date);
     setDate(date);
     hideDatePicker();
   };
 
   return (
-    <TouchableOpacity onPress={showDatePicker}>
+    <>
       <Text style={styles.label}>{label}</Text>
-      <Box
-        style={{
-          borderWidth: 1,
-          borderColor: palette.gray,
-
-          marginHorizontal: 30,
-          borderRadius: 10,
-        }}>
-        <DateTimePickerModal
-          isVisible={isDatePickerVisible}
-          mode={mode}
-          onConfirm={handleConfirm}
-          onCancel={hideDatePicker}
-        />
-        <Input editable={false} placeholder={'00:00'} h={50} />
-      </Box>
-    </TouchableOpacity>
+      <Input
+        editable={false}
+        placeholder={'00:00'}
+        h={50}
+        color={palette.primary}
+        isReadOnly
+        value={date.toDateString()}
+        onPressIn={showDatePicker}
+      />
+      <DateTimePickerModal
+        isVisible={isDatePickerVisible}
+        mode={mode}
+        onConfirm={handleConfirm}
+        onCancel={hideDatePicker}
+      />
+    </>
   );
 };
 

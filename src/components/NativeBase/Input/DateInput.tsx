@@ -1,30 +1,43 @@
-import {Box, Image, Text} from 'native-base';
+import {Box, Image, Input, Text} from 'native-base';
 import React, {useState} from 'react';
-import DateTimePicker from '@react-native-community/datetimepicker';
+
+import DateTimePickerModal, {
+  ReactNativeModalDateTimePickerProps,
+} from 'react-native-modal-datetime-picker';
+
+import format from 'date-fns/format';
+
 import {Button, StyleSheet, TouchableOpacity} from 'react-native';
 import {palette} from '../../../theme/palette';
 
-const DateInput = ({label}: {label: string}) => {
-  const [date, setDate] = useState(new Date(1598051730000));
-  const [mode, setMode] = useState('date');
-  const [show, setShow] = useState(false);
+interface Props {
+  onChange: (value: string) => void;
+  value: string;
+  label: string;
+  hasError: boolean;
+  errorMessage?: string | undefined;
+}
 
-  const onChange = (event, selectedDate) => {
-    const currentDate = selectedDate;
-    setShow(false);
-    setDate(currentDate);
+const DateInput = ({label, value, onChange}: Props) => {
+  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+  const [date, setDate] = useState(format(new Date(), 'MM/dd/yyyy'));
+
+  const showDatePicker = () => {
+    setDatePickerVisibility(true);
   };
 
-  const showMode = currentMode => {
-    setShow(true);
-    setMode(currentMode);
+  const hideDatePicker = () => {
+    setDatePickerVisibility(false);
   };
 
-  const showDatepicker = () => {
-    showMode('date');
+  const handleConfirm = date => {
+    setDate(format(date, 'MM/dd/yyyy'));
+    hideDatePicker();
   };
 
-  console.log(date.toLocaleString());
+  console.log(date);
+  console.log(value, 'value');
+
   return (
     <Box my={3} minWidth={'150'}>
       <Text style={styles.title}>{label}</Text>
@@ -44,33 +57,30 @@ const DateInput = ({label}: {label: string}) => {
           />
         </Box>
         <Box flex={1} w={300} justifyContent={'center'}>
-          <TouchableOpacity onPress={showDatepicker}>
-            <DateTimePicker
-              style={{
-                width: '100%',
-              }}
-              testID="dateTimePicker"
+          <TouchableOpacity onPress={showDatePicker} activeOpacity={1}>
+            <Input
+              editable={false}
+              placeholder={'00:00'}
+              h={50}
+              onChangeText={onChange}
               value={date}
-              mode={mode}
-              is24Hour={true}
-              onChange={onChange}
+              color={palette.primary}
+              isReadOnly
+              //value={date.toDateString()}
+              onPressIn={showDatePicker}
             />
           </TouchableOpacity>
+          <DateTimePickerModal
+            isVisible={isDatePickerVisible}
+            mode={'date'}
+            onConfirm={handleConfirm}
+            onCancel={hideDatePicker}
+          />
         </Box>
       </Box>
     </Box>
   );
 };
-
-/* 
-  _selectedItem={{
-    bg: 'blue.100',
-  }}
-  style={{
-    borderColor: 'white',
-
-  }}
- */
 
 const styles = StyleSheet.create({
   title: {
@@ -79,6 +89,7 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: 14,
+    marginVertical: 1,
     lineHeight: 17,
   },
 });
