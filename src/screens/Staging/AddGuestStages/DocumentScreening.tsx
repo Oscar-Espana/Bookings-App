@@ -54,7 +54,13 @@ const DocumentScreening = ({onPress}: {onPress: () => void}) => {
               errorMesagge={errors.documentNumber}
               hasError={'documentNumber' in errors}
             />
-            <DateInput label="Expedition date" />
+            <DateInput
+              label="Expedition date"
+              value={values.documentExpedition}
+              onChange={handleChange('documentExpedition')}
+              hasError={'documentExpedition' in errors}
+              errorMessage={errors.documentExpedition}
+            />
           </VStack>
         )}
       </Formik>

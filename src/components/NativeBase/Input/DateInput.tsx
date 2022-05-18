@@ -13,14 +13,17 @@ import {palette} from '../../../theme/palette';
 interface Props {
   onChange: (value: string) => void;
   value: string;
+  mode: 'date' | 'datetime' | 'time';
   label: string;
   hasError: boolean;
   errorMessage?: string | undefined;
 }
 
-const DateInput = ({label, value, onChange}: Props) => {
+const DateInput = ({label, value, onChange, mode = 'date'}: Props) => {
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [date, setDate] = useState(format(new Date(), 'MM/dd/yyyy'));
+
+  const [time, setTime] = useState(format(new Date(), ''));
 
   const showDatePicker = () => {
     setDatePickerVisibility(true);
@@ -72,7 +75,7 @@ const DateInput = ({label, value, onChange}: Props) => {
           </TouchableOpacity>
           <DateTimePickerModal
             isVisible={isDatePickerVisible}
-            mode={'date'}
+            mode={mode}
             onConfirm={handleConfirm}
             onCancel={hideDatePicker}
           />
