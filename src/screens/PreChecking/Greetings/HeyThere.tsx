@@ -1,4 +1,4 @@
-import {Box} from 'native-base';
+import {Box, VStack} from 'native-base';
 import React from 'react';
 import {ImageBackground, Text, StyleSheet} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -25,13 +25,18 @@ const HeyThere = () => {
           MyBooking App? So, you must have receive an email with a code to
           create your account.
         </Text>
-        <Box position={'absolute'} bottom={0} w={'100%'} alignSelf={'center'}>
-          <ButtonBig name={'I HAVE AN ACCOUNT'} />
+        <VStack
+          position={'absolute'}
+          bottom={10}
+          space={4}
+          w={'100%'}
+          alignSelf={'center'}>
+          <ButtonBig name={'I HAVE AN ACCOUNT'} color={'white'} />
           <ButtonBig
             name={'I HAVE A CODE'}
             onPress={() => navigation.navigate('WelcomeScreen')}
           />
-        </Box>
+        </VStack>
       </LinearGradient>
     </ImageBackground>
   );

@@ -30,7 +30,7 @@ const WelcomeScreen = () => {
           ready for your arrival and we will grant you access to all the content
           and services that we have prepared for you.
         </Text>
-        <Box position={'absolute'} bottom={0} w={'100%'} alignSelf={'center'}>
+        <Box position={'absolute'} bottom={10} w={'100%'} alignSelf={'center'}>
           <ButtonBig
             name={'LETS GO'}
             onPress={() => navigation.navigate('TypeKeyword')}

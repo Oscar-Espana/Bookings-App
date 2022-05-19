@@ -10,7 +10,6 @@ interface Props {
 }
 
 const Timeline = ({data}: Props) => {
-  console.log(data);
   return (
     <ScrollView
       horizontal

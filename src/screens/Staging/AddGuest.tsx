@@ -78,8 +78,6 @@ const AddGuest = () => {
 };
 
 const customRenderStepIndicator = ({stepStatus, position}: any) => {
-  console.log(stepStatus, position);
-
   return (
     <>
       {stepStatus === 'finished' ? (

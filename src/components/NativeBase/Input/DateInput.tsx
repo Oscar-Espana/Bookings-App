@@ -20,10 +20,9 @@ interface Props {
 }
 
 const DateInput = ({label, value, onChange, mode = 'date'}: Props) => {
+  const dateAux = value === '' ? new Date() : new Date(value);
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
-  const [date, setDate] = useState(format(new Date(), 'MM/dd/yyyy'));
-
-  const [time, setTime] = useState(format(new Date(), ''));
+  const [date, setDate] = useState(format(dateAux, 'MM/dd/yyyy'));
 
   const showDatePicker = () => {
     setDatePickerVisibility(true);
@@ -33,13 +32,12 @@ const DateInput = ({label, value, onChange, mode = 'date'}: Props) => {
     setDatePickerVisibility(false);
   };
 
-  const handleConfirm = date => {
-    setDate(format(date, 'MM/dd/yyyy'));
+  const handleConfirm = (date: Date) => {
+    const dateFormatted = format(date, 'MM/dd/yyyy');
+    setDate(dateFormatted);
+    onChange(dateFormatted);
     hideDatePicker();
   };
-
-  console.log(date);
-  console.log(value, 'value');
 
   return (
     <Box my={3} minWidth={'150'}>
@@ -65,7 +63,6 @@ const DateInput = ({label, value, onChange, mode = 'date'}: Props) => {
               editable={false}
               placeholder={'00:00'}
               h={50}
-              onChangeText={onChange}
               value={date}
               color={palette.primary}
               isReadOnly

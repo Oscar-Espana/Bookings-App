@@ -2,6 +2,7 @@ import {Box, Text} from 'native-base';
 import React from 'react';
 import {TouchableOpacity, StyleSheet} from 'react-native';
 import {palette} from '../../../theme/palette';
+import ErrorText from '../ErrorText';
 
 interface Props {
   label: string;
@@ -27,7 +28,8 @@ const GenderInput = ({
     onChange(option);
   };
 
-  console.log(selectedOption);
+  console.log(hasError, 'hasError');
+  console.log(errorMessage, 'ERROR MESSAGE');
 
   return (
     <Box>
@@ -105,6 +107,8 @@ const GenderInput = ({
           </Box>
         </TouchableOpacity>
       </Box>
+
+      {hasError && <ErrorText msg={errorMessage || ''} />}
     </Box>
   );
 };

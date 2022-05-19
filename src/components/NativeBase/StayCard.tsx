@@ -12,7 +12,6 @@ interface Props {
 }
 
 const StayCard = ({StayInfo}: Props) => {
-  console.log(StayInfo.name);
   return (
     <Box
       flex={1}

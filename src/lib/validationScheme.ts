@@ -1,15 +1,29 @@
 import * as yup from 'yup';
 
+const email = yup.string().email('Email is required')
+
+
+const stringValidation = (name: string) => {
+
+  return yup.string().required(`${name} is required`)
+
+}
+
 export const userValidation = yup.object().shape({
-  user: yup.string().required('User is required'),
-  password: yup.string().required('Password is required').min(4, 'Password must be at least 4 characters'),
-  documentNumber: yup.number().required('Only numbers required'),
+  user: stringValidation('user'),
+  password: stringValidation('password').min(4, 'Password must be at least 4 characters'),
   nationality: yup.string().required('nationality is required'),
   birthday: yup.date(),
-  email: yup.string().email('EMAIL IS REQUIRED'),
-  documentExpedition: yup.date()
-
-          
+  gender: stringValidation('Gender'),
+  email
   
 });
+
+export const documentValidation = yup.object().shape({
+  
+  documentExpedition: yup.date(),
+  documentNumber: yup.number().required('Only numbers required'),
+  email
+  
+})
 
