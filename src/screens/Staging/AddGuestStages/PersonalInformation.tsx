@@ -33,11 +33,11 @@ const PersonalInformation = ({onPress}: Props) => {
 
       <Formik
         initialValues={{
-          birthday: '03/18/2022',
+          birthday: '',
           gender: '',
-          nationality: 'COL',
-          password: 'TuyoHjklkjh9999',
-          user: 'OiuytrtyuiIuyty',
+          nationality: '',
+          password: '',
+          user: '',
         }}
         validationSchema={userValidation}
         onSubmit={onSubmit}>
@@ -99,7 +99,9 @@ const PersonalInformation = ({onPress}: Props) => {
               />
             </VStack>
 
-            <ButtonBig name="NEXT" onPress={() => console.log(values)} />
+            <Box mx={30}>
+              <ButtonBig name="NEXT" onPress={() => console.log(values)} />
+            </Box>
           </>
         )}
       </Formik>

@@ -82,7 +82,9 @@ const DocumentScreening = ({onPress}: {onPress: () => void}) => {
         <SelfieScanner onPress={() => navigation.navigate('Scanner')} />
       </Box>
 
-      <ButtonBig name={'NEXT'} onPress={onPress} />
+      <Box mx={30} mt={10}>
+        <ButtonBig name={'NEXT'} onPress={onPress} />
+      </Box>
     </ScrollView>
   );
 };

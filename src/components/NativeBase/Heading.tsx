@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: 30,
     lineHeight: 31,
+    letterSpacing: 1.85,
     textTransform: 'uppercase',
     color: palette.primary,
   },

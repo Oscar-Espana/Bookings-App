@@ -99,8 +99,11 @@ const Guests = () => {
         <TextSection>
           Write us on the chat support, we will be pleased to help you.
         </TextSection>
+
+        <Box mx={30} mt={10}>
+          <ButtonBig name="OPEN CHAT" />
+        </Box>
       </ScrollView>
-      <ButtonBig name="OPEN CHAT" />
     </BackgroundwithGradient>
   );
 };

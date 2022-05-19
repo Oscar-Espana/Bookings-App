@@ -18,15 +18,14 @@ const ButtonBig = ({name, onPress, color = 'transparent'}: Props) => {
         backgroundColor={color}
         justifyContent={'center'}
         alignItems={'center'}
-        borderRadius={16}
-        padding={5}>
+        borderRadius={16}>
         <Text
           color={color === 'white' ? palette.black : palette.primary}
           fontFamily={'Trade Gothic LT Std'}
           fontSize={16}
           fontWeight={'700'}
           lineHeight={16}
-          py={21}>
+          py={30}>
           {name}
         </Text>
       </Box>

@@ -31,7 +31,11 @@ const HeyThere = () => {
           space={4}
           w={'100%'}
           alignSelf={'center'}>
-          <ButtonBig name={'I HAVE AN ACCOUNT'} color={'white'} />
+          <ButtonBig
+            name={'I HAVE AN ACCOUNT'}
+            color={'white'}
+            onPress={() => navigation.navigate('TypeYourCode')}
+          />
           <ButtonBig
             name={'I HAVE A CODE'}
             onPress={() => navigation.navigate('WelcomeScreen')}

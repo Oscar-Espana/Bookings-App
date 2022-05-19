@@ -9,6 +9,7 @@ import Contracts from '../../screens/PreChecking/RequiredActions/Contracts';
 import LogoScreen from '../../screens/PreChecking/Greetings/LogoScreen';
 import HeyThere from '../../screens/PreChecking/Greetings/HeyThere';
 import WelcomeScreen from '../../screens/PreChecking/Greetings/WelcomeScreen';
+import TypeYourCode from '../../screens/PreChecking/Greetings/TypeYourCode';
 
 const Stack = createStackNavigator();
 
@@ -22,7 +23,7 @@ const LoginNavigator = () => {
       <Stack.Screen name="LogoScreen" component={LogoScreen} />
       <Stack.Screen name="HeyThere" component={HeyThere} />
       <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
-
+      <Stack.Screen name="TypeYourCode" component={TypeYourCode} />
       <Stack.Screen name="TypeKeyword" component={TypeKeyword} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="HowWouldYou" component={HowWouldYou} />

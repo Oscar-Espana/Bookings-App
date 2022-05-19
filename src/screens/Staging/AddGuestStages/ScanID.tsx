@@ -17,36 +17,35 @@ const ScanID = ({onPress}: {onPress: () => void}) => {
     <Box flex={1}>
       <SectionTitle title="Scan ID / Passport" />
       <TextSection>You should see the code code (MRZ) IS.</TextSection>
-      <Box justifyContent={'space-between'}>
-        <TouchableOpacity onPress={() => navigation.navigate('Scanner')}>
-          <Box alignItems={'center'} mt={10}>
-            <Box
-              justifyContent={'center'}
-              alignItems={'center'}
-              w={200}
-              h={200}
-              mt={5}
-              rounded={100}
-              borderWidth={1}
-              borderColor={palette.secondary}
-              backgroundColor={'rgba(187, 187, 187, 0.1)'}>
-              <ScanIcon color={palette.secondary} />
-              <Text
-                mt={3}
-                color={palette.secondary}
-                fontFamily={'Trade Gothic LT Std'}
-                fontStyle="normal"
-                fontWeight="400"
-                fontSize={15}
-                lineHeight={18}>
-                Scan
-              </Text>
-            </Box>
+
+      <TouchableOpacity onPress={() => navigation.navigate('Scanner')}>
+        <Box alignItems={'center'} mt={100}>
+          <Box
+            justifyContent={'center'}
+            alignItems={'center'}
+            w={200}
+            h={200}
+            mt={5}
+            rounded={100}
+            borderWidth={1}
+            borderColor={palette.secondary}
+            backgroundColor={'rgba(187, 187, 187, 0.1)'}>
+            <ScanIcon color={palette.secondary} />
+            <Text
+              mt={3}
+              color={palette.secondary}
+              fontFamily={'Trade Gothic LT Std'}
+              fontStyle="normal"
+              fontWeight="400"
+              fontSize={15}
+              lineHeight={18}>
+              Scan
+            </Text>
           </Box>
-        </TouchableOpacity>
-        <Box mt={70}>
-          <ButtonBig name="NEXT" onPress={onPress} />
         </Box>
+      </TouchableOpacity>
+      <Box mx={30} bottom={-120}>
+        <ButtonBig name="NEXT" onPress={onPress} />
       </Box>
     </Box>
   );

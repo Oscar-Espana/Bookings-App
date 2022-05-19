@@ -9,7 +9,7 @@ interface Props {
 
 const SignatureButtons = ({handleClear, handleConfirm}: Props) => {
   return (
-    <Box flexDirection={'row'} justifyContent={'space-between'}>
+    <Box flexDirection={'row'} justifyContent={'space-between'} w={350}>
       <ButtonBig name={'CLEAR'} onPress={handleClear} />
       <ButtonBig name={'NEXT'} onPress={handleConfirm} />
     </Box>

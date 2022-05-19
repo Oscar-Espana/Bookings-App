@@ -27,7 +27,7 @@ export const BottomTabsNavigator = () => {
           shadowOpacity: 0.9, */
         },
       }}>
-      <Tab.Screen
+      {/* <Tab.Screen
         name="STAGING"
         component={StagingNavigator}
         options={{
@@ -38,7 +38,7 @@ export const BottomTabsNavigator = () => {
             />
           ),
         }}
-      />
+      /> */}
 
       <Tab.Screen
         name="HOME"

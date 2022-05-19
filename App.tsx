@@ -7,14 +7,16 @@ import {BottomTabsNavigator} from './src/navigation/BottomTabsNavigator';
 import {NativeBaseProvider} from 'native-base';
 import {PermissionsProvider} from './src/context/PermissionsContext';
 import LoginNavigator from './src/navigation/Login/LoginNavigator';
+import StagingNavigator from './src/navigation/StagingNavigator';
 
 const App = () => {
   return (
     <PermissionsProvider>
       <NativeBaseProvider>
         <NavigationContainer>
-          {/*           <BottomTabsNavigator /> */}
-          <LoginNavigator />
+          <BottomTabsNavigator />
+          {/* <LoginNavigator /> */}
+          {/* {<StagingNavigator />} */}
         </NavigationContainer>
       </NativeBaseProvider>
     </PermissionsProvider>
