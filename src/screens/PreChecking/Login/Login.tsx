@@ -23,10 +23,12 @@ const Login = () => {
           <TextInputC label={'Password'} />
         </VStack>
       </Box>
-      <ButtonBig
-        name={'LOGIN'}
-        onPress={() => navigation.navigate('HowWouldYou')}
-      />
+      <Box mx={30} bottom={10}>
+        <ButtonBig
+          name={'LOGIN'}
+          onPress={() => navigation.navigate('HowWouldYou')}
+        />
+      </Box>
     </BackgroundwithGradient>
   );
 };

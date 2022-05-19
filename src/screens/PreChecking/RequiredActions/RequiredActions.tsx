@@ -39,10 +39,12 @@ const RequiredActions = () => {
           />
         </VStack>
       </Box>
-      <ButtonBig
-        name={'COMPLETAL PRECHECKING'}
-        onPress={() => console.log('Precheking complete')}
-      />
+      <Box mx={30} bottom={10}>
+        <ButtonBig
+          name={'COMPLETAL PRECHECKING'}
+          onPress={() => console.log('Precheking complete')}
+        />
+      </Box>
     </BackgroundwithGradient>
   );
 };

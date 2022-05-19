@@ -24,9 +24,7 @@ const HowWouldYou = () => {
 
           <VStack space={4} mx={30}>
             <TextInputC label={'User'} />
-
             <TextInputC label={'Password'} />
-
             <TextInputC label={'Repeat Password'} />
           </VStack>
 
@@ -44,11 +42,14 @@ const HowWouldYou = () => {
               ]}
             />
           </VStack>
+
+          <Box mx={30}>
+            <ButtonBig
+              name={'LOGIN'}
+              onPress={() => navigation.navigate('RequiredActions')}
+            />
+          </Box>
         </ScrollView>
-        <ButtonBig
-          name={'LOGIN'}
-          onPress={() => navigation.navigate('RequiredActions')}
-        />
       </SafeAreaView>
     </BackgroundwithGradient>
   );

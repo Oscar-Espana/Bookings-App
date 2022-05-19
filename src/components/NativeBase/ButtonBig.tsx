@@ -19,8 +19,7 @@ const ButtonBig = ({name, onPress, color = 'transparent'}: Props) => {
         justifyContent={'center'}
         alignItems={'center'}
         borderRadius={16}
-        padding={5}
-        mx={30}>
+        padding={5}>
         <Text
           color={color === 'white' ? palette.black : palette.primary}
           fontFamily={'Trade Gothic LT Std'}
