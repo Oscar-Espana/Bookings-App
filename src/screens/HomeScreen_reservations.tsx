@@ -28,13 +28,14 @@ const HomeScreen_reservations = () => {
           />
 
           <SectionTitle title={'Required actions'} />
-
           <RequiredActions />
 
           <SectionTitle title={'Timeline'} />
           <Timeline data={timeline} />
+
           <SectionTitle title={'Plans & Services'} />
           <PlansServicesCard data={planservices} />
+
           <SectionTitle title={'Tu reserva en curso'} />
           <CardCheckInOut />
           <CardReservePriceTotal />

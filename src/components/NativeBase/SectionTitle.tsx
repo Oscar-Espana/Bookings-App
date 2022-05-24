@@ -30,6 +30,7 @@ const SectionTitle = ({title, upperTitle}: Props) => {
         justifyContent={'space-between'}
         marginLeft={22}
         padding={2}
+        mt={2}
         mb={3}
         alignItems={'center'}>
         <Text style={typography.heading3}>{title}</Text>

@@ -43,7 +43,7 @@ const RequiredActions = () => {
 
   return (
     <Box mb={5}>
-      <Box px={20} pb={4} flexDirection={'row'}>
+      <Box pl={20} pr={12} pb={8} flexDirection={'row'}>
         <Box
           w={58}
           h={58}

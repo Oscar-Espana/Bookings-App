@@ -32,7 +32,7 @@ const ListItem = ({
               color: color,
               fontFamily: 'Trade Gothic LT Std',
               fontStyle: 'normal',
-              fontWeight: '700',
+              fontWeight: '400',
               fontSize: 18,
               lineHeight: 22,
             }}>
