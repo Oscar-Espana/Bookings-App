@@ -4,7 +4,7 @@ import Signature from 'react-native-signature-canvas';
 import BackgroundwithGradient from '../../components/NativeBase/BackgroundwithGradient';
 import TitleCentered from '../../components/NativeBase/TitleCentered';
 import {useNavigation} from '@react-navigation/native';
-import {Box, ScrollView, Text} from 'native-base';
+import {Box, HStack, ScrollView, Text} from 'native-base';
 import {palette} from '../../theme/palette';
 import ButtonBig from '../../components/NativeBase/ButtonBig';
 
@@ -37,7 +37,8 @@ const SignScreen = () => {
 
       <Box padding={6} flex={1}>
         <Text
-          mb={4}
+          mt={-5}
+          mb={3}
           style={{fontSize: 14, fontWeight: '400', color: '#8B8B8B'}}>
           Sign with inside of the delimited area.
         </Text>
@@ -52,9 +53,13 @@ const SignScreen = () => {
           />
         </Box>
 
-        <Box flexDirection={'row'} justifyContent={'space-between'}>
-          <ButtonBig name={'CLEAR'} onPress={handleClear} />
-          <ButtonBig name={'NEXT'} onPress={handleConfirm} />
+        <Box flexDirection={'row'} justifyContent={'space-between'} mt={3}>
+          <Box w={160}>
+            <ButtonBig name={'CLEAR'} onPress={handleClear} />
+          </Box>
+          <Box w={160}>
+            <ButtonBig name={'NEXT'} onPress={handleConfirm} />
+          </Box>
         </Box>
       </Box>
     </BackgroundwithGradient>
