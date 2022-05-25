@@ -10,6 +10,7 @@ import ScanID from './AddGuestStages/ScanID';
 import DocumentScreening from './AddGuestStages/DocumentScreening';
 import PersonalInformation from './AddGuestStages/PersonalInformation';
 import DocumentSign from './AddGuestStages/DocumentSign';
+import {useNavigation} from '@react-navigation/native';
 
 const customStyles = {
   stepIndicatorSize: 35,
@@ -28,6 +29,7 @@ const customStyles = {
 };
 
 const AddGuest = () => {
+  const navigation = useNavigation();
   const [currentPosition, setCurrentPosition] = useState(0);
   const renderStages = (position: any) => {
     switch (position) {
@@ -59,10 +61,7 @@ const AddGuest = () => {
 
   return (
     <BackgroundwithGradient>
-      <TitleCentered
-        title="ADD GUEST"
-        onPress={() => console.log(currentPosition)}
-      />
+      <TitleCentered title="ADD GUEST" onPress={() => navigation.goBack()} />
       <Box pb={5} mt={-6}>
         <StepIndicator
           stepCount={4}

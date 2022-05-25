@@ -34,11 +34,11 @@ const HeyThere = () => {
           <ButtonBig
             name={'I HAVE AN ACCOUNT'}
             color={'white'}
-            onPress={() => navigation.navigate('TypeYourCode')}
+            onPress={() => navigation.navigate('WelcomeScreen')}
           />
           <ButtonBig
             name={'I HAVE A CODE'}
-            onPress={() => navigation.navigate('WelcomeScreen')}
+            onPress={() => navigation.navigate('TypeYourCode')}
           />
         </VStack>
       </LinearGradient>

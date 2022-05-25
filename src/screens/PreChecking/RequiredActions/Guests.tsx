@@ -82,7 +82,7 @@ const Guests = () => {
                 />
               );
             })}
-          <AddGuestButton />
+          <AddGuestButton onPress={() => navigation.navigate('AddGuest')} />
         </VStack>
         <Text
           mt={2}

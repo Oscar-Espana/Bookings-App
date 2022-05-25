@@ -1,4 +1,4 @@
-import {Box, Center, Input, Text} from 'native-base';
+import {Box, Center, HStack, Input, Text} from 'native-base';
 import React, {useRef, useState} from 'react';
 import BackgroundwithGradient from '../../../components/NativeBase/BackgroundwithGradient';
 import TextSection from '../../../components/NativeBase/TextSection';
@@ -9,6 +9,8 @@ import {
   TextInput,
   TextInputKeyPressEventData,
 } from 'react-native';
+import ButtonBig from '../../../components/NativeBase/ButtonBig';
+import {palette} from '../../../theme/palette';
 
 const DIGIT_POS_0 = 0;
 const DIGIT_POS_1 = 1;
@@ -18,21 +20,12 @@ const DIGIT_POS_4 = 4;
 const DIGIT_POS_5 = 5;
 const DIGIT_POS_6 = 6;
 const DIGIT_POS_7 = 7;
-const LAST_POS = 7;
-const CODE_LEN = 8;
+const LAST_POS = 3;
+const CODE_LEN = 4;
 
 const TypeYourCode = () => {
   const [currentDigit, setCurrentDigit] = useState(0);
-  const [codeDigits, setCodeDigits] = useState([
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-  ]);
+  const [codeDigits, setCodeDigits] = useState(['', '', '', '']);
 
   const refFirstInput = useRef<TextInput>(null);
   const refSecondInput = useRef<TextInput>(null);
@@ -80,22 +73,6 @@ const TypeYourCode = () => {
     setCurrentDigit(3);
   };
 
-  const handleFifthDigitFocus = () => {
-    setCurrentDigit(4);
-  };
-
-  const handleSixthDigitFocus = () => {
-    setCurrentDigit(5);
-  };
-
-  const handleSeventhDigitFocus = () => {
-    setCurrentDigit(6);
-  };
-
-  const handleEighthDigitFocus = () => {
-    setCurrentDigit(7);
-  };
-
   const handleNextDigit = (text: string, currentPosition: number) => {
     const inputText = text.toUpperCase().replace(/[^[A-Z0-9]/g, '');
     console.log('inputText', inputText);
@@ -114,80 +91,90 @@ const TypeYourCode = () => {
 
   const isDisabled = codeDigits.join('').length !== CODE_LEN;
 
+  console.log(codeDigits);
   return (
-    <BackgroundwithGradient>
-      <Text style={typography.heading1}>TYPE YOUR CODE</Text>
-      <TextSection>
-        On the email you got with the link to download this app, we gave you a
-        keyword to type in order to a access your reservation.
-      </TextSection>
+    <>
+      <BackgroundwithGradient>
+        <Text style={typography.heading2} mb={28}>
+          TYPE YOUR CODE
+        </Text>
+        <TextSection>
+          On the email you got with the link to download this app, we gave you a
+          keyword to type in order to a access your reservation.
+        </TextSection>
 
-      <Box>
-        <Input
-          ref={refFirstInput}
-          m={1}
-          maxLength={1}
-          color={'cream.400'}
-          variant="underlined"
-          style={styles.codeinput}
-          keyboardType="numeric"
-          value={codeDigits[DIGIT_POS_0]}
-          onChangeText={text => handleNextDigit(text, DIGIT_POS_0)}
-          onFocus={handleFirstDigitFocus}
-          onKeyPress={handleKeyPressed}
-        />
-        <Input
-          ref={refSecondInput}
-          m={1}
-          maxLength={1}
-          color={'cream.400'}
-          variant="underlined"
-          style={styles.codeinput}
-          keyboardType="numeric"
-          value={codeDigits[DIGIT_POS_1]}
-          onChangeText={text => handleNextDigit(text, DIGIT_POS_1)}
-          onFocus={handleSecondDigitFocus}
-          onKeyPress={handleKeyPressed}
-        />
-        <Input
-          ref={refThirdInput}
-          m={1}
-          maxLength={1}
-          variant="underlined"
-          color={'cream.400'}
-          style={styles.codeinput}
-          keyboardType="numeric"
-          value={codeDigits[DIGIT_POS_2]}
-          onChangeText={text => handleNextDigit(text, DIGIT_POS_2)}
-          onFocus={handleThirdDigitFocus}
-          onKeyPress={handleKeyPressed}
-        />
-        <Input
-          ref={refFourthInput}
-          m={1}
-          maxLength={1}
-          variant="underlined"
-          color={'cream.400'}
-          style={styles.codeinput}
-          keyboardType="numeric"
-          value={codeDigits[DIGIT_POS_3]}
-          onChangeText={text => handleNextDigit(text, DIGIT_POS_3)}
-          onFocus={handleFourthDigitFocus}
-          onKeyPress={handleKeyPressed}
+        <Center p={5} w={'30%'} flexDir={'row'} ml={'35%'}>
+          <Input
+            ref={refFirstInput}
+            m={1}
+            maxLength={1}
+            color={'cream.400'}
+            variant="underlined"
+            style={styles.codeinput}
+            keyboardType="numeric"
+            value={codeDigits[DIGIT_POS_0]}
+            onChangeText={text => handleNextDigit(text, DIGIT_POS_0)}
+            onFocus={handleFirstDigitFocus}
+            onKeyPress={handleKeyPressed}
+          />
+          <Input
+            ref={refSecondInput}
+            m={1}
+            maxLength={1}
+            color={'cream.400'}
+            variant="underlined"
+            style={styles.codeinput}
+            keyboardType="numeric"
+            value={codeDigits[DIGIT_POS_1]}
+            onChangeText={text => handleNextDigit(text, DIGIT_POS_1)}
+            onFocus={handleSecondDigitFocus}
+            onKeyPress={handleKeyPressed}
+          />
+          <Input
+            ref={refThirdInput}
+            m={1}
+            maxLength={1}
+            variant="underlined"
+            color={'cream.400'}
+            style={styles.codeinput}
+            keyboardType="numeric"
+            value={codeDigits[DIGIT_POS_2]}
+            onChangeText={text => handleNextDigit(text, DIGIT_POS_2)}
+            onFocus={handleThirdDigitFocus}
+            onKeyPress={handleKeyPressed}
+          />
+          <Input
+            ref={refFourthInput}
+            m={1}
+            maxLength={1}
+            variant="underlined"
+            color={'cream.400'}
+            style={styles.codeinput}
+            keyboardType="numeric"
+            value={codeDigits[DIGIT_POS_3]}
+            onChangeText={text => handleNextDigit(text, DIGIT_POS_3)}
+            onFocus={handleFourthDigitFocus}
+            onKeyPress={handleKeyPressed}
+          />
+        </Center>
+      </BackgroundwithGradient>
+      <Box p={30} backgroundColor={palette.background}>
+        <ButtonBig
+          name={'NEXT'}
+          onPress={() => console.warn('Submited code', codeDigits)}
         />
       </Box>
-    </BackgroundwithGradient>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
-  imageBackground: {
-    height: '100%',
-    width: '100%',
-  },
   codeinput: {
     fontSize: 30,
+    color: palette.primary,
     fontFamily: 'Analogue',
+    width: 150,
+    height: 50,
   },
 });
 

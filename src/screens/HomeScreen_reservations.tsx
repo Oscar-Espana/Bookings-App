@@ -16,9 +16,9 @@ import ButtonBig from '../components/NativeBase/ButtonBig';
 
 const HomeScreen_reservations = () => {
   return (
-    <>
+    <Box backgroundColor={palette.background} flex={1}>
       <BackgroundHome arrivalDays={0} />
-      <Box flex={2} backgroundColor={palette.background}>
+      <Box flex={2}>
         <ScrollView>
           <SectionTitle title={'Your Reservations'} />
           <ReservationsCard
@@ -41,7 +41,7 @@ const HomeScreen_reservations = () => {
           <CardReservePriceTotal />
         </ScrollView>
       </Box>
-    </>
+    </Box>
   );
 };
 

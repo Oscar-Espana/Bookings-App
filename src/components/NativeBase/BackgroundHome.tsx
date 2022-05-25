@@ -21,11 +21,11 @@ const BackgroundHome = ({arrivalDays}: Props) => {
         start={{x: 0, y: 0}}
         end={{x: 1, y: 1}}>
         <Box
-          flexDirection={'row'}
+          flex={1}
           mt={67}
+          flexDirection={'row'}
           mx={28}
-          justifyContent={'space-between'}
-          alignItems={'center'}>
+          justifyContent={'space-between'}>
           <Box>
             <Text color={palette.primary} fontFamily={'Analogue'} fontSize={30}>
               HOLA JOHN
@@ -63,6 +63,7 @@ const BackgroundHome = ({arrivalDays}: Props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+
     justifyContent: 'center',
   },
 });

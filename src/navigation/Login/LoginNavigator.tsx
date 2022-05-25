@@ -10,6 +10,8 @@ import LogoScreen from '../../screens/PreChecking/Greetings/LogoScreen';
 import HeyThere from '../../screens/PreChecking/Greetings/HeyThere';
 import WelcomeScreen from '../../screens/PreChecking/Greetings/WelcomeScreen';
 import TypeYourCode from '../../screens/PreChecking/Greetings/TypeYourCode';
+import {BottomTabsNavigator} from '../BottomTabsNavigator';
+import StagingNavigator from '../StagingNavigator';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +32,8 @@ const LoginNavigator = () => {
       <Stack.Screen name="RequiredActions" component={RequiredActions} />
       <Stack.Screen name="Guests" component={Guests} />
       <Stack.Screen name="Contracts" component={Contracts} />
+      <Stack.Screen name="BottomTabs" component={BottomTabsNavigator} />
+      <Stack.Screen name="AddGuest" component={StagingNavigator} />
     </Stack.Navigator>
   );
 };

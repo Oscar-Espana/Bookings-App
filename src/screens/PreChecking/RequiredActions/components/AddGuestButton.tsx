@@ -4,9 +4,9 @@ import {palette} from '../../../../theme/palette';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {TouchableOpacity} from 'react-native';
 
-const AddGuestButton = () => {
+const AddGuestButton = ({onPress}: {onPress: () => void}) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <Box
         alignSelf={'center'}
         w={71}

@@ -9,9 +9,13 @@ interface Props {
 
 const SignatureButtons = ({handleClear, handleConfirm}: Props) => {
   return (
-    <Box flexDirection={'row'} justifyContent={'space-between'} w={350}>
-      <ButtonBig name={'CLEAR'} onPress={handleClear} />
-      <ButtonBig name={'NEXT'} onPress={handleConfirm} />
+    <Box flexDirection={'row'} justifyContent={'space-between'} mt={2}>
+      <Box w={154}>
+        <ButtonBig name={'CLEAR'} onPress={handleClear} />
+      </Box>
+      <Box w={154}>
+        <ButtonBig name={'NEXT'} onPress={handleConfirm} />
+      </Box>
     </Box>
   );
 };

@@ -14,9 +14,9 @@ const App = () => {
     <PermissionsProvider>
       <NativeBaseProvider>
         <NavigationContainer>
-          <BottomTabsNavigator />
-          {/* <LoginNavigator /> */}
-          {/* {<StagingNavigator />} */}
+          {/* <BottomTabsNavigator /> */}
+          <LoginNavigator />
+          {/* <StagingNavigator />  */}
         </NavigationContainer>
       </NativeBaseProvider>
     </PermissionsProvider>

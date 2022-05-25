@@ -30,8 +30,9 @@ const PlanPostInfo = ({route, navigation}: any) => {
           62.
         </TextSection>
         <MoreDropdown />
-        <Box py={5}></Box>
-        <ButtonBig />
+        <Box py={5} mx={5}>
+          <ButtonBig name="NEXT" />
+        </Box>
       </ScrollView>
     </BackgroundwithGradient>
   );

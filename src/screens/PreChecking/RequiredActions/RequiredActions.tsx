@@ -7,6 +7,8 @@ import TextSection from '../../../components/NativeBase/TextSection';
 import {useNavigation} from '@react-navigation/native';
 import ActionCard from './components/ActionCard';
 
+import {StackActions} from '@react-navigation/native';
+
 const RequiredActions = () => {
   const navigation = useNavigation();
   return (
@@ -42,7 +44,9 @@ const RequiredActions = () => {
       <Box mx={30} bottom={10}>
         <ButtonBig
           name={'COMPLETAL PRECHECKING'}
-          onPress={() => console.log('Precheking complete')}
+          onPress={() =>
+            navigation.dispatch(StackActions.replace('BottomTabs'))
+          }
         />
       </Box>
     </BackgroundwithGradient>
