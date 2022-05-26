@@ -8,6 +8,7 @@ import Guests from '../../screens/PreChecking/RequiredActions/Guests';
 import Contracts from '../../screens/PreChecking/RequiredActions/Contracts';
 import LogoScreen from '../../screens/PreChecking/Greetings/LogoScreen';
 import HeyThere from '../../screens/PreChecking/Greetings/HeyThere';
+import TravelInformation from '../../screens/PreChecking/RequiredActions/TravelInformation';
 import WelcomeScreen from '../../screens/PreChecking/Greetings/WelcomeScreen';
 import TypeYourCode from '../../screens/PreChecking/Greetings/TypeYourCode';
 import {BottomTabsNavigator} from '../BottomTabsNavigator';
@@ -34,6 +35,7 @@ const LoginNavigator = () => {
       <Stack.Screen name="Contracts" component={Contracts} />
       <Stack.Screen name="BottomTabs" component={BottomTabsNavigator} />
       <Stack.Screen name="AddGuest" component={StagingNavigator} />
+      <Stack.Screen name="TravelInformation" component={TravelInformation} />
     </Stack.Navigator>
   );
 };

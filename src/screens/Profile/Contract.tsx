@@ -81,7 +81,9 @@ const Contract = ({route, navigation}: any) => {
           <Image source={{uri: data}} alt="signature" w={319} h={120} />
         </Box>
 
-        <ButtonBig name={'SEND CONTRACT'} />
+        <Box m={30}>
+          <ButtonBig name={'SEND CONTRACT'} />
+        </Box>
       </ScrollView>
     </BackgroundwithGradient>
   );

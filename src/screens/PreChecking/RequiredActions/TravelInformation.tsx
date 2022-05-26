@@ -1,16 +1,16 @@
 import {useNavigation} from '@react-navigation/native';
 import {Box, ScrollView, VStack} from 'native-base';
 import React from 'react';
-import TextSection from '../../components/NativeBase/TextSection';
-import TitleCentered from '../../components/NativeBase/TitleCentered';
-import BackgroundwithGradient from '../../components/NativeBase/BackgroundwithGradient';
-import SelectInput from '../../components/NativeBase/SelectInput';
+import TextSection from '../../../components/NativeBase/TextSection';
+import TitleCentered from '../../../components/NativeBase/TitleCentered';
+import BackgroundwithGradient from '../../../components/NativeBase/BackgroundwithGradient';
+import SelectInput from '../../../components/NativeBase/SelectInput';
 
-import ButtonBig from '../../components/NativeBase/ButtonBig';
+import ButtonBig from '../../../components/NativeBase/ButtonBig';
 
 import {Formik} from 'formik';
-import {userValidation} from '../../lib/validationScheme';
-import DateInput from '../../components/NativeBase/Input/DateInput';
+import {userValidation} from '../../../lib/validationScheme';
+import DateInput from '../../../components/NativeBase/Input/DateInput';
 
 const TravelInformation = () => {
   const navigation = useNavigation();
@@ -63,10 +63,12 @@ const TravelInformation = () => {
                 />
               </VStack>
 
-              <ButtonBig
-                name="SAVE"
-                onPress={() => navigation.navigate('FinishSettings')}
-              />
+              <Box mx={30}>
+                <ButtonBig
+                  name="SAVE"
+                  onPress={() => navigation.navigate('FinishSettings')}
+                />
+              </Box>
             </>
           )}
         </Formik>

@@ -37,7 +37,7 @@ const RequiredActions = () => {
             title={'Travel'}
             status={'Pendiente'}
             icon={'compassBig'}
-            onPress={() => navigation.navigate('Travel')}
+            onPress={() => navigation.navigate('TravelInformation')}
           />
         </VStack>
       </Box>
