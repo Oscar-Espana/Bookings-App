@@ -1,8 +1,8 @@
 import React from 'react';
 import {ImageBackground, Text, StyleSheet} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {paletteRGBA} from '../theme/palette';
-import {typography} from '../theme/typography';
+import {paletteRGBA} from '../../theme/palette';
+import {typography} from '../../theme/typography';
 
 const GreetingsScreen = () => {
   return (

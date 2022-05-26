@@ -57,13 +57,15 @@ const GrantAccessEmail = () => {
                   />
                 </FormControl>
               </Box>
-              <ButtonBig name={'FINISH'} onPress={handleSubmit} />
+              <Box flex={1} m={30}>
+                <ButtonBig name={'FINISH'} onPress={handleSubmit} />
+              </Box>
             </>
           )}
         </Formik>
 
         <TouchableWithoutFeedback
-          onPress={() => navigation.navigate('TravelInformation')}>
+          onPress={() => navigation.navigate('FinishSettings')}>
           <Text style={styles.skip}>Omitir</Text>
         </TouchableWithoutFeedback>
       </ScrollView>

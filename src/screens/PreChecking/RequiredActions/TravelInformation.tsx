@@ -29,6 +29,7 @@ const TravelInformation = () => {
         <Formik
           initialValues={{
             checkingTime: '',
+            arrivalTransport: '',
           }}
           onSubmit={values => {
             console.log(values);
@@ -38,6 +39,8 @@ const TravelInformation = () => {
             <>
               <Box mx={30}>
                 <SelectInput
+                  onChange={handleChange}
+                  value={values.arrivalTransport}
                   label="Arrival transport"
                   items={[
                     {label: 'Private transport', value: 'private'},

@@ -2,7 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {palette} from '../theme/palette';
 import {Image} from 'react-native';
-import HomeScreen_reservations from '../screens/HomeScreen_reservations';
+import HomeScreen_reservations from '../screens/Home/HomeScreen_reservations';
 import MyTripNavigator from './MyTripNavigator';
 import SupportNavigator from './SupportNavigator';
 import ExploreNavigator from './ExploreNavigator';

@@ -7,8 +7,10 @@ import ButtonBig from '../../components/NativeBase/ButtonBig';
 import {palette} from '../../theme/palette';
 import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
+import {useNavigation} from '@react-navigation/native';
 
 const BeginVideo = () => {
+  const navigation = useNavigation();
   return (
     <>
       <Video
@@ -35,10 +37,13 @@ const BeginVideo = () => {
           <Icon name="play" size={25} color={palette.white} />
         </Box>
 
-        <Box position={'absolute'} bottom={0} alignSelf={'center'} w={'100%'}>
+        <Box position={'absolute'} alignSelf={'center'} bottom={175}>
           <Text style={styles.check}>Check out what is coming for you!</Text>
 
-          <ButtonBig name="BEGIN" />
+          <ButtonBig
+            name="BEGIN"
+            onPress={() => navigation.navigate('BottomTabs')}
+          />
         </Box>
       </Box>
     </>

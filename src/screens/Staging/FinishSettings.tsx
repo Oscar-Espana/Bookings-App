@@ -25,10 +25,12 @@ const FinishSettings = () => {
           stay with us.
         </TextSection>
       </Box>
-      <ButtonBig
-        name="LET'S GO"
-        onPress={() => navigation.navigate('BeginVideo')}
-      />
+      <Box m={30}>
+        <ButtonBig
+          name="LET'S GO"
+          onPress={() => navigation.navigate('BeginVideo')}
+        />
+      </Box>
     </BackgroundwithGradient>
   );
 };
