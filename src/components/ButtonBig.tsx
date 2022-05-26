@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     borderWidth: 2,
-    borderColor: '#F7F4EB',
+    borderColor: palette.primary,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 16,
@@ -26,7 +26,10 @@ const styles = StyleSheet.create({
   },
   button: {
     color: palette.primary,
-    fontFamily: 'Trade Gothic LT Std Extended',
+    fontFamily: 'Trade Gothic LT Std',
+    fontSize: 16,
+    fontWeight: '700',
+    lineHeight: 16,
   },
 });
 export default ButtonBig;

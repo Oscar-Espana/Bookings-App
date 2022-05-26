@@ -6,31 +6,67 @@ export const typography = StyleSheet.create({
     color: palette.primary,
     fontFamily: 'Quentin',
     fontSize: 48,
+    lineHeight: 70
   },
-  body2: {
-    color: palette.primary,
-    fontFamily: 'Trade Gothic LT Std Extended',
-    fontSize: 14,
-    lineHeight: 24,
-  },
+ 
   heading2: {
     color: palette.primary,
     fontFamily: 'Analogue',
-    fontSize: 30
+    fontSize: 30,
+    lineHeight: 40,
+    textAlign: 'center'
   },
-  greet: {
+  heading3: {
+    color: palette.primary,
+    fontFamily: 'Analogue',
+    fontSize: 24
+    },
+  body1: {
+    color: palette.gray,
+    fontFamily: 'Trade Gothic LT Std',
+    fontSize: 18,
+    lineHeight: 22,
+    fontWeight: '400'
+  },
+  body1Bold: {
+    color: palette.neutral,
+    fontFamily: 'Trade Gothic LT Std',
+    fontSize: 18,
+    lineHeight: 22,
+    fontWeight: '700'
+  },  
+  body2: {
+    color: palette.primary,
+    fontWeight: '400',
+    fontFamily: 'Trade Gothic LT Std',
+    fontSize: 14,
+    lineHeight: 24,
+  },greet: {
       fontFamily:'Quentin',
       fontSize: 24,
       color: palette.primary
   }, 
   cardFont: {
-    fontFamily: 'Trade Gothic LT Std Extended',
+    fontFamily: 'Trade Gothic LT Std',
     fontSize: 18,
     color: palette.background
   },
   pricesFont: {
-    fontFamily: 'Trade Gothic LT Std Extended',
+    fontFamily: 'Trade Gothic LT Std',
     fontSize: 18,
-    color: palette.primary
+    fontWeight: '700',
+    color: palette.primary,
+    lineHeight: 22
+  }, 
+  nightsFont: {
+    color: palette.background,
+    fontFamily: 'Trade Gothic LT Std',
+    fontWeight: '700',
+    fontStyle: 'normal',
+    fontSize: 18,
+    lineHeight: 20,
+    textAlign: 'center',
+    
+    
   }
 });
