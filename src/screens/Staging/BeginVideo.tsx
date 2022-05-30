@@ -12,8 +12,8 @@ import {useNavigation} from '@react-navigation/native';
 const BeginVideo = () => {
   const navigation = useNavigation();
   return (
-    <>
-      <Video
+    <Box>
+      {/*   <Video
         source={apartment}
         muted={true}
         style={styles.backgroundVideo}
@@ -21,7 +21,7 @@ const BeginVideo = () => {
         resizeMode={'cover'}
         rate={1.5}
         ignoreSilentSwitch={'obey'}
-      />
+      /> */}
 
       <Box flex={1}>
         <Box
@@ -46,20 +46,21 @@ const BeginVideo = () => {
           />
         </Box>
       </Box>
-    </>
+    </Box>
   );
 };
 
 const {height} = Dimensions.get('window');
 const styles = StyleSheet.create({
   backgroundVideo: {
-    height: height,
-    position: 'absolute',
-    top: -25,
+    height: height * 1.1,
+
+    backgroundColor: 'red',
+    top: 0,
     left: 0,
 
     alignItems: 'stretch',
-    bottom: 25,
+
     right: 0,
   },
   check: {

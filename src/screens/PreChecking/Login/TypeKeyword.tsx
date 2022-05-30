@@ -17,7 +17,7 @@ const TypeKeyword = () => {
           keyword to type in order to a access your reservation.
         </TextSection>
 
-        <Box mx={30}>
+        <Box m={30}>
           <Input h={50} rounded={10} />
         </Box>
       </Box>

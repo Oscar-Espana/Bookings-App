@@ -8,6 +8,8 @@ import TextInputC from '../../../components/NativeBase/TextInputC';
 import {useNavigation} from '@react-navigation/native';
 import SelectInput from '../../../components/NativeBase/SelectInput';
 import {SafeAreaView} from 'react-native';
+import {Formik} from 'formik';
+import {loginSchema, registerSchema} from '../../../lib/validationScheme';
 
 const HowWouldYou = () => {
   const navigation = useNavigation();
@@ -22,33 +24,70 @@ const HowWouldYou = () => {
             information related to you reservation.
           </TextSection>
 
-          <VStack space={4} mx={30}>
-            <TextInputC label={'User'} />
-            <TextInputC label={'Password'} />
-            <TextInputC label={'Repeat Password'} />
-          </VStack>
+          <Formik
+            initialValues={{
+              user: '',
+              password: '',
+              password2: '',
+              language: '',
+            }}
+            onSubmit={values => {
+              console.log(values);
+              navigation.navigate('RequiredActions');
+            }}
+            validationSchema={registerSchema}>
+            {({handleChange, handleBlur, handleSubmit, values, errors}) => (
+              <>
+                <VStack space={4} mx={30}>
+                  <TextInputC
+                    label={'User'}
+                    value={values.user}
+                    errorMesagge={errors.user}
+                    hasError={'user' in errors}
+                    onBlur={handleBlur('user')}
+                    onChangeText={handleChange('user')}
+                  />
+                  <TextInputC
+                    label={'Repeat Password'}
+                    value={values.password}
+                    errorMesagge={errors.password}
+                    hasError={'password' in errors}
+                    onBlur={handleBlur('password')}
+                    onChangeText={handleChange('password')}
+                  />
+                  <TextInputC
+                    label={'Password'}
+                    value={values.password2}
+                    errorMesagge={errors.password2}
+                    hasError={'password2' in errors}
+                    onBlur={handleBlur('password2')}
+                    onChangeText={handleChange('password2')}
+                  />
+                </VStack>
 
-          <TextSection>
-            In whic of the following languages would you like us to communicate
-            with you?
-          </TextSection>
+                <TextSection>
+                  In whic of the following languages would you like us to
+                  communicate with you?
+                </TextSection>
 
-          <VStack mx={30}>
-            <SelectInput
-              label={'Language'}
-              items={[
-                {label: 'English', value: 'en'},
-                {label: 'Spanish', value: 'es'},
-              ]}
-            />
-          </VStack>
+                <VStack mx={30}>
+                  <SelectInput
+                    onChange={handleChange('language')}
+                    value={values.language}
+                    label={'Language'}
+                    items={[
+                      {label: 'English', value: 'en'},
+                      {label: 'Spanish', value: 'es'},
+                    ]}
+                  />
+                </VStack>
 
-          <Box mx={30}>
-            <ButtonBig
-              name={'LOGIN'}
-              onPress={() => navigation.navigate('RequiredActions')}
-            />
-          </Box>
+                <Box mx={30}>
+                  <ButtonBig name={'LOGIN'} onPress={handleSubmit} />
+                </Box>
+              </>
+            )}
+          </Formik>
         </ScrollView>
       </SafeAreaView>
     </BackgroundwithGradient>
