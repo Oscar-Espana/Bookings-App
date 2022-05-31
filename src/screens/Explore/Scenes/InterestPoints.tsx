@@ -11,6 +11,7 @@ import {Map} from '../../../components/Map';
 import {PermissionsContext} from '../../../context/PermissionsContext';
 import useNearbyPlaces from '../../../hooks/useNearbyPlaces';
 import {useFocusEffect} from '@react-navigation/native';
+import {nearbyPlaces} from '../../../constants/nearbyPlaces';
 
 const initialLayout = {
   width: Dimensions.get('window').width,
@@ -59,7 +60,7 @@ export const InterestPoints = () => {
 
   return (
     <>
-      <Map />
+      <Map markers={nearbyPlaces} />
       <Text>{JSON.stringify(permissions, null, 5)}</Text>
 
       <TabView
