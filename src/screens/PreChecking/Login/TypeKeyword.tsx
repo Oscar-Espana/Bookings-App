@@ -1,16 +1,20 @@
-import {Box, Input} from 'native-base';
+import {Box, Input, KeyboardAvoidingView} from 'native-base';
 import React from 'react';
 import BackgroundwithGradient from '../../../components/NativeBase/BackgroundwithGradient';
 import ButtonBig from '../../../components/NativeBase/ButtonBig';
 import Heading from '../../../components/NativeBase/Heading';
 import TextSection from '../../../components/NativeBase/TextSection';
 import {useNavigation} from '@react-navigation/native';
+import {Platform} from 'react-native';
 
 const TypeKeyword = () => {
   const navigation = useNavigation();
   return (
     <BackgroundwithGradient>
-      <Box style={{flex: 1, justifyContent: 'center'}}>
+      <KeyboardAvoidingView
+        flex={1}
+        justifyContent={'center'}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <Heading title="TYPE THE KEYWORD" />
         <TextSection>
           On the email you got with the link to download this app, we gave you a
@@ -20,7 +24,8 @@ const TypeKeyword = () => {
         <Box m={30}>
           <Input h={50} rounded={10} />
         </Box>
-      </Box>
+      </KeyboardAvoidingView>
+
       <Box p={30} bottom={0} position={'absolute'}>
         <ButtonBig name={'NEXT'} onPress={() => navigation.navigate('Login')} />
       </Box>
