@@ -61,7 +61,7 @@ export const InterestPoints = () => {
   return (
     <>
       <Map markers={nearbyPlaces} />
-      <Text>{JSON.stringify(permissions, null, 5)}</Text>
+      {/* <Text>{JSON.stringify(permissions, null, 5)}</Text> */}
 
       <TabView
         navigationState={{

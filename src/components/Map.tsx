@@ -9,12 +9,12 @@ import {mapstyle} from '../constants/mapstyle';
 import {palette} from '../theme/palette';
 import Fab from './Fab';
 import {PermissionsContext} from '../context/PermissionsContext';
-import {useFocusEffect} from '@react-navigation/native';
+import {useFocusEffect, useNavigation} from '@react-navigation/native';
 import LoadingScreen from '../screens/NotUsed/LoadingScreen';
 import {Box} from 'native-base';
 
 interface Props {
-  markers?: Location[] & {price?: number};
+  markers?: Location[] & {price?: number} & {name?: string};
   coords?: Location;
   polyline?: Location[];
   showUserLocation?: boolean;
@@ -30,6 +30,7 @@ export const Map = ({
   showUserLocation = true,
   zoom = 0.009,
 }: Props) => {
+  const navigation = useNavigation();
   let {width, height} = Dimensions.get('window');
   const ASPECT_RATIO = width / height;
   const LATITUDE_DELTA = zoom;
@@ -121,6 +122,17 @@ export const Map = ({
           markers.map((marker, index) => (
             <Marker
               key={index}
+              onPress={() => {
+                following.current = false;
+                mapViewRef.current?.animateCamera({
+                  center: {
+                    latitude: marker.latitude,
+                    longitude: marker.longitude,
+                  },
+                });
+                /* console.warn(marker.name, 'pressed'); */
+                navigation.navigate('PointDetails', marker);
+              }}
               coordinate={{
                 latitude: marker.latitude,
                 longitude: marker.longitude,
