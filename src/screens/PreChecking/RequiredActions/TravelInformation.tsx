@@ -9,7 +9,7 @@ import SelectInput from '../../../components/NativeBase/SelectInput';
 import ButtonBig from '../../../components/NativeBase/ButtonBig';
 
 import {Formik} from 'formik';
-import {userValidation} from '../../../lib/validationScheme';
+import {userValidation, travelSchema} from '../../../lib/validationScheme';
 import DateInput from '../../../components/NativeBase/Input/DateInput';
 
 const TravelInformation = () => {
@@ -29,17 +29,19 @@ const TravelInformation = () => {
         <Formik
           initialValues={{
             checkingTime: '',
+            checkingTime2: '',
             arrivalTransport: '',
           }}
           onSubmit={values => {
             console.log(values);
+            navigation.goBack();
           }}
-          validationSchema={userValidation}>
+          validationSchema={travelSchema}>
           {({handleChange, handleBlur, handleSubmit, values, errors}) => (
             <>
               <Box mx={30}>
                 <SelectInput
-                  onChange={handleChange}
+                  onChange={handleChange('arrivalTransport')}
                   value={values.arrivalTransport}
                   label="Arrival transport"
                   items={[
@@ -52,25 +54,22 @@ const TravelInformation = () => {
               <VStack mx={8}>
                 <DateInput
                   mode={'time'}
+                  onChange={handleChange('checkingTime')}
                   value={values.checkingTime}
                   hasError={'checkingTime' in errors}
-                  onChange={handleChange}
                   label={'Estimated checking time'}
                 />
                 <DateInput
                   mode={'time'}
-                  value={values.checkingTime}
-                  hasError={'checkingTime' in errors}
-                  onChange={handleChange}
+                  value={values.checkingTime2}
+                  hasError={'checkingTime2' in errors}
+                  onChange={handleChange('checkingTime2')}
                   label={'Estimated checking time'}
                 />
               </VStack>
 
-              <Box mx={30}>
-                <ButtonBig
-                  name="SAVE"
-                  onPress={() => navigation.navigate('FinishSettings')}
-                />
+              <Box mx={30} position={'absolute'} width={'85%'} bottom={-250}>
+                <ButtonBig name="SAVE" onPress={handleSubmit} />
               </Box>
             </>
           )}

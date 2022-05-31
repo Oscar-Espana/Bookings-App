@@ -21,7 +21,7 @@ const TypeKeyword = () => {
           <Input h={50} rounded={10} />
         </Box>
       </Box>
-      <Box position={'relative'} bottom={10} mx={30}>
+      <Box p={30} bottom={0} position={'absolute'}>
         <ButtonBig name={'NEXT'} onPress={() => navigation.navigate('Login')} />
       </Box>
     </BackgroundwithGradient>

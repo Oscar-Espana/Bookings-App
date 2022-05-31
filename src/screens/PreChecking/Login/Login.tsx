@@ -51,7 +51,7 @@ const Login = () => {
                 />
               </VStack>
             </Box>
-            <Box mx={30} bottom={10}>
+            <Box p={30} bottom={0} position={'absolute'}>
               <ButtonBig
                 name={'LOGIN'}
                 /* onPress={() => navigation.navigate('HowWouldYou')} */

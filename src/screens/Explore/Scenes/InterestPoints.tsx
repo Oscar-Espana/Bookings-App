@@ -17,7 +17,8 @@ const initialLayout = {
 };
 
 export const InterestPoints = () => {
-  const {permissions} = React.useContext(PermissionsContext);
+  const {permissions, askLocationPermission} =
+    React.useContext(PermissionsContext);
 
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState<IRouteTab[]>([
@@ -52,9 +53,13 @@ export const InterestPoints = () => {
     }
   };
 
+  useEffect(() => {
+    askLocationPermission();
+  }, []);
+
   return (
     <>
-      {/* <Map /> */}
+      <Map />
       <Text>{JSON.stringify(permissions, null, 5)}</Text>
 
       <TabView
