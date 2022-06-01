@@ -12,6 +12,11 @@ import {PermissionsContext} from '../../../context/PermissionsContext';
 import useNearbyPlaces from '../../../hooks/useNearbyPlaces';
 import {useFocusEffect} from '@react-navigation/native';
 import {nearbyPlaces} from '../../../constants/nearbyPlaces';
+import ListItemwithIcon from '../../../components/NativeBase/ListItemwithIcon';
+
+import gastronomia from '../../../assets/icons/explore/gastronomia.png';
+import eventos from '../../../assets/icons/explore/eventos.png';
+import ocio from '../../../assets/icons/explore/ocio.png';
 
 const initialLayout = {
   width: Dimensions.get('window').width,
@@ -46,9 +51,13 @@ export const InterestPoints = () => {
       case 'first':
         return (
           <VStack space={5}>
-            <ListItem name="Gastronomia" />
-            <ListItem name="Eventos" />
-            <ListItem name="Ocio" />
+            <ListItemwithIcon
+              name="Gastronomia"
+              icon={gastronomia}
+              subtitle={'300m'}
+            />
+            <ListItemwithIcon name="Eventos" icon={eventos} subtitle={'300m'} />
+            <ListItemwithIcon name="Ocio" icon={ocio} subtitle={'300m'} />
           </VStack>
         );
     }
@@ -60,7 +69,7 @@ export const InterestPoints = () => {
 
   return (
     <>
-      <Map markers={nearbyPlaces} />
+      {/* <Map markers={nearbyPlaces} /> */}
       {/* <Text>{JSON.stringify(permissions, null, 5)}</Text> */}
 
       <TabView
