@@ -29,7 +29,7 @@ const SectionTitle = ({title, upperTitle}: Props) => {
         flexDirection={'row'}
         justifyContent={'space-between'}
         marginLeft={22}
-        padding={2}
+        py={10}
         mt={2}
         mb={0}
         alignItems={'center'}>
