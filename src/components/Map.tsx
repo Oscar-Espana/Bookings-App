@@ -115,7 +115,7 @@ export const Map = ({
           />
         )}
         <Marker coordinate={userLocation}>
-          <Icon name="location" size={40} color={'red'} />
+          <Icon name="location" size={40} color={palette.secondary} />
         </Marker>
 
         {markers &&
