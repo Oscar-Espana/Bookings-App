@@ -28,10 +28,10 @@ const SectionTitle = ({title, upperTitle}: Props) => {
       <Box
         flexDirection={'row'}
         justifyContent={'space-between'}
-        marginLeft={22}
-        py={10}
+        marginLeft={30}
+        py={0}
         mt={2}
-        mb={0}
+        mb={4}
         alignItems={'center'}>
         <Text style={typography.heading3}>{title}</Text>
         <Box w={'100%'} ml={3} borderBottomWidth={1} borderColor={'white'} />

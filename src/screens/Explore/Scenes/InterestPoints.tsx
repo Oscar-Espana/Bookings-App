@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect} from 'react';
-import {Box, Text, VStack} from 'native-base';
+import {Box, ScrollView, Text, VStack} from 'native-base';
 import {IRouteTab} from '../../../interfaces/IRouteTab';
 import {Dimensions} from 'react-native';
 import {TabView} from 'react-native-tab-view';
@@ -50,15 +50,21 @@ export const InterestPoints = () => {
     switch (route.key) {
       case 'first':
         return (
-          <VStack space={5}>
-            <ListItemwithIcon
-              name="Gastronomia"
-              icon={gastronomia}
-              subtitle={'300m'}
-            />
-            <ListItemwithIcon name="Eventos" icon={eventos} subtitle={'300m'} />
-            <ListItemwithIcon name="Ocio" icon={ocio} subtitle={'300m'} />
-          </VStack>
+          <ScrollView>
+            <VStack space={5}>
+              <ListItemwithIcon
+                name="Gastronomia"
+                icon={gastronomia}
+                subtitle={'300m'}
+              />
+              <ListItemwithIcon
+                name="Eventos"
+                icon={eventos}
+                subtitle={'300m'}
+              />
+              <ListItemwithIcon name="Ocio" icon={ocio} subtitle={'300m'} />
+            </VStack>
+          </ScrollView>
         );
     }
   };
@@ -69,25 +75,27 @@ export const InterestPoints = () => {
 
   return (
     <>
-      {/* <Map markers={nearbyPlaces} /> */}
+      <Map markers={nearbyPlaces} />
       {/* <Text>{JSON.stringify(permissions, null, 5)}</Text> */}
 
-      <TabView
-        navigationState={{
-          index,
-          routes,
-        }}
-        renderScene={renderScene}
-        renderTabBar={e => (
-          <TabBarOptions
-            {...e}
-            indexTab={index}
-            onIndexChange={indexTab => setIndex(indexTab)}
-          />
-        )}
-        onIndexChange={setIndex}
-        initialLayout={initialLayout}
-      />
+      <Box flex={1} mt={8}>
+        <TabView
+          navigationState={{
+            index,
+            routes,
+          }}
+          renderScene={renderScene}
+          renderTabBar={e => (
+            <TabBarOptions
+              {...e}
+              indexTab={index}
+              onIndexChange={indexTab => setIndex(indexTab)}
+            />
+          )}
+          onIndexChange={setIndex}
+          initialLayout={initialLayout}
+        />
+      </Box>
     </>
   );
 };

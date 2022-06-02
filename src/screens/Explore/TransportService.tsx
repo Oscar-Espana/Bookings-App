@@ -1,7 +1,7 @@
 import React from 'react';
 import BackgroundwithCustomImage from '../../components/NativeBase/BackgroundwithCustomImage';
 import TitleCentered from '../../components/NativeBase/TitleCentered';
-import taxi2 from '../../assets/images/taxi2.png';
+import taxi2 from '../../assets/images/taxi.png';
 import {Box, Heading, ScrollView, Text} from 'native-base';
 import {useNavigation} from '@react-navigation/native';
 import {palette} from '../../theme/palette';

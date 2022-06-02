@@ -33,7 +33,7 @@ const MyTrip = ({navigation}: Props) => {
   const [routes] = React.useState<IRouteTab[]>([
     {
       key: 'first',
-      title: 'Mi ciudad',
+      title: 'Tu ciudad',
     },
     {
       key: 'second',

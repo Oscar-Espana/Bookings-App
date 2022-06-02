@@ -28,7 +28,9 @@ const TitleCentered = ({title, onPress}: Props) => {
         </TouchableOpacity>
       </Box>
 
-      <Text style={typography.heading2}>{title}</Text>
+      <Text style={{...typography.heading2, textTransform: 'uppercase'}}>
+        {title}
+      </Text>
 
       <Box w={30} h={30} />
     </Box>

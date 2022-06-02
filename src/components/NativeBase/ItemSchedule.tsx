@@ -14,14 +14,15 @@ const ItemSchedule = ({time, type}: Props) => {
       borderWidth={1}
       borderColor={palette.neutral}
       borderRadius={16}
-      my={2}>
-      <Box width={'30%'} _text={{color: palette.secondary}} padding={26}>
+      my={2}
+      mx={8}>
+      <Box width={'40%'} _text={{color: palette.secondary}} padding={26}>
         {type}
         {time}
       </Box>
 
-      <Box _text={{color: palette.primary}}>
-        En Madrid la hora de {type} es a las {time}
+      <Box _text={{color: palette.primary}} alignSelf={'center'} width={'55%'}>
+        En Madrid la hora de comida es de 8:00AM
       </Box>
     </Box>
   );

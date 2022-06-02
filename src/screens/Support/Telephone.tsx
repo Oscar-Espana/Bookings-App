@@ -22,7 +22,7 @@ const Telephone = () => {
             data={[
               {
                 name: 'Policia',
-                number: '112',
+                number: '11285695',
               },
             ]}
           />
@@ -32,7 +32,7 @@ const Telephone = () => {
             data={[
               {
                 name: 'Bomberos',
-                number: '112',
+                number: '11289859',
               },
             ]}
           />
@@ -41,22 +41,25 @@ const Telephone = () => {
             name={'Hospitales'}
             data={[
               {
-                name: 'Hospital General de la Provincia de Buenos Aires',
-                number: '8745184554',
+                name: 'Hospital 1',
+                number: '87451854',
               },
               {
-                name: 'Hospital General de la Provincia de Imbabura',
-                number: '911',
+                name: 'Hospital 2',
+                number: '91187958',
+              },
+              {
+                name: 'Hospital 3',
+                number: '91111988',
               },
             ]}
           />
           <TelephoneItem
-            icon={'bug'}
             name={'Mi host'}
             data={[
               {
                 name: 'Pedrito Zaruma',
-                number: '+593 98512963',
+                number: '98512963',
               },
             ]}
           />

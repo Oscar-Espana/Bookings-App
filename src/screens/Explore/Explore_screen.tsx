@@ -49,7 +49,7 @@ const Explore_screen = () => {
     <BackgroundwithGradient>
       <TitleWithIcon title="EXPLORA" />
 
-      <Box flex={2}>
+      <Box flex={1}>
         <TabView
           navigationState={{
             index,

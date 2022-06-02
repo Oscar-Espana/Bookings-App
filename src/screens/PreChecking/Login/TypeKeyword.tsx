@@ -6,6 +6,7 @@ import Heading from '../../../components/NativeBase/Heading';
 import TextSection from '../../../components/NativeBase/TextSection';
 import {useNavigation} from '@react-navigation/native';
 import {Platform} from 'react-native';
+import {palette} from '../../../theme/palette';
 
 const TypeKeyword = () => {
   const navigation = useNavigation();
@@ -22,7 +23,17 @@ const TypeKeyword = () => {
         </TextSection>
 
         <Box m={30}>
-          <Input h={50} rounded={10} />
+          <Input
+            rounded={10}
+            _focus={{
+              borderColor: palette.primary,
+              backgroundColor: 'transparent',
+            }}
+            color={palette.primary}
+            borderColor={palette.gray}
+            height={50}
+            borderRadius={10}
+          />
         </Box>
       </KeyboardAvoidingView>
 
