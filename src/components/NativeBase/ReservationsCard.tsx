@@ -61,26 +61,50 @@ const ReservationsCard = ({data, horizontal, onPress}: Props) => {
                 </Box>
 
                 <Box
-                  w={36}
-                  h={36}
+                  w={42}
+                  h={42}
                   rounded={50}
                   justifyContent={'center'}
                   alignContent={'center'}>
                   {item.status === 'done' ? (
-                    <Icon
-                      name="checkmark-circle"
-                      size={36}
-                      color={palette.secondary}
-                    />
+                    <>
+                      <Box
+                        position={'absolute'}
+                        bgColor={palette.primary}
+                        rounded={50}
+                        ml={1}
+                        w={6}
+                        h={6}
+                      />
+                      <Icon
+                        name="checkmark-circle"
+                        size={42}
+                        color={palette.secondary}
+                      />
+                    </>
                   ) : (
-                    <Icon name="close-circle" size={36} color={palette.gray} />
+                    <>
+                      <Box
+                        position={'absolute'}
+                        bgColor={palette.primary}
+                        rounded={50}
+                        ml={1}
+                        w={6}
+                        h={6}
+                      />
+                      <Icon
+                        name="close-circle"
+                        size={36}
+                        color={palette.gray}
+                      />
+                    </>
                   )}
                 </Box>
               </Box>
 
               <VStack
                 px={3}
-                py={1}
+                pt={1}
                 rounded={16}
                 backgroundColor="white"
                 bottom={-160}>
