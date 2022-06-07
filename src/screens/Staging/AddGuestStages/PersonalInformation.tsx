@@ -33,11 +33,11 @@ const PersonalInformation = ({onPress}: Props) => {
   };
 
   return (
-    <ScrollView flex={1}>
+    <ScrollView flex={1} mb={8}>
       <KeyboardAvoidingView
         flex={1}
-        behavior={Platform.OS == 'ios' ? 'padding' : 'height'}>
-        <SectionTitle title="Personal Information" />
+        behavior={Platform.OS == 'ios' ? 'padding' : 'padding'}>
+        <SectionTitle title="Personal Information" withLine={false} />
         <TextSection>Make sure the images are clear.</TextSection>
 
         <Formik

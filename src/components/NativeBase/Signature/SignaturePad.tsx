@@ -12,7 +12,7 @@ const SignaturePad = React.forwardRef<SignatureViewRef, Props>((props, ref) => {
   const {navigation, handleOK, handleEmpty} = props;
 
   return (
-    <Box w={'100%'} h={'74%'} rounded={100}>
+    <Box w={'100%'} h={'71%'} rounded={100}>
       <SignatureScreen
         ref={ref}
         onOK={handleOK}

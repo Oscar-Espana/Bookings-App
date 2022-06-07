@@ -15,7 +15,7 @@ const TypeKeyword = () => {
       <KeyboardAvoidingView
         flex={1}
         justifyContent={'center'}
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+        behavior={Platform.OS === 'ios' ? 'padding' : 'padding'}>
         <Heading title="TYPE THE KEYWORD" />
         <TextSection>
           On the email you got with the link to download this app, we gave you a

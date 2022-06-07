@@ -16,7 +16,7 @@ const Login = () => {
     <BackgroundwithGradient>
       <KeyboardAvoidingView
         flex={1}
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+        behavior={Platform.OS === 'ios' ? 'padding' : 'padding'}>
         <Formik
           initialValues={{
             user: '',

@@ -17,6 +17,7 @@ import Compass from '../assets/icons/compass.svg';
 import Briefcase from '../assets/icons/briefcase.svg';
 import Bouy from '../assets/icons/life-buoy.svg';
 import User from '../assets/icons/user.svg';
+import {Platform} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,7 +29,7 @@ export const BottomTabsNavigator = () => {
         tabBarActiveTintColor: palette.primary,
         tabBarStyle: {
           backgroundColor: palette.background,
-          height: 95,
+          height: Platform.OS === 'ios' ? 95 : 65,
           shadowColor: 'black',
           shadowOffset: {width: 0.1, height: 0.1},
           shadowOpacity: 0.9,

@@ -18,8 +18,8 @@ import {useNavigation} from '@react-navigation/native';
 const DocumentScreening = ({onPress}: {onPress: () => void}) => {
   const navigation = useNavigation();
   return (
-    <ScrollView flex={1}>
-      <SectionTitle title="Identify Document" />
+    <ScrollView flex={1} mb={5}>
+      <SectionTitle title="Identify Document" withLine={false} />
       <TextSection>
         For security reasons we check manualy all the identifications. In order
         to do that, we need you to upload a picture of you ID document and a
@@ -67,7 +67,7 @@ const DocumentScreening = ({onPress}: {onPress: () => void}) => {
               />
             </VStack>
 
-            <HStack justifyContent={'space-between'} px={30}>
+            <HStack justifyContent={'space-between'} mx={30}>
               <CardScanButtons
                 label={'Front'}
                 icon={frontCard}
@@ -80,7 +80,7 @@ const DocumentScreening = ({onPress}: {onPress: () => void}) => {
               />
             </HStack>
 
-            <Box px={30}>
+            <Box p={30}>
               <SelfieScanner onPress={() => navigation.navigate('Scanner')} />
             </Box>
 

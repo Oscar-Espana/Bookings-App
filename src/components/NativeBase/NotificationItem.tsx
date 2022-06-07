@@ -21,10 +21,13 @@ const NotificationItem = ({icon, name, time, info}: Props) => {
         mr={4}
       />
       <Box flex={1}>
-        <Text style={{color: 'white'}} flexWrap={'wrap'}>
-          {name} is simply dummy text of the printing and typesetting is simply
+        <Text style={{color: palette.gray}} flexWrap={'wrap'}>
+          <Text style={{color: palette.primary, fontWeight: '700'}}>
+            {name}
+          </Text>{' '}
           is simply dummy text of the printing and typesetting is simply is
-          simply dummy text of the printing and typesetting is simply
+          simply dummy text of the printing and typesetting is simply is simply
+          dummy text of the printing and typesetting is simply
         </Text>
         <Text style={{color: palette.secondary}}>{time}</Text>
       </Box>

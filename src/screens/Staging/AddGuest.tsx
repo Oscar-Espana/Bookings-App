@@ -62,7 +62,7 @@ const AddGuest = () => {
   return (
     <BackgroundwithGradient>
       <TitleCentered title="ADD GUEST" onPress={() => navigation.goBack()} />
-      <Box pb={5} mt={-6}>
+      <Box pb={4} mt={0}>
         <StepIndicator
           stepCount={4}
           renderStepIndicator={customRenderStepIndicator}
@@ -72,6 +72,7 @@ const AddGuest = () => {
         />
       </Box>
       {renderStages(currentPosition)}
+      <Box mb={5} />
     </BackgroundwithGradient>
   );
 };

@@ -28,12 +28,12 @@ const ListItem = ({
         <Box>
           <Text
             style={{
-              ...typography.body1Bold,
               color: color,
               fontFamily: 'Trade Gothic LT Std',
               fontStyle: 'normal',
-              fontWeight: '400',
+              fontWeight: '700',
               fontSize: 18,
+              letterSpacing: 0.4,
               lineHeight: 22,
             }}>
             {name}

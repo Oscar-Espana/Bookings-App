@@ -17,7 +17,7 @@ const CheckInOut = ({type, date}: Props) => {
       backgroundColor={'#fff'}
       justifyContent={'center'}
       alignItems={'center'}>
-      <Text style={{...typography.cardFont, fontSize: 10, marginBottom: 5}}>
+      <Text style={{...typography.cardFont, fontSize: 10, marginBottom: 0}}>
         {type}
       </Text>
       <Text style={{...typography.cardFont, fontWeight: 'bold'}}>

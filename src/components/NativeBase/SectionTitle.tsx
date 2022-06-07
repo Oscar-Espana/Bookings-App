@@ -6,9 +6,10 @@ import {palette} from '../../theme/palette';
 interface Props {
   title: string;
   upperTitle?: string;
+  withLine?: boolean;
 }
 
-const SectionTitle = ({title, upperTitle}: Props) => {
+const SectionTitle = ({title, upperTitle, withLine = true}: Props) => {
   return (
     <>
       {upperTitle && (
@@ -29,12 +30,14 @@ const SectionTitle = ({title, upperTitle}: Props) => {
         flexDirection={'row'}
         justifyContent={'space-between'}
         marginLeft={30}
-        py={0}
+        py={4}
         mt={2}
         mb={4}
         alignItems={'center'}>
         <Text style={typography.heading3}>{title}</Text>
-        <Box w={'100%'} ml={3} borderBottomWidth={1} borderColor={'white'} />
+        {withLine && (
+          <Box w={'100%'} ml={3} borderBottomWidth={1} borderColor={'white'} />
+        )}
       </Box>
     </>
   );

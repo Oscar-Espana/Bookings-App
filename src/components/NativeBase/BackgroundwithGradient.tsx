@@ -1,3 +1,4 @@
+import {Box} from 'native-base';
 import React, {Children} from 'react';
 import {ImageBackground, StyleSheet} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -14,7 +15,7 @@ const BackgroundwithGradient = ({children}: any) => {
       resizeMode="cover">
       <LinearGradient
         style={styles.container}
-        colors={[paletteRGBA.background(0.8), paletteRGBA.background(1)]}
+        colors={[paletteRGBA.background(0.91), paletteRGBA.background(1)]}
         start={{x: 0, y: 0}}
         end={{x: 0, y: 1}}>
         {children}

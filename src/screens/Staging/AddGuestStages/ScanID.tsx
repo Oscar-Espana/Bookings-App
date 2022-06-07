@@ -16,7 +16,7 @@ const ScanID = ({onPress}: {onPress: () => void}) => {
   return (
     <Box flex={1} justifyContent={'space-between'}>
       <Box>
-        <SectionTitle title="Scan ID / Passport" />
+        <SectionTitle title="Scan ID / Passport" withLine={false} />
         <TextSection>You should see the code code (MRZ) IS.</TextSection>
         <Box alignItems={'center'}>
           <Box

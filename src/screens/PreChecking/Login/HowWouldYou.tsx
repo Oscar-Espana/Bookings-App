@@ -24,7 +24,7 @@ const HowWouldYou = () => {
       <SafeAreaView>
         <KeyboardAvoidingView
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-          <ScrollView mt={10}>
+          <ScrollView mt={10} mb={10}>
             <Heading title="HOW WOULD YOU LIKE TO LOG IN NEXT TIME?" />
             <TextSection>
               Type your email and the password you would like to use to log in
@@ -90,7 +90,7 @@ const HowWouldYou = () => {
                     />
                   </VStack>
 
-                  <Box mx={30}>
+                  <Box mx={30} my={8}>
                     <ButtonBig name={'LOGIN'} onPress={handleSubmit} />
                   </Box>
                 </>

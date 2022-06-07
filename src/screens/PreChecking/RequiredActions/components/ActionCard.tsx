@@ -18,6 +18,19 @@ interface Props {
 const ActionCard = ({title, status, icon, onPress}: Props) => {
   return (
     <TouchableOpacity onPress={onPress}>
+      {status === 'Completado' ? (
+        <Box
+          position={'absolute'}
+          bgColor={'red'}
+          w={30}
+          h={30}
+          zIndex={1}
+          right={0}
+          top={-8}>
+          <Icon name={'checkmark-circle'} size={30} color={palette.secondary} />
+        </Box>
+      ) : null}
+
       <Box
         style={{
           shadowColor: '#000',
