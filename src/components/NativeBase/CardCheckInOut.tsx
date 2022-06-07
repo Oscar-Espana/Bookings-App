@@ -5,10 +5,13 @@ import CheckInOut from './CheckInOut';
 
 const CardCheckInOut = () => {
   return (
-    <Box flex={1} alignItems="center" mb={5}>
+    <Box alignItems="center" mb={5}>
       <Image
         source={require('../../assets/images/reserva.png')}
         alt="reserva"
+        width={335}
+        height={288}
+        rounded={30}
       />
       <HStack
         position={'absolute'}

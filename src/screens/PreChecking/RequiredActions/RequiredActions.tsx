@@ -8,12 +8,15 @@ import {useNavigation} from '@react-navigation/native';
 import ActionCard from './components/ActionCard';
 
 import {StackActions} from '@react-navigation/native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const RequiredActions = () => {
   const navigation = useNavigation();
+  const {top} = useSafeAreaInsets();
+
   return (
     <BackgroundwithGradient>
-      <Box style={{flex: 1, justifyContent: 'center'}}>
+      <Box style={{flex: 1, marginTop: 3 * top}}>
         <Heading title="Required Actions" />
         <TextSection>
           We need you to completed following actions as soon as posible to
@@ -41,7 +44,7 @@ const RequiredActions = () => {
           />
         </VStack>
       </Box>
-      <Box mx={30} bottom={10}>
+      <Box p={30} bottom={0} position={'absolute'}>
         <ButtonBig
           name={'COMPLETAL PRECHECKING'}
           onPress={() =>

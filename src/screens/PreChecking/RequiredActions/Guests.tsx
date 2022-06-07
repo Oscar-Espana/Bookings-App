@@ -66,7 +66,7 @@ const Guests = () => {
         information of all the guests.
       </TextSection>
       <SectionTitle title="Guests" />
-      <ScrollView>
+      <ScrollView mb={10}>
         {/* render guest card with data  */}
         <VStack mx={30}>
           {data &&
@@ -92,11 +92,12 @@ const Guests = () => {
           fontWeight={400}
           fontSize={16}
           lineHeight={24}
+          letterSpacing={1}
           textAlign="center"
           textTransform="uppercase">
           DO YOU HAVE ANY QUESTION?
         </Text>
-        <TextSection>
+        <TextSection textAlign={'center'}>
           Write us on the chat support, we will be pleased to help you.
         </TextSection>
 

@@ -66,7 +66,9 @@ const GrantAccessEmail = () => {
 
         <TouchableWithoutFeedback
           onPress={() => navigation.navigate('FinishSettings')}>
-          <Text style={styles.skip}>Omitir</Text>
+          <Box mb={5}>
+            <Text style={styles.skip}>Omitir</Text>
+          </Box>
         </TouchableWithoutFeedback>
       </ScrollView>
     </BackgroundwithGradient>
@@ -89,6 +91,7 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: 16,
+
     lineHeight: 19,
     textAlign: 'center',
   },

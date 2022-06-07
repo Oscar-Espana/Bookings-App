@@ -14,37 +14,40 @@ import {useNavigation} from '@react-navigation/native';
 const ScanID = ({onPress}: {onPress: () => void}) => {
   const navigation = useNavigation();
   return (
-    <Box flex={1}>
-      <SectionTitle title="Scan ID / Passport" />
-      <TextSection>You should see the code code (MRZ) IS.</TextSection>
-
-      <TouchableOpacity onPress={() => navigation.navigate('Scanner')}>
-        <Box alignItems={'center'} mt={100}>
+    <Box flex={1} justifyContent={'space-between'}>
+      <Box>
+        <SectionTitle title="Scan ID / Passport" withLine={false} />
+        <TextSection>You should see the code code (MRZ) IS.</TextSection>
+        <Box alignItems={'center'}>
           <Box
             justifyContent={'center'}
             alignItems={'center'}
             w={200}
             h={200}
-            mt={5}
+            mt={24}
             rounded={100}
             borderWidth={1}
             borderColor={palette.secondary}
             backgroundColor={'rgba(187, 187, 187, 0.1)'}>
-            <ScanIcon color={palette.secondary} />
-            <Text
-              mt={3}
-              color={palette.secondary}
-              fontFamily={'Trade Gothic LT Std'}
-              fontStyle="normal"
-              fontWeight="400"
-              fontSize={15}
-              lineHeight={18}>
-              Scan
-            </Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Scanner')}>
+              <ScanIcon color={palette.secondary} />
+              <Text
+                mt={5}
+                color={palette.secondary}
+                fontFamily={'Trade Gothic LT Std'}
+                fontStyle="normal"
+                fontWeight="400"
+                fontSize={15}
+                lineHeight={18}
+                alignSelf={'center'}>
+                Scan
+              </Text>
+            </TouchableOpacity>
           </Box>
         </Box>
-      </TouchableOpacity>
-      <Box mx={30} bottom={-120}>
+      </Box>
+
+      <Box p={30} bottom={0} position={'absolute'}>
         <ButtonBig name="NEXT" onPress={onPress} />
       </Box>
     </Box>

@@ -7,14 +7,14 @@ import {paletteRGBA, palette} from '../../theme/palette';
 import ReservationsCard from './ReservationsCard';
 import TitleCentered from './TitleCentered';
 
-const BackgroundwithGradient = ({children, source}: any) => {
+const BackgroundwithGradient = ({children, source, height = 288}: any) => {
   return (
     <Box bgColor={palette.background} flex={1} position={'relative'}>
       <ImageBackground
         source={source}
         style={{
           flex: 1,
-          height: 288,
+          height: height,
           width: '100%',
           position: 'absolute',
         }}

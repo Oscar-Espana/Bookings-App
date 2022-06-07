@@ -32,7 +32,7 @@ const DocumentSign = ({onPress}: {onPress: () => void}) => {
 
   return (
     <Box flex={1}>
-      <SectionTitle title={'Document Sign'} />
+      <SectionTitle title={'Document Sign'} withLine={false} />
       <Box p={6}>
         <SignaturePad
           ref={ref}

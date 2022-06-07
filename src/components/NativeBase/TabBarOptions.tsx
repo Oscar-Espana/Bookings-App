@@ -15,7 +15,7 @@ export const TabBarOptions = (props: Props) => {
   const inputRange = props.navigationState.routes.map((x, i) => i);
 
   return (
-    <Box flexDirection="row" m={8}>
+    <Box flexDirection="row" mx={8} mb={8}>
       {props.navigationState.routes.map((route: any, i: any) => {
         const opacity = props.position.interpolate({
           inputRange,

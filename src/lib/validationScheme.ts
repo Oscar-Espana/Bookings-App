@@ -27,3 +27,21 @@ export const documentValidation = yup.object().shape({
   
 })
 
+export const loginSchema = yup.object().shape({
+  user: stringValidation('user'),
+  password: stringValidation('password').min(4, 'Password must be at least 4 characters')
+})
+
+export const registerSchema = yup.object().shape({
+  user: stringValidation('user'),
+  password: stringValidation('password').min(4, 'Password must be at least 4 characters'),
+  password2: stringValidation('password2').min(4, 'Password must be at least 4 characters')
+})
+
+export const travelSchema = yup.object().shape({
+  arrivalTransport: stringValidation('arrivalTransport'),
+  checkingTime: yup.date().required('Estimated checking time is required'), 
+  checkingTime2: yup.date().required('Estimated checking time is required'), 
+
+})
+

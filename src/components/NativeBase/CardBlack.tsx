@@ -21,7 +21,18 @@ const CardBlack = ({data}: Props) => {
         h={124}
         bg={palette.background}
         rounded={16}
-        flexDirection={'row'}>
+        flexDirection={'row'}
+        style={{
+          shadowColor: '#000',
+          shadowOffset: {
+            width: 0,
+            height: 7,
+          },
+          shadowOpacity: 0.41,
+          shadowRadius: 9.11,
+
+          elevation: 14,
+        }}>
         <Box w={104} h={104} m={2}>
           <Image alt={'plan'} source={plan_events} />
         </Box>
@@ -38,16 +49,22 @@ const CardBlack = ({data}: Props) => {
             color={palette.neutral}>
             Friday, 23th, Feb, 2021
           </Text>
-          <Box w={100} flexDirection={'row'} mt={5}>
+          <Box w={100} flexDirection={'row'} mt={5} ml={4}>
             {data.guests.map((item: IGuest, index: number) => {
               return (
-                <Image
-                  alt={'guest'}
-                  source={item.img}
-                  w={8}
-                  h={8}
-                  key={index}
-                />
+                <Box
+                  ml={-4}
+                  borderLeftWidth={3}
+                  borderLeftColor={palette.background}
+                  rounded={30}>
+                  <Image
+                    alt={'guest'}
+                    source={item.img}
+                    w={8}
+                    h={8}
+                    key={index}
+                  />
+                </Box>
               );
             })}
           </Box>

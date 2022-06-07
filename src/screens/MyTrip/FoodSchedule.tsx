@@ -15,7 +15,9 @@ const FoodSchedule = () => {
           title={'Horarios de comida'}
           onPress={() => navigation.goBack()}
         />
-        <Box _text={{color: 'white'}}>Espana, Madrid</Box>
+        <Box _text={{color: 'white'}} mx={8}>
+          Espana, Madrid
+        </Box>
         <ItemSchedule type={'Desayuno'} time={'7:00AM'} />
         <ItemSchedule type={'Almuerzo'} time={'1:00AM'} />
         <ItemSchedule type={'Cena'} time={'8:00AM'} />

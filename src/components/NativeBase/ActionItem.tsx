@@ -23,12 +23,24 @@ const ActionItem = ({icon, name, selected, onPress, size}: Props) => {
     <TouchableOpacity onPress={onPress}>
       <Box
         _text={{
-          color: palette.primary,
+          color: selected ? palette.secondary : palette.primary,
           fontSize: 11,
+          top: 4,
           fontFamily: 'Trade Gothic LT Std',
         }}
         justifyContent={'center'}
-        alignItems={'center'}>
+        alignItems={'center'}
+        style={{
+          shadowColor: '#000',
+          shadowOffset: {
+            width: 0,
+            height: 7,
+          },
+          shadowOpacity: 0.41,
+          shadowRadius: 9.11,
+
+          elevation: 14,
+        }}>
         <Box
           w={boxSize}
           h={boxSize}

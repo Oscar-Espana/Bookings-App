@@ -25,7 +25,7 @@ const FinishSettings = () => {
           stay with us.
         </TextSection>
       </Box>
-      <Box m={30}>
+      <Box bottom={10} mx={30} position={'absolute'} w={'85%'}>
         <ButtonBig
           name="LET'S GO"
           onPress={() => navigation.navigate('BeginVideo')}

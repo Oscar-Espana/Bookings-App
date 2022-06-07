@@ -2,6 +2,7 @@ import React from 'react';
 import {Select, Box, Text, FormControl} from 'native-base';
 import {StyleSheet} from 'react-native';
 import {palette} from '../../theme/palette';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 interface Props {
   label: string;
@@ -26,11 +27,20 @@ const SelectInput = ({
   let [valueAux, setService] = React.useState(value);
 
   return (
-    <Box my={30} minWidth={'150'}>
+    <Box mt={30} minWidth={'150'}>
       <FormControl isRequired isInvalid={hasError}>
         <Text style={styles.title}>{label}</Text>
         <Select
           height={50}
+          dropdownIcon={
+            <Box mr={2.5}>
+              <Icon
+                name="chevron-down-outline"
+                size={28}
+                color={palette.secondary}
+              />
+            </Box>
+          }
           rounded={10}
           selectedValue={valueAux}
           accessibilityLabel={label}

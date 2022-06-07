@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: 14,
+    marginVertical: 10,
     lineHeight: 17,
   },
 });

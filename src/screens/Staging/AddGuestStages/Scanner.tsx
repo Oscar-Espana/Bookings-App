@@ -1,4 +1,4 @@
-import {Box, Image, Text} from 'native-base';
+import {Box, HStack, Image, Text} from 'native-base';
 import React, {useState, useRef, useEffect} from 'react';
 import PDFScanner from '@woonivers/react-native-document-scanner';
 import {
@@ -107,10 +107,15 @@ const Scanner = () => {
           detectionRefreshRateInMS={50}
         />
       </Box>
-      <Box flexDirection={'row'} justifyContent={'center'}>
+      <HStack
+        justifyContent={'space-between'}
+        width={'100%'}
+        paddingX={8}
+        paddingY={8}
+        space={5}>
         <ButtonBig onPress={handleOnPress} name={'CANCEL'} />
         <ButtonBig onPress={handleOnPress} name={'SCAN'} />
-      </Box>
+      </HStack>
     </BackgroundwithGradient>
   );
 };

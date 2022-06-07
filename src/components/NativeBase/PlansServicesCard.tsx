@@ -13,7 +13,20 @@ const PlansServicesCard = ({data}: Props) => {
   return (
     <ScrollView horizontal padding={5} showsHorizontalScrollIndicator={false}>
       {data.map((item: IPlanServices) => (
-        <Box key={item.id} marginRight={10}>
+        <Box
+          key={item.id}
+          marginRight={5}
+          style={{
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 8,
+              height: 8,
+            },
+            shadowOpacity: 0.51,
+            shadowRadius: 10.11,
+
+            elevation: 20,
+          }}>
           <Image
             source={item.img}
             w={210}

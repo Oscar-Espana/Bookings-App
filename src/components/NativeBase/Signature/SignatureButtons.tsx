@@ -1,4 +1,4 @@
-import {Box} from 'native-base';
+import {Box, HStack} from 'native-base';
 import React from 'react';
 import ButtonBig from '../ButtonBig';
 
@@ -9,14 +9,14 @@ interface Props {
 
 const SignatureButtons = ({handleClear, handleConfirm}: Props) => {
   return (
-    <Box flexDirection={'row'} justifyContent={'space-between'} mt={2}>
-      <Box w={154}>
-        <ButtonBig name={'CLEAR'} onPress={handleClear} />
-      </Box>
-      <Box w={154}>
-        <ButtonBig name={'NEXT'} onPress={handleConfirm} />
-      </Box>
-    </Box>
+    <HStack
+      justifyContent={'space-between'}
+      width={'100%'}
+      paddingY={8}
+      space={5}>
+      <ButtonBig onPress={handleClear} name={'CLEAR'} />
+      <ButtonBig onPress={handleConfirm} name={'NEXT'} />
+    </HStack>
   );
 };
 

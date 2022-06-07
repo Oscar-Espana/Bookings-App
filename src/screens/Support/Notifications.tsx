@@ -5,7 +5,8 @@ import {useNavigation} from '@react-navigation/native';
 import {Box, ScrollView, Text, VStack} from 'native-base';
 import {palette} from '../../theme/palette';
 import NotificationItem from '../../components/NativeBase/NotificationItem';
-import userProfile from '../../assets/images/profilePicture/user_s.png';
+import userProfile from '../../assets/images/guests/1.png';
+import Time from './components/Time';
 
 const Notifications = () => {
   const navigation = useNavigation();
@@ -16,15 +17,12 @@ const Notifications = () => {
         onPress={() => navigation.goBack()}
       />
       <Box flex={1}>
-        <Box flexDirection={'row'} justifyContent={'space-between'} mx={28}>
-          <Text color={palette.primary}>Hoy</Text>
-          <Text color={palette.secondary}>Limpiar</Text>
-        </Box>
         <ScrollView>
+          <Time time={'Hoy'} />
           <VStack space={6} mt={5} px={6}>
             <NotificationItem
               icon={userProfile}
-              name={'Terry Culhane'}
+              name={'Mateo Culhane'}
               time={'1h'}
             />
             <NotificationItem
@@ -32,19 +30,12 @@ const Notifications = () => {
               name={'Terry Culhane'}
               time={'2h'}
             />
+          </VStack>
+          <Time time={'Ayer'} />
+          <VStack space={6} mt={5} px={6}>
             <NotificationItem
               icon={userProfile}
-              name={'Terry Culhane'}
-              time={'3h'}
-            />
-            <NotificationItem
-              icon={userProfile}
-              name={'Terry Culhane'}
-              time={'4h'}
-            />
-            <NotificationItem
-              icon={userProfile}
-              name={'Terry Culhane'}
+              name={'Tey Seep'}
               time={'1h'}
             />
             <NotificationItem
@@ -54,7 +45,7 @@ const Notifications = () => {
             />
             <NotificationItem
               icon={userProfile}
-              name={'Terry Culhane'}
+              name={'Terry Isout'}
               time={'1h'}
             />
           </VStack>

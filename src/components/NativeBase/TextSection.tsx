@@ -4,9 +4,21 @@ import {Text} from 'react-native';
 import {typography} from '../../theme/typography';
 import {palette} from '../../theme/palette';
 
-const TextSection = ({children}: any) => {
+interface Props {
+  children: any;
+  textAlign?: 'center' | 'left' | 'right';
+}
+
+const TextSection = ({children, textAlign}: Props) => {
   return (
-    <Box mx={8} _text={{...typography.body2, color: palette.neutral}} my={0}>
+    <Box
+      mx={8}
+      _text={{
+        ...typography.body2,
+        color: palette.neutral,
+        textAlign: textAlign,
+      }}
+      my={0}>
       {children}
     </Box>
   );

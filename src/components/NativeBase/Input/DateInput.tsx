@@ -19,10 +19,11 @@ interface Props {
   errorMessage?: string | undefined;
 }
 
-const DateInput = ({label, value, onChange, mode = 'date'}: Props) => {
+const DateInput = ({label, value, onChange, mode = 'time'}: Props) => {
   const dateAux = value === '' ? new Date() : new Date(value);
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [date, setDate] = useState(format(dateAux, 'MM/dd/yyyy'));
+  const [time, setTime] = useState(format(dateAux, 'HH:mm'));
 
   const showDatePicker = () => {
     setDatePickerVisibility(true);
@@ -34,11 +35,14 @@ const DateInput = ({label, value, onChange, mode = 'date'}: Props) => {
 
   const handleConfirm = (date: Date) => {
     const dateFormatted = format(date, 'MM/dd/yyyy');
-    setDate(dateFormatted);
+    const timeFormatted = format(date, 'HH:mm');
+    mode === 'time' ? setTime(timeFormatted) : setDate(dateFormatted);
+    //setDate(dateFormatted);
     onChange(dateFormatted);
     hideDatePicker();
   };
 
+  console.log(date);
   return (
     <Box my={3} minWidth={'150'}>
       <Text style={styles.title}>{label}</Text>
@@ -63,7 +67,8 @@ const DateInput = ({label, value, onChange, mode = 'date'}: Props) => {
               editable={false}
               placeholder={'00:00'}
               h={50}
-              value={date}
+              borderWidth={0}
+              value={mode === 'time' ? time : date}
               color={palette.primary}
               isReadOnly
               //value={date.toDateString()}

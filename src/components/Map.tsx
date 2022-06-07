@@ -4,15 +4,17 @@ import MapView, {Marker, Polyline, PROVIDER_GOOGLE} from 'react-native-maps';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Location} from '../interfaces/ILocation';
 import {useLocation} from '../hooks/useLocation';
-import LoadingScreen from '../screens/LoadingScreen';
+
 import {mapstyle} from '../constants/mapstyle';
 import {palette} from '../theme/palette';
 import Fab from './Fab';
 import {PermissionsContext} from '../context/PermissionsContext';
-import {useFocusEffect} from '@react-navigation/native';
+import {useFocusEffect, useNavigation} from '@react-navigation/native';
+import LoadingScreen from '../screens/NotUsed/LoadingScreen';
+import {Box} from 'native-base';
 
 interface Props {
-  markers?: Location[];
+  markers?: Location[] & {price?: number} & {name?: string};
   coords?: Location;
   polyline?: Location[];
   showUserLocation?: boolean;
@@ -28,6 +30,7 @@ export const Map = ({
   showUserLocation = true,
   zoom = 0.009,
 }: Props) => {
+  const navigation = useNavigation();
   let {width, height} = Dimensions.get('window');
   const ASPECT_RATIO = width / height;
   const LATITUDE_DELTA = zoom;
@@ -112,28 +115,42 @@ export const Map = ({
           />
         )}
         <Marker coordinate={userLocation}>
-          <Icon name="airplane" size={30} color={palette.secondary} />
+          <Icon name="location" size={40} color={palette.secondary} />
         </Marker>
 
-        {markers && (
-          <>
+        {markers &&
+          markers.map((marker, index) => (
             <Marker
+              key={index}
+              onPress={() => {
+                following.current = false;
+                mapViewRef.current?.animateCamera({
+                  center: {
+                    latitude: marker.latitude,
+                    longitude: marker.longitude,
+                  },
+                });
+                /* console.warn(marker.name, 'pressed'); */
+                navigation.navigate('PointDetails', marker);
+              }}
               coordinate={{
-                latitude: markers[0].latitude,
-                longitude: markers[0].longitude,
+                latitude: marker.latitude,
+                longitude: marker.longitude,
               }}>
-              <Icon name="flag" size={40} color="black" />
+              <Box
+                bgColor={'white'}
+                p={2}
+                rounded={13}
+                _text={{
+                  fontSize: 15,
+                  color: 'black',
+                  fontWeight: 'bold',
+                }}>
+                {marker.price}
+              </Box>
+              {/* <Icon name="cafe" size={40} color={'green'} /> */}
             </Marker>
-
-            <Marker
-              coordinate={{
-                latitude: markers[markers.length - 1].latitude,
-                longitude: markers[markers.length - 1].longitude,
-              }}>
-              <Icon name="golf" size={40} color="black" />
-            </Marker>
-          </>
-        )}
+          ))}
       </MapView>
 
       <Fab

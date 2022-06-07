@@ -59,38 +59,6 @@ export const mapstyle = [
     ]
   },
   {
-    "featureType": "poi.attraction",
-    "stylers": [
-      {
-        "visibility": "on"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.business",
-    "stylers": [
-      {
-        "visibility": "on"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.government",
-    "stylers": [
-      {
-        "visibility": "on"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.medical",
-    "stylers": [
-      {
-        "visibility": "on"
-      }
-    ]
-  },
-  {
     "featureType": "poi.park",
     "elementType": "geometry",
     "stylers": [
@@ -105,15 +73,6 @@ export const mapstyle = [
     "stylers": [
       {
         "color": "#9e9e9e"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.place_of_worship",
-    "elementType": "geometry.fill",
-    "stylers": [
-      {
-        "visibility": "simplified"
       }
     ]
   },

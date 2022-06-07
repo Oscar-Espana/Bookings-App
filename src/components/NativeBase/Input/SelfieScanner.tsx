@@ -17,7 +17,7 @@ const SelfieScanner = ({onPress}: {onPress: () => void}) => {
           borderWidth={1}
           rounded={16}>
           <Box padding={44} alignItems={'center'}>
-            <Image source={selfie} alt={'icon'} />
+            <Image source={selfie} alt={'icon'} w={16} h={12} />
           </Box>
         </Box>
       </Box>
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     color: palette.primary,
     fontFamily: 'Trade Gothic LT Std',
     fontStyle: 'normal',
+    marginBottom: 10,
     fontWeight: '700',
     fontSize: 14,
     lineHeight: 17,

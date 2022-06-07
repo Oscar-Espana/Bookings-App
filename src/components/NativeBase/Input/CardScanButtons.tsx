@@ -19,8 +19,10 @@ const CardScanButtons = ({
       <Box justifyContent={'center'}>
         <Text style={styles.label}>{label}</Text>
         <Box
+          width={150}
           height={110}
           justifyContent="center"
+          alignItems="center"
           borderColor={palette.gray}
           borderStyle={'dashed'}
           borderWidth={1}
@@ -41,6 +43,7 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: 14,
+    marginBottom: 5,
     lineHeight: 17,
     textAlign: 'center',
   },

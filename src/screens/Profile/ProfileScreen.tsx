@@ -35,10 +35,6 @@ const ProfileScreen = () => {
       </Box>
 
       <VStack flex={2} space={5} py={8}>
-        <ListItem
-          name="Signature"
-          onPress={() => navigation.navigate('Signature')}
-        />
         <ListItem name="Datos personales" />
         <ListItem name="Datos de reserva" />
         <ListItem name="Terminos y condiciones" />

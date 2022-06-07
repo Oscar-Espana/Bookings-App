@@ -158,7 +158,7 @@ const TypeYourCode = () => {
           />
         </Center>
       </BackgroundwithGradient>
-      <Box p={30} backgroundColor={palette.background}>
+      <Box p={30} bottom={0} position={'absolute'}>
         <ButtonBig
           name={'NEXT'}
           onPress={() => console.warn('Submited code', codeDigits)}

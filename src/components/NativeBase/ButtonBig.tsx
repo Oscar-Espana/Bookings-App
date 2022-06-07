@@ -11,14 +11,23 @@ interface Props {
 
 const ButtonBig = ({name, onPress, color = 'transparent'}: Props) => {
   return (
-    <TouchableOpacity onPress={onPress}>
-      <Box
-        borderColor={palette.primary}
-        borderWidth={2}
-        backgroundColor={color}
-        justifyContent={'center'}
-        alignItems={'center'}
-        borderRadius={16}>
+    <Box
+      borderColor={palette.primary}
+      borderWidth={2}
+      flex={1}
+      backgroundColor={color}
+      borderRadius={16}
+      minHeight={20}
+      maxHeight={20}
+      flexDirection={'row'}>
+      <TouchableOpacity
+        onPress={onPress}
+        style={{
+          width: '100%',
+          paddingHorizontal: 24,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
         <Text
           color={color === 'white' ? palette.black : palette.primary}
           fontFamily={'Trade Gothic LT Std'}
@@ -28,8 +37,8 @@ const ButtonBig = ({name, onPress, color = 'transparent'}: Props) => {
           py={30}>
           {name}
         </Text>
-      </Box>
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </Box>
   );
 };
 

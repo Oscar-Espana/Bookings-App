@@ -8,6 +8,7 @@ import Clock from '../../assets/icons/home/clock.png';
 import wallet from '../../assets/icons/home/wallet.png';
 import file from '../../assets/icons/home/file-pdf.png';
 import {ImageSourcePropType} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 interface Action {
   id: number;

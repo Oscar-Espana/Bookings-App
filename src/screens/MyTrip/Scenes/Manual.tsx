@@ -3,7 +3,7 @@ import React from 'react';
 import ListItem from '../../../components/NativeBase/ListItem';
 
 export const Manual = ({navigation}: any) => (
-  <VStack space={30}>
+  <VStack space={4}>
     <ListItem
       name={'Documentacion'}
       onPress={() => navigation.navigate('Documentation')}
